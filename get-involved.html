@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support Lokahi Connect — fund evidence-based literacy intervention for students who have been underserved by conventional approaches. 501(c)(3) · EIN: 33-3985311." />
+  <title>Get Involved — Lokahi Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_shared.css" />
+  <style>
+    .page-hero .hero-cta { margin-top: 1.8rem; }
+    .ways-section { background: var(--cream); }
+    .ways-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; margin-top: 2.8rem; }
+    .way-card { background: var(--white); border-radius: 1.2rem; padding: 2rem 1.75rem; box-shadow: 0 2px 14px rgba(26,26,46,0.07); display: flex; flex-direction: column; border-top: 4px solid var(--sky); transition: transform 0.25s, box-shadow 0.25s; }
+    .way-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(26,26,46,0.12); }
+    .way-card:nth-child(1) { border-top-color: var(--seafoam); }
+    .way-card:nth-child(2) { border-top-color: var(--ocean); }
+    .way-card:nth-child(3) { border-top-color: var(--dusk); }
+    .way-card:nth-child(4) { border-top-color: var(--mahogany); }
+    .way-card h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.75rem; }
+    .way-card p { font-size: 0.95rem; line-height: 1.75; color: var(--muted); flex: 1; margin-bottom: 1.4rem; }
+    .way-card .way-cta { margin-top: auto; }
+    .tiers-section { background: #0A1828; }
+    .tiers-section .section-tag { color: var(--seafoam); background: rgba(46,196,160,0.15); }
+    .tiers-section .section-heading { color: var(--white); }
+    .tiers-section .section-sub { color: rgba(255,255,255,0.68); }
+    .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; margin-top: 2.8rem; }
+    .tier-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 1.2rem; padding: 2.25rem 2rem; position: relative; transition: background 0.25s, transform 0.25s; }
+    .tier-card:hover { background: rgba(255,255,255,0.10); transform: translateY(-3px); }
+    .tier-card.featured { border-color: rgba(46,196,160,0.5); background: rgba(46,196,160,0.08); }
+    .tier-badge { position: absolute; top: -0.75rem; left: 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--seafoam); color: var(--ink); padding: 0.25rem 0.75rem; border-radius: 2rem; }
+    .tier-card .tier-name { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--seafoam); display: block; margin-bottom: 0.3rem; }
+    .tier-card .tier-amount { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); display: block; margin-bottom: 1rem; }
+    .tier-card p { font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.65); }
+    .pathways-section { background: var(--sand); }
+    .pathways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; margin-top: 2.8rem; }
+    .pathway-card { background: var(--white); border-radius: 1.2rem; padding: 2rem 1.75rem; box-shadow: 0 2px 12px rgba(26,26,46,0.06); }
+    .pathway-icon { font-size: 1.6rem; margin-bottom: 0.85rem; display: block; }
+    .pathway-card h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.7rem; }
+    .pathway-card p { font-size: 0.95rem; line-height: 1.75; color: var(--muted); }
+    .spread-section { background: var(--white); }
+    .spread-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; margin-top: 2.5rem; }
+    .contact-card { background: var(--cream); border-radius: 1rem; padding: 1.75rem; text-align: center; }
+    .contact-card .contact-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+    .contact-card h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .contact-card p { font-size: 0.9rem; line-height: 1.65; color: var(--muted); margin-bottom: 1rem; }
+    .contact-card a.contact-link { font-size: 0.88rem; font-weight: 600; color: var(--ocean); text-decoration: none; border-bottom: 1px solid rgba(13,90,138,0.3); transition: color 0.2s; }
+    .contact-card a.contact-link:hover { color: var(--sky); }
+    @media (max-width: 768px) {
+      .ways-grid { grid-template-columns: 1fr; }
+      .tiers-grid { grid-template-columns: 1fr; }
+      .pathways-grid { grid-template-columns: 1fr; }
+      .spread-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="our-approach.html">Our Approach</a></li>
+    <li><a href="programs-and-impact.html">Programs &amp; Impact</a></li>
+    <li><a href="get-involved.html" class="nav-cta active">Get Involved</a></li>
+  </ul>
+</nav>
+<main>
+  <div class="page-hero">
+    <span class="eyebrow">Make a Difference</span>
+    <h1>Fund Literacy That <em>Lasts a Lifetime</em></h1>
+    <p>Every gift to Lokahi Connect funds evidence-based literacy intervention for students who have been underserved by conventional approaches. 501(c)(3) · EIN: 33-3985311</p>
+    <div class="hero-cta">
+      <a href="https://givebutter.com/bl1HIO" class="btn-primary" target="_blank" rel="noopener">Donate Now ↗</a>
+    </div>
+  </div>
+  <section class="ways-section">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Ways to Give</span>
+      <h2 class="section-heading">Choose How You Give</h2>
+      <p class="section-sub">Every path to support matters. Whether you give once, give monthly, or give through your estate — your generosity creates lasting change.</p>
+      <div class="ways-grid">
+        <article class="way-card"><h3>One-Time or Recurring Gift</h3><p>Any amount makes a difference. Set up a monthly gift to provide sustained support for a student's full intervention sequence.</p><a href="https://givebutter.com/bl1HIO" class="btn-primary way-cta" target="_blank" rel="noopener">Give Now ↗</a></article>
+        <article class="way-card"><h3>Institutional Grant</h3><p>Foundations, corporations, and government agencies can partner with us for direct service contracts, research collaborations, or curriculum development.</p><a href="mailto:info@lokahiconnect.org?subject=Institutional%20Partnership%20Inquiry" class="btn-ocean way-cta">Contact Us →</a></article>
+        <article class="way-card"><h3>Tribute or Memorial Gift</h3><p>Honor someone who believed in the power of literacy education. We'll send a notification to whoever you designate.</p><a href="https://givebutter.com/bl1HIO" class="btn-primary way-cta" target="_blank" rel="noopener">Give in Honor ↗</a></article>
+        <article class="way-card"><h3>Estate Planning</h3><p>Include Lokahi Connect in your will or estate plan. Contact us to discuss legacy giving and how your gift can outlast a lifetime.</p><a href="mailto:info@lokahiconnect.org?subject=Legacy%20Giving%20Inquiry" class="btn-ocean way-cta">Contact Us →</a></article>
+      </div>
+    </div></div>
+  </section>
+  <section class="tiers-section">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Investment Levels</span>
+      <h2 class="section-heading">Your Gift in Action</h2>
+      <p class="section-sub">Every giving level translates directly into student outcomes, educator capacity, and open tools for families.</p>
+      <div class="tiers-grid">
+        <div class="tier-card"><span class="tier-name">Seed</span><span class="tier-amount">$1,000</span><p>Funds one student's complete Meaning-First intervention sequence (approximately 20 sessions).</p></div>
+        <div class="tier-card featured"><span class="tier-badge">Most Impactful</span><span class="tier-name">Root</span><span class="tier-amount">$10,000</span><p>Trains one educator to deliver SWI-based instruction to 25+ students per year — a multiplier investment.</p></div>
+        <div class="tier-card"><span class="tier-name">Grove</span><span class="tier-amount">$50,000</span><p>Supports a school-year partnership with a Title I school: professional development, coaching, and direct student services.</p></div>
+        <div class="tier-card"><span class="tier-name">Canopy</span><span class="tier-amount">Custom</span><p>Multi-year institutional partnership. Contact us to design a program for your district, foundation, or organization.</p></div>
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="https://givebutter.com/bl1HIO" class="btn-primary" target="_blank" rel="noopener">Donate Now ↗</a>
+      </div>
+    </div></div>
+  </section>
+  <section class="pathways-section">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Who Can Help</span>
+      <h2 class="section-heading">There's a Role for You</h2>
+      <p class="section-sub">Donors, educators, researchers, school leaders, and families all play a part in building a more literate world.</p>
+      <div class="pathways-grid">
+        <article class="pathway-card"><span class="pathway-icon">🎓</span><h3>Educators</h3><p>Bring SWI-based professional development to your school. We offer single-day institutes, multi-day cohorts, and year-long coaching to build lasting instructional capacity.</p></article>
+        <article class="pathway-card"><span class="pathway-icon">🔬</span><h3>Researchers</h3><p>Collaborate with us on morphological intervention studies. We're building an evidence base for SWI with neurodivergent populations and welcome research partnerships.</p></article>
+        <article class="pathway-card"><span class="pathway-icon">🏫</span><h3>Schools &amp; Districts</h3><p>Partner with us for student services, curriculum alignment, or educator certification. We work flexibly with schools to meet your students' needs and your professional development goals.</p></article>
+        <article class="pathway-card"><span class="pathway-icon">👨‍👩‍👧</span><h3>Families</h3><p>Refer a student, access the free Student Lab, or connect with our community of parents who advocate for meaning-based literacy. No family should navigate this alone.</p></article>
+      </div>
+    </div></div>
+  </section>
+  <section class="spread-section">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Spread the Word</span>
+      <h2 class="section-heading">Tell Someone About the Science</h2>
+      <p class="section-sub">Share our work with educators, administrators, and policy-makers. Follow us, link to us, and tell someone about the science of spelling.</p>
+      <div class="spread-grid">
+        <div class="contact-card"><span class="contact-icon">✉️</span><h3>Email Us</h3><p>Reach out with questions, partnership ideas, or to refer a student.</p><a href="mailto:info@lokahiconnect.org" class="contact-link">info@lokahiconnect.org</a></div>
+        <div class="contact-card"><span class="contact-icon">🌐</span><h3>Student Lab</h3><p>Share the free, open-access Meaning-First Student Lab with educators and families everywhere.</p><a href="https://lokahi-connect.github.io/Meaning-First-Student-Lab/" target="_blank" rel="noopener" class="contact-link">Launch the Lab ↗</a></div>
+        <div class="contact-card"><span class="contact-icon">💛</span><h3>Donate</h3><p>Your gift — at any level — directly funds student services and open educational tools.</p><a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener" class="contact-link">Give at Givebutter ↗</a></div>
+      </div>
+    </div></div>
+  </section>
+  <section style="background:linear-gradient(145deg,#0A3D5C 0%,#0D5A8A 55%,#1A8FC1 100%); text-align:center;">
+    <div class="container"><div class="reveal">
+      <h2 class="section-heading" style="color:var(--white); margin-bottom:1rem;">Every Child Deserves to Know Why</h2>
+      <p style="font-size:1.05rem; line-height:1.75; color:rgba(255,255,255,0.75); max-width:540px; margin:0 auto 2rem;">The science is clear. The need is urgent. The work is already happening. Will you be part of it?</p>
+      <a href="https://givebutter.com/bl1HIO" class="btn-primary" target="_blank" rel="noopener">Donate Now ↗</a>
+    </div></div>
+  </section>
+</main>
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+    <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2025 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
+    <div class="footer-meta" style="text-align:right"><p><a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener">Donate</a></p></div>
+  </div>
+</footer>
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="From one-on-one intervention to system-wide educator training, Lokahi Connect meets students and schools where they are. See our programs and real student outcomes." />
+  <title>Programs &amp; Impact — Lokahi Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_shared.css" />
+  <style>
+    .programs-section { background: var(--cream); }
+    .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; margin-top: 2.8rem; }
+    .program-card { background: var(--white); border-radius: 1.25rem; padding: 2.25rem 2rem; box-shadow: 0 2px 14px rgba(26,26,46,0.07); display: flex; flex-direction: column; border-top: 5px solid var(--ocean); transition: transform 0.25s, box-shadow 0.25s; }
+    .program-card:nth-child(2) { border-top-color: var(--sky); }
+    .program-card:nth-child(3) { border-top-color: var(--seafoam); }
+    .program-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,26,46,0.12); }
+    .program-card h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: 0.85rem; }
+    .program-card > p { font-size: 0.97rem; line-height: 1.75; color: var(--muted); flex: 1; margin-bottom: 1.2rem; }
+    .audience-badge { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; background: rgba(13,90,138,0.08); color: var(--ocean); padding: 0.35rem 0.85rem; border-radius: 2rem; margin-bottom: 1.2rem; }
+    .program-card .program-cta { margin-top: auto; }
+    .story-section { background: var(--sand); }
+    .story-card { background: var(--white); border-radius: 1.25rem; padding: 2.5rem 2.25rem; border-left: 6px solid var(--seafoam); box-shadow: 0 4px 20px rgba(26,26,46,0.08); max-width: 860px; }
+    .story-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--seafoam); margin-bottom: 1rem; display: block; }
+    .story-quote { font-family: var(--serif); font-size: 1.15rem; font-style: italic; line-height: 1.75; color: var(--ink); margin-bottom: 2rem; }
+    .score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.2rem; }
+    .score-item { background: var(--cream); border-radius: 0.85rem; padding: 1.2rem 1rem; text-align: center; }
+    .score-item .score-val { font-family: var(--serif); font-size: 1.8rem; font-weight: 900; color: var(--seafoam); display: block; line-height: 1; margin-bottom: 0.35rem; }
+    .score-item .score-area { font-size: 0.8rem; font-weight: 600; color: var(--ocean); text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 0.2rem; }
+    .score-item .score-desc { font-size: 0.78rem; color: var(--muted); }
+    .story-note { font-size: 0.8rem; color: var(--muted); font-style: italic; }
+    .session-section { background: linear-gradient(145deg, #0A3D5C 0%, #0D5A8A 55%, #1A8FC1 100%); }
+    .session-section .section-tag { color: var(--seafoam); background: rgba(46,196,160,0.15); }
+    .session-section .section-heading { color: var(--white); }
+    .session-section .section-sub { color: rgba(255,255,255,0.75); }
+    .flow-track { display: flex; align-items: flex-start; gap: 0; margin-top: 3rem; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.5rem; }
+    .flow-item { flex: 1 1 160px; min-width: 140px; text-align: center; position: relative; }
+    .flow-item:not(:last-child)::after { content: '→'; position: absolute; right: -0.75rem; top: 1.3rem; font-size: 1.2rem; color: var(--seafoam); opacity: 0.7; z-index: 1; }
+    .flow-bubble { width: 3rem; height: 3rem; background: rgba(46,196,160,0.25); border: 2px solid rgba(46,196,160,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--seafoam); }
+    .flow-title { font-size: 0.85rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .flow-desc { font-size: 0.78rem; color: rgba(255,255,255,0.58); line-height: 1.55; }
+    .reach-section { background: var(--white); }
+    .reach-metrics { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(26,26,46,0.08); }
+    .reach-item { flex: 1 1 200px; }
+    .reach-item .reach-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--seafoam); margin-bottom: 0.3rem; display: block; }
+    .reach-item p { font-size: 0.93rem; color: var(--muted); line-height: 1.6; }
+    @media (max-width: 768px) {
+      .programs-grid { grid-template-columns: 1fr; }
+      .score-grid { grid-template-columns: 1fr; max-width: 260px; }
+      .flow-track { flex-direction: column; gap: 1.2rem; overflow-x: visible; }
+      .flow-item:not(:last-child)::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -1.1rem; transform: translateX(-50%); }
+      .flow-item { min-width: unset; }
+      .reach-metrics { flex-direction: column; gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="our-approach.html">Our Approach</a></li>
+    <li><a href="programs-and-impact.html" class="active">Programs &amp; Impact</a></li>
+    <li><a href="get-involved.html" class="nav-cta">Get Involved</a></li>
+  </ul>
+</nav>
+<main>
+  <div class="page-hero">
+    <span class="eyebrow">Where We Work</span>
+    <h1>Programs That <em>Move the Needle</em></h1>
+    <p>From one-on-one intervention to system-wide educator training, Lokahi Connect meets students and schools where they are.</p>
+  </div>
+  <section class="programs-section">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">What We Offer</span>
+      <h2 class="section-heading">Three Ways We Serve</h2>
+      <p class="section-sub">Whether you're a student, educator, or district administrator, there's a Lokahi Connect program designed for you.</p>
+      <div class="programs-grid">
+        <article class="program-card">
+          <h3>Direct Student Services</h3>
+          <span class="audience-badge">For Students</span>
+          <p>Individualized SWI-based intervention for students in grades K–12 and adult learners. Sessions are 45–60 minutes, structured around the 5-step Meaning-First sequence.</p>
+          <p style="font-size:0.87rem; color:var(--ocean); font-weight:600; margin-bottom:0;">Who we serve: Students with dyslexia, language-based learning differences, ELL backgrounds, or persistent spelling difficulties.</p>
+        </article>
+        <article class="program-card">
+          <h3>Educator Professional Development</h3>
+          <span class="audience-badge">For Educators</span>
+          <p>Multi-day training institutes and ongoing coaching for classroom teachers, reading specialists, and speech-language pathologists. We don't just deliver PD — we model the practice.</p>
+          <p style="font-size:0.87rem; color:var(--sky); font-weight:600; margin-bottom:0;">Who we serve: K–12 teachers, reading coaches, special educators, SLPs.</p>
+        </article>
+        <article class="program-card">
+          <h3>Digital Resources (Open Access)</h3>
+          <span class="audience-badge">For Everyone</span>
+          <p>The Meaning-First Student Lab is a free, open-access web tool for structured word investigation. Built for neurodivergent learners — with text-to-speech, adjustable speed, and scaffolded activities.</p>
+          <p style="font-size:0.87rem; color:var(--seafoam); font-weight:600; margin-bottom:1.2rem;">Who can use it: Students, families, and educators anywhere in the world.</p>
+          <a href="https://lokahi-connect.github.io/Meaning-First-Student-Lab/" target="_blank" rel="noopener" class="btn-ocean program-cta">Launch Student Lab ↗</a>
+        </article>
+      </div>
+    </div></div>
+  </section>
+  <section class="story-section">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Impact</span>
+      <h2 class="section-heading">Real Results for Real Students</h2>
+      <p class="section-sub" style="margin-bottom:2.5rem;">Our outcomes are measured by standardized assessments — and by the confidence students bring to words they've never seen before.</p>
+      <div class="story-card">
+        <span class="story-label">Student Story</span>
+        <p class="story-quote">"Peter came to us reading at a 2nd-grade level in 6th grade. After 18 months of Meaning-First intervention, his standard scores shifted dramatically across reading, writing, AND math — because morphological reasoning is domain-general."</p>
+        <div class="score-grid">
+          <div class="score-item"><span class="score-area">Reading</span><span class="score-val">+7</span><span class="score-desc">standard score points</span></div>
+          <div class="score-item"><span class="score-area">Writing</span><span class="score-val">+19</span><span class="score-desc">standard score points</span></div>
+          <div class="score-item"><span class="score-area">Math</span><span class="score-val">+27</span><span class="score-desc">standard score points</span></div>
+        </div>
+        <p class="story-note">Name changed to protect privacy. Scores from standardized assessments.</p>
+      </div>
+    </div></div>
+  </section>
+  <section class="session-section">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">How It Works</span>
+      <h2 class="section-heading">How a Session Works</h2>
+      <p class="section-sub">Every session follows the same five-step arc — predictable enough to build confidence, flexible enough to meet the student where they are.</p>
+      <div class="flow-track">
+        <div class="flow-item"><div class="flow-bubble">1</div><div class="flow-title">Sentence Anchor</div><div class="flow-desc">Target word encountered in rich context</div></div>
+        <div class="flow-item"><div class="flow-bubble">2</div><div class="flow-title">Meaning Check</div><div class="flow-desc">Context-based meaning, not dictionary definition</div></div>
+        <div class="flow-item"><div class="flow-bubble">3</div><div class="flow-title">Structure Analysis</div><div class="flow-desc">Write a word sum: &lt;base&gt; + &lt;suffix&gt;</div></div>
+        <div class="flow-item"><div class="flow-bubble">4</div><div class="flow-title">Join Convention</div><div class="flow-desc">What happened at the morpheme boundary?</div></div>
+        <div class="flow-item"><div class="flow-bubble">5</div><div class="flow-title">Word Family Transfer</div><div class="flow-desc">Apply reasoning to a new, unseen word</div></div>
+      </div>
+    </div></div>
+  </section>
+  <section class="reach-section">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Geographic Reach</span>
+      <h2 class="section-heading">Where We Work</h2>
+      <p class="section-sub">Starting from Bainbridge Island, WA, we're growing to serve students and educators nationally through remote sessions and open-access digital tools.</p>
+      <div class="reach-metrics">
+        <div class="reach-item"><span class="reach-label">Home Base</span><p>Bainbridge Island, WA — where our direct services and educator training are rooted</p></div>
+        <div class="reach-item"><span class="reach-label">Remote Sessions</span><p>Student interventions and educator coaching delivered nationwide via secure video</p></div>
+        <div class="reach-item"><span class="reach-label">Digital Tools</span><p>The Meaning-First Student Lab is free and accessible to learners globally</p></div>
+      </div>
+    </div></div>
+  </section>
+  <section style="background:var(--sand); text-align:center;">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Next Steps</span>
+      <h2 class="section-heading">Ready to Partner with Us?</h2>
+      <p class="section-sub" style="margin:0 auto 2rem;">Whether you want to refer a student, bring PD to your school, or make a gift that funds these programs — we'd love to connect.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="get-involved.html" class="btn-primary">Get Involved ↗</a>
+        <a href="mailto:info@lokahiconnect.org" class="btn-ocean">Contact Us →</a>
+      </div>
+    </div></div>
+  </section>
+</main>
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+    <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2025 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
+    <div class="footer-meta" style="text-align:right"><p><a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener">Donate</a></p></div>
+  </div>
+</footer>
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
