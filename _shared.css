@@ -10,6 +10,7 @@
   --cream:    #F8F4ED;
   --muted:    #4B5563;
   --serif:    'Playfair Display', Georgia, serif;
+  --heading:  'Lexend', 'DM Sans', sans-serif;
   --sans:     'DM Sans', system-ui, sans-serif;
 }
 
@@ -44,7 +45,7 @@ footer .nav-logo { font-size: 1rem; }
 section { padding: 6rem 2.5rem; }
 .container { max-width: 1200px; margin: 0 auto; }
 .section-tag { display: inline-block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ocean); background: rgba(13,90,138,0.09); padding: 0.35rem 0.9rem; border-radius: 2rem; margin-bottom: 1.2rem; }
-.section-heading { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 900; line-height: 1.15; color: var(--ink); margin-bottom: 1.2rem; }
+.section-heading { font-family: var(--heading); font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 1.2rem; }
 .section-sub { font-size: 1.05rem; line-height: 1.75; color: var(--muted); max-width: 600px; }
 
 /* BUTTONS */
