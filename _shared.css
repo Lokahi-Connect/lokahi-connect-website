@@ -5,17 +5,18 @@
   --sand:     #F5EFE0;
   --dusk:     #E8753A;
   --mahogany: #7B3F2E;
-  --ink:      #1A1A2E;
+  --ink:      #1F2937;
   --white:    #FFFFFF;
-  --cream:    #FDFAF4;
-  --muted:    #6B7280;
+  --cream:    #F8F4ED;
+  --muted:    #4B5563;
   --serif:    'Playfair Display', Georgia, serif;
+  --heading:  'Lexend', 'DM Sans', sans-serif;
   --sans:     'DM Sans', system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--sans); background: var(--cream); color: var(--ink); overflow-x: hidden; }
+html { scroll-behavior: smooth; font-size: 18px; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); overflow-x: hidden; line-height: 1.7; }
 
 /* NAV */
 nav {
@@ -44,7 +45,7 @@ footer .nav-logo { font-size: 1rem; }
 section { padding: 6rem 2.5rem; }
 .container { max-width: 1200px; margin: 0 auto; }
 .section-tag { display: inline-block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ocean); background: rgba(13,90,138,0.09); padding: 0.35rem 0.9rem; border-radius: 2rem; margin-bottom: 1.2rem; }
-.section-heading { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 900; line-height: 1.15; color: var(--ink); margin-bottom: 1.2rem; }
+.section-heading { font-family: var(--heading); font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 1.2rem; }
 .section-sub { font-size: 1.05rem; line-height: 1.75; color: var(--muted); max-width: 600px; }
 
 /* BUTTONS */
@@ -83,4 +84,99 @@ section { padding: 6rem 2.5rem; }
   .page-hero h1 { font-size: 2rem; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
   .footer-meta[style] { text-align: left !important; }
+}
+
+/* ─── Read Aloud Player ──────────────────────────────────── */
+.read-aloud-player {
+  padding: 1rem 2.5rem;
+  background: rgba(46,196,160,0.06);
+  border-top: 1px solid rgba(46,196,160,0.2);
+  border-bottom: 1px solid rgba(46,196,160,0.2);
+}
+.ra-launch {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: var(--seafoam); color: var(--ink);
+  font-family: var(--sans); font-size: 0.95rem; font-weight: 700;
+  padding: 0.6rem 1.5rem; border-radius: 3rem; border: none;
+  cursor: pointer; min-height: 44px;
+  transition: background 0.2s, transform 0.15s;
+}
+.ra-launch:hover { background: #28d4ab; transform: translateY(-1px); }
+.ra-launch:focus-visible { outline: 3px solid var(--ocean); outline-offset: 3px; }
+.ra-ui {
+  display: flex; align-items: center; gap: 0.85rem; max-width: 580px;
+}
+.ra-playpause, .ra-stop {
+  flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; border: none;
+  transition: background 0.15s, transform 0.15s;
+}
+.ra-playpause:focus-visible, .ra-stop:focus-visible {
+  outline: 3px solid var(--ocean); outline-offset: 3px;
+}
+.ra-playpause { background: var(--seafoam); color: var(--ink); }
+.ra-playpause:hover { background: #28d4ab; transform: scale(1.05); }
+.ra-playpause[data-state="playing"] .ra-play-icon  { display: none; }
+.ra-playpause[data-state="paused"]  .ra-pause-icon { display: none; }
+.ra-stop { background: transparent; color: var(--muted); border: 2px solid currentColor; }
+.ra-stop:hover { color: var(--ink); }
+.ra-track { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+.ra-progress {
+  height: 6px; background: rgba(13,90,138,0.15);
+  border-radius: 3px; overflow: hidden;
+}
+.ra-fill {
+  height: 100%; width: 0%; background: var(--seafoam);
+  border-radius: 3px; transition: width 0.5s linear;
+}
+.ra-meta {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.78rem; color: var(--muted); font-family: var(--sans);
+  font-variant-numeric: tabular-nums;
+}
+.ra-loading { font-style: italic; }
+@media (max-width: 600px) {
+  .read-aloud-player { padding: 1rem 1.4rem; }
+  .ra-ui { max-width: 100%; }
+}
+
+/* ─── Skip-to-content link ───────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--seafoam);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
+/* ─── Keyboard focus rings ───────────────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--seafoam);
+  outline-offset: 3px;
+}
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--ocean);
+  outline-offset: 3px;
+}
+
+/* ─── Reduced-motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .skip-link { transition: none; }
 }
