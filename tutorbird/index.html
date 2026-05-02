@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parent Portal — Lokahi Connect</title>
+  <meta name="description" content="Access your student's Tutorbird parent portal to view session notes, scheduling, and progress updates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../_shared.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav>
+    <a href="/index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/our-approach.html">Our Approach</a></li>
+      <li><a href="/programs-and-impact.html">Programs &amp; Impact</a></li>
+      <li><a href="/tutorbird/" class="active">Tutorbird</a></li>
+      <li><a href="/get-involved.html" class="nav-cta">Get Involved</a></li>
+    </ul>
+  </nav>
+  <main id="main-content">
+    <div class="page-hero">
+      <span class="eyebrow">Current Families</span>
+      <h1>Parent Portal</h1>
+      <p>Log in below to view your student's session notes, scheduling, and progress updates through Tutorbird.</p>
+    </div>
+    <section style="background: var(--cream); padding: 3rem 0;">
+      <div class="container">
+        <div id="tutorbird-widget">
+          <p id="tutorbird-loading">Loading parent portal…</p>
+          <noscript>
+            <p>The parent portal requires JavaScript. You can also access it directly at <a href="https://app.tutorbird.com">app.tutorbird.com</a>.</p>
+          </noscript>
+        </div>
+
+        <script src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9xWTFKUSIsIldlYnNpdGVJRCI6Indic194WUpNIiwiV2Vic2l0ZUJsb2NrSUQiOiJ3YmJfQnBtSlkifQ=="></script>
+
+        <script>
+          // Fallback if the Tutorbird widget script fails to load or render
+          // within a reasonable window. Shows parents a direct link instead
+          // of leaving them on a page that looks broken.
+          setTimeout(function () {
+            var container = document.getElementById('tutorbird-widget');
+            var loading = document.getElementById('tutorbird-loading');
+            // If the loading message is still the only visible child, the widget didn't render
+            if (container && loading && container.children.length <= 2) {
+              loading.innerHTML = 'The parent portal didn\'t load. You can access it directly at <a href="https://app.tutorbird.com">app.tutorbird.com</a>.';
+            }
+          }, 8000);
+        </script>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <a href="/index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+      <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2025 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
+      <div class="footer-meta" style="text-align:right"><p><a href="/our-approach.html">Our Approach</a> · <a href="/programs-and-impact.html">Programs</a></p><p><a href="/get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener">Donate</a></p><p><a href="/nondiscrimination-policy.html">Nondiscrimination Policy</a></p></div>
+    </div>
+  </footer>
+</body>
+</html>
