@@ -33,22 +33,21 @@
         <div id="tutorbird-widget">
           <p id="tutorbird-loading">Loading parent portal…</p>
           <noscript>
-            <p>The parent portal requires JavaScript. You can also access it directly at <a href="https://app.tutorbird.com">app.tutorbird.com</a>.</p>
+            <p>The parent portal requires JavaScript. Please enable JavaScript in your browser to access it.</p>
           </noscript>
         </div>
 
         <script src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9xWTFKUSIsIldlYnNpdGVJRCI6Indic194WUpNIiwiV2Vic2l0ZUJsb2NrSUQiOiJ3YmJfQnBtSlkifQ=="></script>
 
         <script>
-          // Fallback if the Tutorbird widget script fails to load or render
-          // within a reasonable window. Shows parents a direct link instead
-          // of leaving them on a page that looks broken.
+          // Fallback if the Tutorbird widget script fails to load or render.
+          // Tutorbird does not offer a school-scoped direct URL, so the fallback
+          // simply tells parents to refresh or contact Lokahi Connect.
           setTimeout(function () {
             var container = document.getElementById('tutorbird-widget');
             var loading = document.getElementById('tutorbird-loading');
-            // If the loading message is still the only visible child, the widget didn't render
             if (container && loading && container.children.length <= 2) {
-              loading.innerHTML = 'The parent portal didn\'t load. You can access it directly at <a href="https://app.tutorbird.com">app.tutorbird.com</a>.';
+              loading.textContent = 'The parent portal didn\'t load. Please refresh the page, or contact Lokahi Connect if the problem continues.';
             }
           }, 8000);
         </script>
