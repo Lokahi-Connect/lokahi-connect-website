@@ -77,6 +77,32 @@
       <a href="https://givebutter.com/bl1HIO" class="btn-primary" target="_blank" rel="noopener">Donate Now ↗</a>
     </div>
   </div>
+
+  <div class="read-aloud-player" id="readAloudPlayer">
+    <button class="ra-launch" aria-label="Listen to this page as audio narration">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3z"/><path d="M3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+      Listen to this page
+    </button>
+    <div class="ra-ui" hidden>
+      <button class="ra-playpause" data-state="playing" aria-label="Pause narration">
+        <svg class="ra-pause-icon" width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="2" y="1" width="4" height="12" rx="1"/><rect x="8" y="1" width="4" height="12" rx="1"/></svg>
+        <svg class="ra-play-icon"  width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M2 1.5l10 5.5-10 5.5z"/></svg>
+      </button>
+      <div class="ra-track">
+        <div class="ra-progress" role="progressbar" aria-label="Narration progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="ra-fill"></div>
+        </div>
+        <div class="ra-meta">
+          <span class="ra-time" aria-live="polite" aria-atomic="true"></span>
+          <span class="ra-loading" hidden aria-live="polite">Loading audio…</span>
+        </div>
+      </div>
+      <button class="ra-stop" aria-label="Stop audio and close player">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/></svg>
+      </button>
+    </div>
+  </div>
+
   <section class="ways-section">
     <div class="container"><div class="reveal">
       <span class="section-tag">Ways to Give</span>
@@ -112,10 +138,10 @@
       <h2 class="section-heading">There's a Role for You</h2>
       <p class="section-sub">Donors, educators, researchers, school leaders, and families all play a part in building a more literate world.</p>
       <div class="pathways-grid">
-        <article class="pathway-card"><span class="pathway-icon">🎓</span><h3>Educators</h3><p>Bring SWI-based professional development to your school. We offer single-day institutes, multi-day cohorts, and year-long coaching to build lasting instructional capacity.</p></article>
-        <article class="pathway-card"><span class="pathway-icon">🔬</span><h3>Researchers</h3><p>Collaborate with us on morphological intervention studies. We're building an evidence base for SWI with neurodivergent populations and welcome research partnerships.</p></article>
-        <article class="pathway-card"><span class="pathway-icon">🏫</span><h3>Schools &amp; Districts</h3><p>Partner with us for student services, curriculum alignment, or educator certification. We work flexibly with schools to meet your students' needs and your professional development goals.</p></article>
-        <article class="pathway-card"><span class="pathway-icon">👨‍👩‍👧</span><h3>Families</h3><p>Refer a student, access the free Student Lab, or connect with our community of parents who advocate for meaning-based literacy. No family should navigate this alone.</p></article>
+        <article class="pathway-card"><span class="pathway-icon" aria-hidden="true">🎓</span><h3>Educators</h3><p>Bring SWI-based professional development to your school. We offer single-day institutes, multi-day cohorts, and year-long coaching to build lasting instructional capacity.</p></article>
+        <article class="pathway-card"><span class="pathway-icon" aria-hidden="true">🔬</span><h3>Researchers</h3><p>Collaborate with us on morphological intervention studies. We're building an evidence base for SWI with neurodivergent populations and welcome research partnerships.</p></article>
+        <article class="pathway-card"><span class="pathway-icon" aria-hidden="true">🏫</span><h3>Schools &amp; Districts</h3><p>Partner with us for student services, curriculum alignment, or educator certification. We work flexibly with schools to meet your students' needs and your professional development goals.</p></article>
+        <article class="pathway-card"><span class="pathway-icon" aria-hidden="true">👨‍👩‍👧</span><h3>Families</h3><p>Refer a student, access the free Student Lab, or connect with our community of parents who advocate for meaning-based literacy. No family should navigate this alone.</p></article>
       </div>
     </div></div>
   </section>
@@ -142,7 +168,7 @@
 <footer>
   <div class="footer-inner">
     <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
-    <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2025 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
+    <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2026 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
     <div class="footer-meta" style="text-align:right"><p><a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener">Donate</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a></p></div>
   </div>
 </footer>
@@ -151,6 +177,13 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+<script src="player.js"></script>
+<script>
+  initReadAloud([
+    'audio/get-involved-01.mp3',
+    'audio/get-involved-02.mp3'
+  ]);
 </script>
 </body>
 </html>
