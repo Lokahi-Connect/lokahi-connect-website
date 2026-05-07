@@ -104,6 +104,18 @@
       <span class="section-tag">What We Offer</span>
       <h2 class="section-heading">Three Ways We Serve</h2>
       <p class="section-sub">Whether you're a student, educator, or district administrator, there's a Lokahi Connect program designed for you.</p>
+      <div style="background:rgba(13,90,138,0.06);border-left:4px solid var(--ocean);border-radius:0 0.75rem 0.75rem 0;padding:1.4rem 1.6rem;margin:1.8rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+        <div>
+          <p style="font-weight:700;color:var(--ink);margin-bottom:0.35rem;font-size:1rem;">Tell us how you're using these resources</p>
+          <p style="font-size:0.93rem;color:var(--muted);margin:0;line-height:1.6;">Your feedback shapes what we build next. It takes about a minute.</p>
+        </div>
+        <a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn-primary"
+           aria-label="Open the Log a Resource Interaction feedback form in a new tab"
+           onclick="trackFeedbackFormClick('resources_top')">Share feedback ↗</a>
+      </div>
       <div class="programs-grid">
         <article class="program-card">
           <h3>Direct Student Services</h3>
@@ -123,6 +135,7 @@
           <p>The Meaning-First Student Lab is a free, open-access web tool for structured word investigation. Built for neurodivergent learners — with text-to-speech, adjustable speed, and scaffolded activities.</p>
           <p style="font-size:0.87rem; color:var(--seafoam); font-weight:600; margin-bottom:1.2rem;">Who can use it: Students, families, and educators anywhere in the world.</p>
           <a href="https://lokahi-connect.github.io/Meaning-First-Student-Lab/" target="_blank" rel="noopener" class="btn-ocean program-cta">Launch Student Lab ↗</a>
+          <p style="font-size:0.85rem;margin-top:1rem;"><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" style="color:var(--ocean);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(13,90,138,0.3);" onclick="trackFeedbackFormClick('resource_card')">Used this resource? Log it here →</a></p>
         </article>
       </div>
     </div></div>
@@ -186,7 +199,7 @@
   <div class="footer-inner">
     <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
     <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2026 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
-    <div class="footer-meta" style="text-align:right"><p><a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener">Donate</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a></p></div>
+    <div class="footer-meta" style="text-align:right"><p><a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener">Donate</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a></p><p><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" onclick="trackFeedbackFormClick('footer')">Log a resource interaction ↗</a></p></div>
   </div>
 </footer>
 <script>
@@ -202,5 +215,6 @@
     'audio/programs-and-impact-02.mp3'
   ]);
 </script>
+<script src="feedback.js"></script>
 </body>
 </html>
