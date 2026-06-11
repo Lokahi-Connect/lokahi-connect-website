@@ -131,6 +131,9 @@ makes "signal"; "sign" plus "ature" makes "signature"; "de" plus "sign"
 plus "ate" makes "designate." The spelling stays the same because the
 meaning stays the same.
 
+Structured Word Inquiry, the Four Questions, and word sums were developed
+by Bowers and Kirby (2010).
+
 Pillar Two: Interactional Neurolinguistics.
 
 Interactional Neurolinguistics — or I.N.T. — is a targeted prompting
