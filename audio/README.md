@@ -99,7 +99,7 @@ These are the exact texts used to generate each audio file. Copy them directly i
 *Voice: Founder cloned voice*
 
 ```
-The Science Behind Meaning-First Literacy.
+The Science Behind Lokahi WORD Project: Word Origins & Roots Discovery.
 
 Lokahi Connect's approach is built on decades of morphological research
 and evidence from cognitive neuroscience. Here's why it works — and why
