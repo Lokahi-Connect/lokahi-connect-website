@@ -158,7 +158,7 @@ Competence, and Self-regulation.
 *Voice: Founder cloned voice*
 
 ```
-The Five-Step Meaning-First Process.
+The Five-Step Lokahi WORD Project Process.
 
 Every session follows the same investigative arc — moving from meaning
 to structure to transfer. This predictable structure builds confidence
@@ -227,7 +227,7 @@ Direct Student Services — for students.
 
 Individualized S.W.I.-based intervention for students in grades K
 through 12 and adult learners. Sessions are 45 to 60 minutes, structured
-around the five-step Meaning-First sequence. We serve students with
+around the five-step Lokahi WORD Project sequence. We serve students with
 dyslexia, language-based learning differences, English-language-learner
 backgrounds, or persistent spelling difficulties.
 
@@ -241,7 +241,7 @@ and speech-language pathologists.
 
 Digital Resources — open access, for everyone.
 
-The Meaning-First Student Lab is a free, open-access web tool for
+The Lokahi WORD Project Student Lab is a free, open-access web tool for
 structured word investigation. Built for neurodivergent learners —
 with text-to-speech, adjustable speed, and scaffolded activities.
 Students, families, and educators anywhere in the world can use it.
@@ -263,7 +263,7 @@ confidence students bring to words they've never seen before.
 Student Story.
 
 "Peter came to us reading at a second-grade level in sixth grade.
-After 18 months of Meaning-First intervention, his standard scores
+After 18 months of Lokahi WORD Project intervention, his standard scores
 shifted dramatically across reading, writing, and math — because
 morphological reasoning is domain-general."
 
@@ -296,7 +296,7 @@ and educator training are rooted.
 Remote Sessions: Student interventions and educator coaching delivered
 nationwide via secure video.
 
-Digital Tools: The Meaning-First Student Lab is free and accessible
+Digital Tools: The Lokahi WORD Project Student Lab is free and accessible
 to learners globally.
 ```
 
