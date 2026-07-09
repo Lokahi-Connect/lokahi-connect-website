@@ -113,8 +113,8 @@ instructional framework.
 
 Pillar One: Structured Word Inquiry.
 
-Structured Word Inquiry — or S.W.I. — is a research-validated approach
-developed at the University of Manitoba. Rather than drilling
+Structured Word Inquiry — or S.W.I. — is an evidence-informed approach
+developed by Pete Bowers at WordWorks Kingston. Rather than drilling
 letter-sound correspondences, S.W.I. teaches students to investigate
 words using four questions.
 
@@ -255,22 +255,22 @@ Students, families, and educators anywhere in the world can use it.
 *Note: **This is the file most likely to need updating.** Regenerate this file whenever you add new pilot data, update score gains, change the student story, or add geographic reach information. You do NOT need to touch Part 1 when only this section changes.*
 
 ```
-Real Results for Real Students.
+What We're Learning.
 
-Our outcomes are measured by standardized assessments — and by the
-confidence students bring to words they've never seen before.
+Our work is documented through student reasoning, word-family
+transfer, and session records. Where standardized assessments are
+used, we report results with context about what was measured.
 
-Student Story.
+One Documented Case.
 
-"Peter came to us reading at a second-grade level in sixth grade.
-After 18 months of Meaning-First intervention, his standard scores
-shifted dramatically across reading, writing, and math — because
-morphological reasoning is domain-general."
+In one three-year case, a twice-exceptional student grew up to
+27 standard-score points in sentence-level written expression,
+moving from the severely impaired range into the average range
+during intensive intervention. Single-word reading remained an
+area of continued need. Because several supports were in place
+simultaneously, we report this as growth observed during
+intervention — not as an outcome attributable to any single method.
 
-Peter's score gains from standardized assessments:
-Reading: plus 7 standard score points.
-Writing: plus 19 standard score points.
-Math: plus 27 standard score points.
 Name has been changed to protect privacy.
 
 How a Session Works.
