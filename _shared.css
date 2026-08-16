@@ -28,7 +28,7 @@ nav {
 }
 .nav-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.02em; }
 .nav-logo span { color: var(--seafoam); }
-.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: clamp(0.85rem, 1.7vw, 2rem); list-style: none; align-items: center; }
 .nav-links a { color: rgba(255,255,255,0.80); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--seafoam); }
 .nav-cta { background: var(--seafoam) !important; color: var(--ink) !important; padding: 0.5rem 1.2rem; border-radius: 2rem; font-weight: 600 !important; transition: background 0.2s, transform 0.2s !important; }
