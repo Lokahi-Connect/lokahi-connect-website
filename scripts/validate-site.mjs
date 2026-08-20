@@ -101,6 +101,15 @@ for (const behavior of ['Escape', 'data-nav-ready', 'data-nav-open', 'aria-expan
   check(navScript.includes(behavior), `site-navigation.js: expected behavior is missing: ${behavior}`);
 }
 
+const policy = contents.get('nondiscrimination-policy.html');
+check(/<button\b[^>]*class=["']ra-launch["'][^>]*disabled/i.test(policy), 'nondiscrimination-policy.html: narration control must start disabled pending audio verification');
+check(/<script\b[^>]*src=["']player\.js\?v=20260820-1["']/i.test(policy), 'nondiscrimination-policy.html: versioned read-aloud script is missing');
+
+const player = fs.readFileSync(path.join(repoRoot, 'player.js'), 'utf8');
+for (const audioControl of ["method: 'HEAD'", "cache: 'no-store'", 'Audio temporarily unavailable', 'verifyAvailability()']) {
+  check(player.includes(audioControl), `player.js: audio availability control is missing: ${audioControl}`);
+}
+
 const portal = contents.get('tutorbird/index.html');
 for (const portalControl of ['app.tutorbird.com/Website/', "frame.title = 'Tutorbird parent portal login'", "frame.setAttribute('aria-label', 'Tutorbird parent portal login')", "frame.setAttribute('aria-describedby', 'portal-accessibility-help')", 'id="portal-accessibility-help"', 'MutationObserver', 'if (!recognizePortalFrame() && loading)']) {
   check(portal.includes(portalControl), `tutorbird/index.html: portal control is missing: ${portalControl}`);

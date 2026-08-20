@@ -30,6 +30,34 @@
     var active  = false;  // true while audio is playing
     var ticker  = null;   // setInterval handle for progress updates
 
+    // Do not offer a control that can only fail. Enable it after every audio
+    // file responds successfully; otherwise leave a clear disabled status.
+    function markUnavailable() {
+      btnLaunch.disabled = true;
+      btnLaunch.setAttribute('aria-label', 'Audio narration is temporarily unavailable');
+      btnLaunch.textContent = 'Audio temporarily unavailable';
+    }
+
+    function verifyAvailability() {
+      if (!window.fetch || !chunks.length) {
+        markUnavailable();
+        return;
+      }
+
+      Promise.all(chunks.map(function (c) {
+        return fetch(c.src, { method: 'HEAD', cache: 'no-store' })
+          .then(function (response) { return response.ok; })
+          .catch(function () { return false; });
+      })).then(function (results) {
+        if (!results.every(Boolean)) {
+          markUnavailable();
+          return;
+        }
+        btnLaunch.disabled = false;
+        btnLaunch.setAttribute('aria-label', 'Listen to this page as audio narration');
+      });
+    }
+
     // Fetch chunk durations in background via metadata-only preload.
     // On iOS this often won't fire until after first user-initiated play —
     // that's fine; we degrade gracefully to elapsed time in that case.
@@ -210,6 +238,8 @@
     window.addEventListener('pagehide', function () {
       chunks.forEach(function (c) { if (c.el) { c.el.pause(); c.el.src = ''; } });
     });
+
+    verifyAvailability();
   };
 
 }());
