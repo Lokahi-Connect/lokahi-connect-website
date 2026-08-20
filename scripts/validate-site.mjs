@@ -52,7 +52,8 @@ for (const page of pages) {
   check(/<a\b[^>]*href=["']\/tutorbird\/["'][^>]*>Parent Portal<\/a>/i.test(nav), `${page}: header Parent Portal must retain /tutorbird/`);
   check(/<a\b[^>]*href=["']\/tutorbird\/["'][^>]*>Tutorbird<\/a>/i.test(footer), `${page}: footer Tutorbird label/path must remain`);
   check(occurrences(html, /aria-current=["']page["']/gi) === 1, `${page}: expected exactly one current-page marker`);
-  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js["']/i.test(html), `${page}: shared navigation script is missing`);
+  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260820-1["']/i.test(html), `${page}: versioned shared navigation script is missing`);
+  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260820-1["']/i.test(html), `${page}: versioned shared stylesheet is missing`);
 
   const baseHtml = execFileSync('git', ['show', `${baseCommit}:${page}`], { cwd: repoRoot, encoding: 'utf8' });
   check(sameSet(mailtoTargets(html), mailtoTargets(baseHtml)), `${page}: mailto target set changed`);
