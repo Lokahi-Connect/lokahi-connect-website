@@ -117,7 +117,7 @@ check(!/<form\b[^>]*\baction=/i.test(programs), 'program inquiry forms must not 
 check(/programs-connect\.js\?v=20260820-1/.test(programs), 'program inquiry and update-request script is missing');
 
 const about = contents.get('about.html') ?? '';
-for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive Director', 'CERI and NILD certifications', 'https://www.wabida.org/about-us']) {
+for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive Director', 'CERI and NILD certifications', 'https://www.wabida.org/about-us', 'assets/stephanie-steinshouer-headshot.jpg', 'Portrait of Stephanie Steinshouer']) {
   check(about.includes(text), `about page leadership or history content is missing: ${text}`);
 }
 
