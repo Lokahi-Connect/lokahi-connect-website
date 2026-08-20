@@ -7,19 +7,21 @@
   <meta name="description" content="Access your student's Tutorbird parent portal to view session notes, scheduling, and progress updates." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../_shared.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <nav>
+  <nav aria-label="Primary navigation">
     <a href="/index.html" class="nav-logo">Lokahi <span>Connect</span></a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-label visually-hidden">Open menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="/index.html">Home</a></li>
       <li><a href="/our-approach.html">Our Approach</a></li>
       <li><a href="/programs-and-impact.html">Programs &amp; Impact</a></li>
       <li><a href="/dyslexia.html">Dyslexia</a></li>
-      <li><a href="/tutorbird/" class="active">Tutorbird</a></li>
+      <li><a href="/tutorbird/" class="active" aria-current="page">Parent Portal</a></li>
+      <li><a href="https://english-orthography.netlify.app" target="_blank" rel="noopener noreferrer">Presentation</a></li>
       <li><a href="/get-involved.html" class="nav-cta">Get Involved</a></li>
     </ul>
   </nav>
@@ -32,25 +34,52 @@
     <section style="background: var(--cream); padding: 3rem 0;">
       <div class="container">
         <div id="tutorbird-widget">
-          <p id="tutorbird-loading">Loading parent portal…</p>
+          <p id="tutorbird-loading" role="status" aria-live="polite">Loading parent portal…</p>
           <noscript>
-            <p>The parent portal requires JavaScript. Please enable JavaScript in your browser to access it.</p>
+            <p>The parent portal requires JavaScript. Please enable JavaScript in your browser to access it. For help, email <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a>.</p>
           </noscript>
         </div>
+        <p style="margin-top:1.25rem;">Need help accessing the Parent Portal? Email <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a>.</p>
 
+        <!-- The portal iframe is vendor-controlled. Its email/password field accessible names cannot be corrected from this site and remain an unresolved vendor dependency. -->
         <script src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9xWTFKUSIsIldlYnNpdGVJRCI6Indic194WUpNIiwiV2Vic2l0ZUJsb2NrSUQiOiJ3YmJfQnBtSlkifQ=="></script>
 
         <script>
-          // Fallback if the Tutorbird widget script fails to load or render.
-          // Tutorbird does not offer a school-scoped direct URL, so the fallback
-          // simply tells parents to refresh or contact Lokahi Connect.
-          setTimeout(function () {
-            var container = document.getElementById('tutorbird-widget');
+          (function () {
             var loading = document.getElementById('tutorbird-loading');
-            if (container && loading && container.children.length <= 2) {
-              loading.textContent = 'The parent portal didn\'t load. Please refresh the page, or contact Lokahi Connect if the problem continues.';
+            var observer;
+
+            function findPortalFrame() {
+              return Array.prototype.find.call(document.querySelectorAll('iframe'), function (frame) {
+                return frame.src.indexOf('app.tutorbird.com/Website/') !== -1;
+              });
             }
-          }, 8000);
+
+            function recognizePortalFrame() {
+              var frame = findPortalFrame();
+              if (!frame) return false;
+              frame.title = 'Tutorbird parent portal login';
+              if (loading) loading.hidden = true;
+              if (observer) observer.disconnect();
+              return true;
+            }
+
+            if (!recognizePortalFrame()) {
+              observer = new MutationObserver(recognizePortalFrame);
+              observer.observe(document.body, { childList: true, subtree: true });
+            }
+
+            setTimeout(function () {
+              if (!recognizePortalFrame() && loading) {
+                loading.textContent = 'The parent portal didn\'t load. Please refresh the page, or email ';
+                var helpLink = document.createElement('a');
+                helpLink.href = 'mailto:info@lokahiconnect.org';
+                helpLink.textContent = 'info@lokahiconnect.org';
+                loading.appendChild(helpLink);
+                loading.appendChild(document.createTextNode(' if the problem continues.'));
+              }
+            }, 8000);
+          }());
         </script>
       </div>
     </section>
@@ -62,6 +91,7 @@
       <div class="footer-meta" style="text-align:right"><p><a href="/our-approach.html">Our Approach</a> · <a href="/programs-and-impact.html">Programs</a> · <a href="/dyslexia.html">Dyslexia</a> · <a href="/tutorbird/">Tutorbird</a></p><p><a href="https://english-orthography.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="View the English orthography presentation in a new tab">Presentation</a></p><p><a href="/get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener">Donate</a></p><p><a href="/nondiscrimination-policy.html">Nondiscrimination Policy</a></p><p><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" onclick="trackFeedbackFormClick('footer')">Log a resource interaction ↗</a></p></div>
     </div>
   </footer>
+  <script src="../site-navigation.js"></script>
   <script src="../feedback.js"></script>
 </body>
 </html>
