@@ -55,7 +55,23 @@ for (const page of pages) {
   check(/<a\b[^>]*href=["']https:\/\/english-orthography\.netlify\.app["'][^>]*>Presentation<\/a>/i.test(footer), `${page}: footer Presentation link changed outside requested scope`);
   check(occurrences(html, /aria-current=["']page["']/gi) === 1, `${page}: expected exactly one current-page marker`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260820-1["']/i.test(html), `${page}: versioned shared navigation script is missing`);
-  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260820-2["']/i.test(html), `${page}: versioned shared stylesheet is missing`);
+  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260820-3["']/i.test(html), `${page}: versioned shared stylesheet is missing`);
+  check(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/favicon\.svg["'][^>]*type=["']image\/svg\+xml["']/i.test(html), `${page}: SVG favicon link is missing`);
+  check(/<meta\b[^>]*name=["']theme-color["'][^>]*content=["']#0D5A8A["']/i.test(html), `${page}: browser theme color is missing`);
+  check(html.includes(page === 'index.html' ? 'class="hero-visual"' : 'class="page-visual-shell"'), `${page}: page visual is missing`);
+
+  for (const imageTag of html.matchAll(/<img\b[^>]*>/gi)) {
+    check(/\balt=["'][^"']+["']/i.test(imageTag[0]), `${page}: image needs meaningful alternative text`);
+  }
+
+  for (const assetMatch of html.matchAll(/<(?:img|source)\b[^>]*(?:src|srcset)=["']([^"']+)["']/gi)) {
+    const asset = assetMatch[1].trim().split(/\s+/, 1)[0];
+    if (/^(?:https?:|data:)/i.test(asset)) continue;
+    const target = asset.startsWith('/')
+      ? asset.slice(1)
+      : path.posix.normalize(path.posix.join(path.posix.dirname(page), asset));
+    check(fs.existsSync(path.join(repoRoot, target)), `${page}: local image asset does not exist: ${asset}`);
+  }
 
   const baseHtml = execFileSync('git', ['show', `${baseCommit}:${page}`], { cwd: repoRoot, encoding: 'utf8' });
   check(sameSet(mailtoTargets(html), mailtoTargets(baseHtml)), `${page}: mailto target set changed`);
