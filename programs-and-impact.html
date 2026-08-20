@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="_shared.css?v=20260820-4" />
+  <link rel="stylesheet" href="_shared.css?v=20260820-5" />
   <style>
     .programs-section { background: var(--cream); }
     .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; margin-top: 2.8rem; }
@@ -84,7 +84,11 @@
   <div class="page-hero">
     <span class="eyebrow">Where We Work</span>
     <h1>Programs that build literacy through meaning and structure</h1>
-    <p>Lokahi Connect develops student learning resources, educator learning, and open online tools. Program formats and availability vary; contact us for current information.</p>
+    <p>See what is available now, what begins with an inquiry, and how to hear about future learning opportunities.</p>
+    <div class="section-actions">
+      <a href="#current-availability" class="btn-primary">See current availability ↓</a>
+      <a href="#service-inquiry" class="btn-ghost">Start a short inquiry ↓</a>
+    </div>
   </div>
 
   <div class="page-visual-shell">
@@ -96,44 +100,58 @@
     </figure>
   </div>
 
-  <section class="programs-section">
+  <nav class="quick-nav" aria-label="Program page sections">
+    <strong>Plan your next step</strong>
+    <ul>
+      <li><a href="#current-availability">Current availability</a></li>
+      <li><a href="#events">Events and learning dates</a></li>
+      <li><a href="#service-inquiry">Short inquiry</a></li>
+      <li><a href="#email-updates">Email updates</a></li>
+    </ul>
+  </nav>
+
+  <section class="programs-section" id="current-availability">
     <div class="container"><div class="reveal">
-      <span class="section-tag">What We Offer</span>
-      <h2 class="section-heading">Three areas of work</h2>
-      <p class="section-sub">Lokahi Connect develops student learning resources, educator learning, and open online tools. Program formats and availability vary; contact us for current information.</p>
-      <div style="background:rgba(13,90,138,0.06);border-left:4px solid var(--ocean);border-radius:0 0.75rem 0.75rem 0;padding:1.4rem 1.6rem;margin:1.8rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <span class="section-tag">Updated August 20, 2026</span>
+      <h2 class="section-heading">Current services and availability</h2>
+      <p class="section-sub section-sub--wide">Lokahi Connect currently offers an open online Student Lab. Student learning and educator professional development begin with an inquiry so fit, format, location, and availability can be confirmed individually.</p>
+      <div class="availability-summary">
         <div>
-          <p style="font-weight:700;color:var(--ink);margin-bottom:0.35rem;font-size:1rem;">Help us understand what families and communities need</p>
-          <p style="font-size:0.93rem;color:var(--muted);margin:0;line-height:1.6;">Share constructive feedback, overlooked concerns, and the resources you hope to find.</p>
+          <p><strong>Inquiries are welcome.</strong> A website inquiry does not promise placement, scheduling, in-person availability, or a particular service format.</p>
         </div>
-        <a href="community-feedback.html" class="btn-primary">Take the community questionnaire →</a>
+        <a href="#service-inquiry" class="btn-ocean">Tell us what you need ↓</a>
       </div>
       <div class="programs-grid">
         <article class="program-card" id="student-learning">
+          <span class="status-badge">Inquiry only</span>
           <h3>Student learning</h3>
           <span class="audience-badge">Designed for students</span>
-          <p>Individualized Lokahi WORD Project instruction may be offered in structured, inquiry-based formats paced to support transfer rather than memorization. Formats and availability vary; contact us for current information.</p>
+          <p>Individualized Lokahi WORD Project instruction may be offered in structured, inquiry-based formats paced to support transfer rather than memorization.</p>
           <ul class="fact-list">
             <li><strong>For:</strong> learners who need more coherent spelling instruction or benefit from explicit, structure-based teaching</li>
             <li><strong>What may be included:</strong> guided word investigation, explicit instruction, practice, and documentation of learner evidence</li>
             <li><strong>Location:</strong> ask about current Bainbridge Island, Maui, or remote options</li>
-            <li><strong>Availability:</strong> varies; no placement or schedule is promised by this page</li>
+            <li><strong>Availability:</strong> confirmed individually; no placement or schedule is promised by this page</li>
+            <li><strong>Age range, format, duration, and fees:</strong> not published; ask what currently applies</li>
           </ul>
-          <a href="mailto:info@lokahiconnect.org?subject=Student%20Learning%20Inquiry" class="btn-ocean program-cta">Ask about student learning →</a>
+          <a href="#service-inquiry" class="btn-ocean program-cta js-inquiry-interest" data-inquiry-interest="Student learning">Ask about student learning ↓</a>
         </article>
         <article class="program-card" id="educator-learning">
+          <span class="status-badge">Inquiry only</span>
           <h3>Educator Professional Development</h3>
           <span class="audience-badge">For Educators</span>
-          <p>Professional learning and coaching may be offered for teachers, reading specialists, special educators, and speech-language pathologists. The focus is how to mediate inquiry, not just how to deliver a script. Formats and availability vary; contact us for current information.</p>
+          <p>Professional learning and coaching may be offered for teachers, reading specialists, special educators, and speech-language pathologists. The focus is how to mediate inquiry, not just how to deliver a script.</p>
           <ul class="fact-list">
             <li><strong>For:</strong> K–12 teachers, reading specialists, special educators, and speech-language pathologists</li>
             <li><strong>What may be included:</strong> professional learning, coaching, inquiry design, and implementation reflection</li>
             <li><strong>Location:</strong> ask about current in-person or remote formats</li>
             <li><strong>Availability:</strong> varies by scope and organizational capacity</li>
+            <li><strong>Dates, duration, and fees:</strong> no public offering is currently listed</li>
           </ul>
-          <a href="mailto:info@lokahiconnect.org?subject=Educator%20Learning%20Inquiry" class="btn-ocean program-cta">Ask about educator learning →</a>
+          <a href="#service-inquiry" class="btn-ocean program-cta js-inquiry-interest" data-inquiry-interest="Educator professional learning">Ask about educator learning ↓</a>
         </article>
         <article class="program-card" id="digital-resources">
+          <span class="status-badge status-badge--open">Open now</span>
           <h3>Digital Resources</h3>
           <span class="audience-badge">For students, families, and educators</span>
           <p>The Lokahi WORD Project Student Lab is a free, web-based tool for structured word investigation. It includes read-aloud support, adjustable speech controls, and scaffolded activities that support learner-controlled pacing.</p>
@@ -146,6 +164,67 @@
           <a href="https://lokahi-connect.github.io/lokahi-word-project-student-lab/" target="_blank" rel="noopener" class="btn-ocean program-cta">Launch Student Lab ↗</a>
           <p style="font-size:0.85rem;margin-top:1rem;"><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" style="color:var(--ocean);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(13,90,138,0.3);" onclick="trackFeedbackFormClick('resource_card')">Used this resource? Log it here →</a></p>
         </article>
+      </div>
+      <p class="resource-reviewed">Service status last reviewed August 20, 2026. Contact Lokahi Connect before relying on a location, format, schedule, or opening.</p>
+    </div></div>
+  </section>
+
+  <section id="events" style="background:var(--sand);">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Events and educator learning</span>
+      <h2 class="section-heading">Confirmed dates will appear here</h2>
+      <p class="section-sub section-sub--wide">Lokahi Connect lists only confirmed public workshops, family sessions, and community events—not tentative dates.</p>
+      <article class="event-empty">
+        <div class="event-date">Current status</div>
+        <div>
+          <h3>No public events are currently listed</h3>
+          <p>When an event is confirmed, this page will identify its date, time zone, audience, format or location, cost, access information, registration status, and registration link.</p>
+          <div class="section-actions">
+            <a href="#email-updates" class="btn-ocean">Request event updates ↓</a>
+            <a href="#service-inquiry" class="btn-ocean js-inquiry-interest" data-inquiry-interest="Community or organizational partnership">Ask about hosting a workshop ↓</a>
+          </div>
+        </div>
+      </article>
+    </div></div>
+  </section>
+
+  <section id="service-inquiry" style="background:var(--white);">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">One short next step</span>
+      <h2 class="section-heading">Ask about learning or partnership opportunities</h2>
+      <p class="section-sub section-sub--wide">Tell us what you are looking for. This form prepares an email in your device’s email app; this website does not save or send your answers. Review the email before sending.</p>
+      <div class="connect-grid">
+        <form class="feedback-form compact-form" id="service-inquiry-form" novalidate>
+          <fieldset>
+            <legend>Short inquiry</legend>
+            <div class="form-field"><label for="inquiry-role">I am a… <span aria-hidden="true">*</span></label><select id="inquiry-role" name="role" required><option value="">Choose one</option><option>Parent or caregiver</option><option>Educator</option><option>School or district representative</option><option>Community organization or partner</option><option>Funder or supporter</option><option>Other</option></select></div>
+            <div class="form-field"><label for="inquiry-interest">I’m interested in… <span aria-hidden="true">*</span></label><select id="inquiry-interest" name="interest" required><option value="">Choose one</option><option>Student learning</option><option>Educator professional learning</option><option>Community or organizational partnership</option><option>Digital resources</option><option>Not sure yet</option></select></div>
+            <div class="form-field"><label for="inquiry-location">Preferred location or format <span class="form-hint">Optional</span></label><select id="inquiry-location" name="location"><option value="">Choose one</option><option>Bainbridge Island or Kitsap County</option><option>Maui, Hawaiʻi</option><option>Elsewhere in Washington</option><option>Elsewhere in Hawaiʻi</option><option>Remote or online</option><option>Flexible or not sure</option></select></div>
+            <div class="form-field"><label for="inquiry-email">Your reply email <span aria-hidden="true">*</span></label><input id="inquiry-email" name="email" type="email" autocomplete="email" required /></div>
+            <div class="form-field"><label for="inquiry-message">What would be helpful to know? <span aria-hidden="true">*</span></label><textarea id="inquiry-message" name="message" maxlength="600" required></textarea><span class="form-hint">Use general information only; 600 characters maximum.</span></div>
+            <label class="consent-row"><input type="checkbox" name="privacy_acknowledgment" required /> <span>I have not included private student, school, evaluation, or health records. <span aria-hidden="true">*</span></span></label>
+          </fieldset>
+          <div class="privacy-note"><strong>Protect privacy:</strong> Do not include a learner’s full name, birth date, school, evaluation or medical information, IEP or 504 content, or other private records. This is not an emergency, diagnosis, formal complaint, or guaranteed placement request.</div>
+          <div class="form-actions"><button type="submit" class="btn-primary">Prepare inquiry email →</button><button type="button" class="btn-ocean" id="copy-inquiry">Copy inquiry</button></div>
+          <p class="form-status" id="inquiry-status" role="status" aria-live="polite"></p>
+          <p class="direct-email">Prefer email? Write directly to <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a>.</p>
+        </form>
+
+        <aside class="updates-panel" id="email-updates">
+          <h3>Request email updates</h3>
+          <p>Receive occasional news about learning opportunities, family resources, educator learning, and community work. This website does not save this request. You are not added to an updates list until Lokahi Connect confirms.</p>
+          <form class="feedback-form compact-form" id="updates-request-form" novalidate>
+            <fieldset>
+              <legend class="visually-hidden">Email update request</legend>
+              <div class="form-field"><label for="updates-email">Email address for updates <span aria-hidden="true">*</span></label><input id="updates-email" name="email" type="email" autocomplete="email" required /></div>
+              <div class="form-field"><label for="updates-topic">Updates I’m interested in <span class="form-hint">Optional</span></label><select id="updates-topic" name="topic"><option>All updates</option><option>Family resources</option><option>Educator learning and events</option><option>Community and partner news</option></select></div>
+              <label class="consent-row"><input type="checkbox" name="updates_consent" required /> <span>I request occasional email updates from Lokahi Connect and understand that I may unsubscribe at any time. <span aria-hidden="true">*</span></span></label>
+            </fieldset>
+            <div class="form-actions"><button type="submit" class="btn-ocean">Prepare signup request →</button><button type="button" class="btn-ocean" id="copy-updates">Copy request</button></div>
+            <p class="form-status" id="updates-status" role="status" aria-live="polite"></p>
+          </form>
+          <p class="direct-email">Prefer email? Send an <a href="mailto:info@lokahiconnect.org?subject=Email%20updates%20request">email updates request</a> directly.</p>
+        </aside>
       </div>
     </div></div>
   </section>
@@ -199,7 +278,7 @@
       <p class="section-sub" style="margin:0 auto 2rem;">Ask about current student-support or educator-learning availability, discuss a possible project, or make a gift that supports this work.</p>
       <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
         <a href="get-involved.html" class="btn-primary">Get Involved ↗</a>
-        <a href="mailto:info@lokahiconnect.org" class="btn-ocean">Contact Us →</a>
+        <a href="#service-inquiry" class="btn-ocean">Start a short inquiry ↑</a>
       </div>
     </div></div>
   </section>
@@ -213,5 +292,6 @@
 </footer>
 <script src="site-navigation.js?v=20260820-1"></script>
 <script src="feedback.js"></script>
+<script src="programs-connect.js?v=20260820-1"></script>
 </body>
 </html>
