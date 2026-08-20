@@ -21,7 +21,7 @@ The review checked the destination, organization identity, and page purpose for:
 - NAEP 2024 Reading results
 - NCES PIAAC 2023 national results
 - International Dyslexia Association 2025 definition and Structured Literacy materials
-- Washington State Branch of IDA dyslexia information
+- Washington State Branch of IDA dyslexia information and public leadership profile
 - National Center on Improving Literacy family-school and identification guides
 - Washington OSPI screening guidance
 - Washington PAVE family-navigation toolkit

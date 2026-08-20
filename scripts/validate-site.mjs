@@ -63,7 +63,7 @@ for (const page of pages) {
   check(/>Community Feedback<\/a>/i.test(footer), `${page}: footer Community Feedback link is missing`);
   check(!/english-orthography\.netlify\.app|>\s*Presentation\s*<\/a>/i.test(html), `${page}: removed presentation link remains`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260820-1["']/i.test(html), `${page}: shared navigation script is missing`);
-  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260820-4["']/i.test(html), `${page}: current shared stylesheet is missing`);
+  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260820-5["']/i.test(html), `${page}: current shared stylesheet is missing`);
   check(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/favicon\.svg["'][^>]*type=["']image\/svg\+xml["']/i.test(html), `${page}: SVG favicon link is missing`);
   check(/<meta\b[^>]*name=["']theme-color["'][^>]*content=["']#0D5A8A["']/i.test(html), `${page}: browser theme color is missing`);
   check(html.includes(page === 'index.html' ? 'class="hero-visual"' : 'class="page-visual-shell"'), `${page}: page visual is missing`);
@@ -109,20 +109,32 @@ for (const text of ['Start with what brought you here', 'Maui, Hawaiʻi · Onlin
 check(home.includes('https://lokahi-connect.github.io/lokahi-word-project-student-lab/'), 'homepage Student Lab destination is incorrect');
 
 const programs = contents.get('programs-and-impact.html') ?? '';
-for (const text of ['id="student-learning"', 'id="educator-learning"', 'id="digital-resources"', 'Bainbridge Island, Washington', 'Maui, Hawaiʻi', 'Remote and online access']) {
+for (const text of ['id="current-availability"', 'id="student-learning"', 'id="educator-learning"', 'id="digital-resources"', 'id="events"', 'id="service-inquiry"', 'id="email-updates"', 'id="service-inquiry-form"', 'id="updates-request-form"', 'Bainbridge Island, Washington', 'Maui, Hawaiʻi', 'Remote and online access', 'No public events are currently listed', 'this website does not save or send your answers', 'not added to an updates list until Lokahi Connect confirms']) {
   check(programs.includes(text), `programs required content is missing: ${text}`);
 }
 check(!/<span class="score-val">[123]<\/span>/.test(programs), 'program evidence cards must not look like numerical scores');
+check(!/<form\b[^>]*\baction=/i.test(programs), 'program inquiry forms must not submit to an undisclosed endpoint');
+check(/programs-connect\.js\?v=20260820-1/.test(programs), 'program inquiry and update-request script is missing');
+
+const about = contents.get('about.html') ?? '';
+for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive Director', 'CERI and NILD certifications', 'https://www.wabida.org/about-us']) {
+  check(about.includes(text), `about page leadership or history content is missing: ${text}`);
+}
 
 const dyslexia = contents.get('dyslexia.html') ?? '';
 for (const text of ['id="family-next-steps"', 'Continue with trusted sources and further research', 'https://doi.org/10.31234/osf.io/aktzw', 'At Lokahi Connect, we use these four question areas']) {
   check(dyslexia.includes(text), `dyslexia required content is missing: ${text}`);
 }
+check(dyslexia.includes('programs-and-impact.html#service-inquiry'), 'dyslexia page early support action is missing');
+
+const approach = contents.get('our-approach.html') ?? '';
+check(approach.includes('programs-and-impact.html#current-availability'), 'approach page early opportunity action is missing');
 
 const resources = contents.get('resources.html') ?? '';
 for (const text of ['id="screening-evaluation"', 'id="washington"', 'id="hawaii"', 'id="maui"', 'id="swi-research"', 'last reviewed August 20, 2026']) {
   check(resources.includes(text), `resources required content is missing: ${text}`);
 }
+check(resources.includes('programs-and-impact.html#service-inquiry'), 'resources page early support action is missing');
 
 const questionnaire = contents.get('community-feedback.html') ?? '';
 for (const text of ['community-feedback-form', 'overlooked', 'contact_permission', 'quote_permission', 'does not save these responses', 'not for emergencies']) {
@@ -155,6 +167,10 @@ for (const behavior of ['Escape', 'data-nav-ready', 'data-nav-open', 'aria-expan
 const feedbackScript = fs.readFileSync(path.join(repoRoot, 'community-feedback.js'), 'utf8');
 for (const behavior of ['validateGroups', 'validateContact', 'buildCommunityFeedbackEmail', 'navigator.clipboard', 'mailto:info@lokahiconnect.org']) {
   check(feedbackScript.includes(behavior), `community-feedback.js: expected behavior is missing: ${behavior}`);
+}
+const programsConnectScript = fs.readFileSync(path.join(repoRoot, 'programs-connect.js'), 'utf8');
+for (const behavior of ['buildServiceInquiryEmail', 'buildEmailUpdatesRequest', 'navigator.clipboard', 'mailto:', '.js-inquiry-interest']) {
+  check(programsConnectScript.includes(behavior), `programs-connect.js: expected privacy-conscious behavior is missing: ${behavior}`);
 }
 
 if (errors.length) {
