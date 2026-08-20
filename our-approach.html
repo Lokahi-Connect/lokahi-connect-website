@@ -7,7 +7,7 @@
   <title>Our Approach — Lokahi Connect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css" />
   <style>
     .pillars-section { background: var(--cream); }
@@ -50,22 +50,24 @@
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
-<nav>
+<nav aria-label="Primary navigation">
   <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-label visually-hidden">Open menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+  <ul class="nav-links" id="primary-navigation">
     <li><a href="index.html">Home</a></li>
-    <li><a href="our-approach.html" class="active">Our Approach</a></li>
+    <li><a href="our-approach.html" class="active" aria-current="page">Our Approach</a></li>
     <li><a href="programs-and-impact.html">Programs &amp; Impact</a></li>
     <li><a href="dyslexia.html">Dyslexia</a></li>
-    <li><a href="/tutorbird/">Tutorbird</a></li>
+    <li><a href="/tutorbird/">Parent Portal</a></li>
+    <li><a href="https://english-orthography.netlify.app" target="_blank" rel="noopener noreferrer">Presentation</a></li>
     <li><a href="get-involved.html" class="nav-cta">Get Involved</a></li>
   </ul>
 </nav>
 <main id="main-content">
   <div class="page-hero">
     <span class="eyebrow">Research-grounded</span>
-    <h1>The thinking behind <em>Lokahi WORD Project: Word Origins &amp; Roots Discovery</em></h1>
-    <p>Lokahi Connect’s approach is grounded in morphological research and in a neurodevelopmentally informed design framework. It is designed to help learners investigate how meaning, structure, grapheme function, and phonology work together in English orthography.</p>
+    <h1>The thinking behind the <em>Lokahi WORD Project</em></h1>
+    <p>Lokahi Connect’s approach helps learners investigate how written language preserves relationships among meaning, morphology, grammar, spelling, history, and context. No single dimension is treated as the sole organizing principle.</p>
   </div>
 
   <section class="pillars-section">
@@ -77,7 +79,7 @@
         <h3>Structured Word Inquiry (SWI)</h3>
         <p>Structured Word Inquiry invites learners to investigate words through evidence. We use questions about meaning, structure, related words, and grapheme function to make spelling more coherent and more generative.</p>
         <div class="callout-box">
-          <p><strong>Four-question routine</strong></p>
+          <p><strong>Four-question investigative scaffold</strong></p>
           <ol>
             <li>What does it mean?</li>
             <li>How is it built?</li>
@@ -91,7 +93,7 @@
           <p>&lt;sign&gt; + &lt;ature&gt; → signature</p>
           <p>&lt;de&gt; + &lt;sign&gt; + &lt;ate&gt; → designate</p>
         </div>
-        <p style="font-size:0.82rem;color:var(--muted);margin-top:1.25rem;">Structured Word Inquiry, the Four Questions, and word sums developed by Bowers &amp; Kirby (2010).</p>
+        <p style="font-size:0.82rem;color:var(--muted);margin-top:1.25rem;">The Four Questions are flexible and recursive: entry point and movement depend on the word, construction, context, learner observation, and purpose of inquiry. Peter N. Bowers is the intellectual source of SWI and the Four Questions. Bowers and Kirby (2010) introduced the term <em>Structured Word Inquiry</em> in a classroom study.</p>
       </article>
       <article class="pillar-block" style="border-top-color: var(--sky);">
         <h3>INT-informed design</h3>
@@ -117,15 +119,15 @@
   </section>
   <section class="sequence-section">
     <div class="container"><div class="reveal">
-      <span class="section-tag">The Sequence</span>
-      <h2 class="section-heading">A typical investigation follows this arc</h2>
-      <p class="section-sub">Every lesson does not sound identical, but the conceptual order stays stable.</p>
+      <span class="section-tag">A recursive investigation</span>
+      <h2 class="section-heading">Evidence guides the path through an investigation</h2>
+      <p class="section-sub">The following are possible areas of attention, not mandatory steps. A learner may enter and move among them in response to the word, construction, context, observations, and purpose.</p>
       <div class="timeline">
-        <div class="timeline-step"><div class="step-label">Step 1</div><h3>Meaning in context</h3><p>The learner encounters the word in a sentence, image, or purposeful context and identifies what it means here.</p></div>
-        <div class="timeline-step"><div class="step-label">Step 2</div><h3>Structure</h3><p>The learner identifies the base, prefixes, suffixes, and word-sum structure.</p></div>
-        <div class="timeline-step"><div class="step-label">Step 3</div><h3>Grapheme function</h3><p>The learner asks what the spelling is doing in this word or family and names the relevant convention or pattern.</p></div>
-        <div class="timeline-step"><div class="step-label">Step 4</div><h3>Phonology</h3><p>The learner analyzes pronunciation once the structure is visible.</p></div>
-        <div class="timeline-step" style="margin-bottom:0;"><div class="step-label">Step 5</div><h3>Fluent pronunciation and transfer</h3><p>The learner reads or says the word with understanding and applies the same reasoning to related words.</p></div>
+        <div class="timeline-step"><div class="step-label">Possible focus</div><h3>Meaning in context</h3><p>The learner considers what the word represents in a sentence, construction, image, or purposeful context.</p></div>
+        <div class="timeline-step"><div class="step-label">Possible focus</div><h3>Structure</h3><p>The learner investigates the base, prefixes, suffixes, and word-sum structure.</p></div>
+        <div class="timeline-step"><div class="step-label">Possible focus</div><h3>Related words</h3><p>The learner tests possible family relationships through shared structure, meaning, and evidence.</p></div>
+        <div class="timeline-step"><div class="step-label">Possible focus</div><h3>Grapheme function and phonology</h3><p>The learner asks how the graphemes function. Pronunciation is one source of evidence rather than an automatic starting point.</p></div>
+        <div class="timeline-step" style="margin-bottom:0;"><div class="step-label">Possible focus</div><h3>Transfer and reflection</h3><p>The learner applies the investigation to another word or context. A response is bounded performance evidence, not proof of understanding.</p></div>
       </div>
     </div></div>
   </section>
@@ -154,12 +156,7 @@
     <div class="footer-meta" style="text-align:right"><p><a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a> · <a href="dyslexia.html">Dyslexia</a> · <a href="/tutorbird/">Tutorbird</a></p><p><a href="https://english-orthography.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="View the English orthography presentation in a new tab">Presentation</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener">Donate</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a></p><p><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" onclick="trackFeedbackFormClick('footer')">Log a resource interaction ↗</a></p></div>
   </div>
 </footer>
-<script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
+<script src="site-navigation.js"></script>
 <script src="feedback.js"></script>
 </body>
 </html>

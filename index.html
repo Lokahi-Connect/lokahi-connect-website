@@ -7,7 +7,7 @@
   <meta name="description" content="Lokahi Connect helps students, families, and educators investigate how English spelling reflects meaning, structure, and history, so words become more coherent and more learnable." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css" />
   <style>
     .hero {
@@ -25,6 +25,7 @@
     .stat-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 1rem; padding: 1.5rem 1.2rem; backdrop-filter: blur(6px); }
     .stat-number { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900; color: var(--seafoam); line-height: 1; margin-bottom: 0.5rem; }
     .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+    .stat-source { display: inline-block; margin-top: 0.65rem; color: var(--white); font-size: 0.76rem; text-underline-offset: 0.18rem; }
     .problem { background: var(--sand); }
     .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
     .problem-card { background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
@@ -66,26 +67,34 @@
       .steps-grid { grid-template-columns: 1fr 1fr; }
       .hero-actions { flex-direction: column; align-items: center; }
     }
+    @media (max-width: 600px) {
+      .hero { min-height: auto; padding: 5.6rem 1.2rem 2.75rem; }
+      .hero-tag { margin-bottom: 0.9rem; }
+      .hero h1 { font-size: 2.2rem; margin-bottom: 0.9rem; }
+      .hero-sub { font-size: 1rem; line-height: 1.6; margin-bottom: 1.35rem; }
+      .hero-actions { gap: 0.65rem; margin-bottom: 2.5rem; }
+    }
     @media (max-width: 480px) { .steps-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <nav>
+  <nav aria-label="Primary navigation">
     <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-label visually-hidden">Open menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+    <ul class="nav-links" id="primary-navigation">
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
       <li><a href="our-approach.html">Our Approach</a></li>
       <li><a href="programs-and-impact.html">Programs &amp; Impact</a></li>
       <li><a href="dyslexia.html">Dyslexia</a></li>
-      <li><a href="/tutorbird/">Tutorbird</a></li>
+      <li><a href="/tutorbird/">Parent Portal</a></li>
       <li><a href="https://english-orthography.netlify.app" target="_blank" rel="noopener noreferrer">Presentation</a></li>
       <li><a href="get-involved.html" class="nav-cta">Get Involved</a></li>
     </ul>
   </nav>
   <main id="main-content">
     <header class="hero">
-      <div class="hero-tag">Research-informed literacy · Bainbridge Island, WA</div>
+      <div class="hero-tag">Research-informed literacy · Bainbridge Island, WA · Hawaiʻi</div>
       <h1>Every child deserves literacy instruction that makes sense</h1>
       <p class="hero-sub">Lokahi Connect helps students, families, and educators investigate how English spelling reflects meaning, structure, and history, so words become more coherent and more learnable.</p>
       <div class="hero-actions">
@@ -93,9 +102,9 @@
         <a href="https://givebutter.com/bl1HIO" class="btn-ghost" target="_blank" rel="noopener">Support the work ↗</a>
       </div>
       <div class="hero-stats">
-        <div class="stat-card"><div class="stat-number">33%</div><div class="stat-label">In 2022, 33% of U.S. fourth-graders performed at or above NAEP Proficient in reading.</div></div>
-        <div class="stat-card"><div class="stat-number">$2.2T</div><div class="stat-label">A 2020 Gallup analysis estimated that improving adult literacy could add about $2.2 trillion in annual income to the U.S. economy.</div></div>
-        <div class="stat-card"><div class="stat-number">K-Adult</div><div class="stat-label">Lokahi Connect serves learners across K-12 and adult education contexts.</div></div>
+        <div class="stat-card"><div class="stat-number">33%</div><div class="stat-label">In 2022, 33% of U.S. fourth-graders performed at or above NAEP Proficient in reading. NAEP notes that this is not the same as grade-level proficiency.</div><a class="stat-source" href="https://www.nationsreportcard.gov/reading/nation/achievement/?grade=4" target="_blank" rel="noopener noreferrer">Source: NAEP reading results ↗</a></div>
+        <div class="stat-card"><div class="stat-number">$2.2T</div><div class="stat-label">A 2020 Gallup analysis estimated a possible $2.2 trillion in added annual income if all U.S. adults reached Level 3 literacy; the report describes this as a rough estimate.</div><a class="stat-source" href="https://www.barbarabush.org/wp-content/uploads/2020/09/BBFoundation_GainsFromEradicatingIlliteracy_9_8.pdf" target="_blank" rel="noopener noreferrer">Source: Gallup analysis ↗</a></div>
+        <div class="stat-card"><div class="stat-number">Flexible</div><div class="stat-label">Lokahi Connect develops student learning resources, educator learning, and open online tools. Program formats and availability vary.</div></div>
       </div>
     </header>
 
@@ -114,14 +123,13 @@
     <section class="solution">
       <div class="container"><div class="reveal">
         <span class="section-tag">A Different Learning Experience, the Lokahi WORD Project</span>
-        <h2 class="section-heading">Meaning and structure make English more teachable</h2>
-        <p class="section-sub">Our investigations move through a consistent sequence: meaning, structure, grapheme function, phonology, and fluent pronunciation.</p>
+        <h2 class="section-heading">Written language preserves connected relationships</h2>
+        <p class="section-sub">Written language preserves relationships among meaning, morphology, grammar, spelling, history, and context. No single dimension is the sole organizing principle. Learners can enter through any of the Four Questions and move among them as the word, context, observation, and purpose require.</p>
         <div class="steps-grid">
-          <div class="step-card"><div class="step-number">1</div><h3>Meaning</h3><p>Start with what the word means in context.</p></div>
-          <div class="step-card"><div class="step-number">2</div><h3>Structure</h3><p>Identify the base, prefixes, and suffixes.</p></div>
-          <div class="step-card"><div class="step-number">3</div><h3>Grapheme function</h3><p>Ask what each grapheme is doing in this word or family.</p></div>
-          <div class="step-card"><div class="step-number">4</div><h3>Phonology</h3><p>Analyze how the word is pronounced once the structure is visible.</p></div>
-          <div class="step-card"><div class="step-number">5</div><h3>Transfer</h3><p>Apply the reasoning to related or unfamiliar words.</p></div>
+          <div class="step-card"><div class="step-number" aria-hidden="true">?</div><h3>Meaning</h3><p>What does the word mean in this construction and context?</p></div>
+          <div class="step-card"><div class="step-number" aria-hidden="true">?</div><h3>Structure</h3><p>How is the word built from a base and any affixes?</p></div>
+          <div class="step-card"><div class="step-number" aria-hidden="true">?</div><h3>Related words</h3><p>Which words share a meaningful structural relationship?</p></div>
+          <div class="step-card"><div class="step-number" aria-hidden="true">?</div><h3>Grapheme function</h3><p>How do the graphemes function in this word and family, including pronunciation evidence where relevant?</p></div>
         </div>
       </div></div>
     </section>
@@ -130,7 +138,7 @@
         <span class="section-tag">Foundations of our practice</span>
         <h2 class="section-heading">How Lokahi Connect Teaches</h2>
         <div class="pillars-grid">
-          <article class="pillar-card"><h3>Structured Word Inquiry (SWI)</h3><p>We use inquiry routines such as word sums, matrices, and family investigations to make structure visible and discussable.</p><p style="font-size:0.82rem;color:var(--muted);margin-top:0.75rem;">Structured Word Inquiry, word sums, and word matrices developed by Bowers &amp; Kirby (2010).</p></article>
+          <article class="pillar-card"><h3>Structured Word Inquiry (SWI)</h3><p>We use inquiry routines such as word sums, matrices, and family investigations to make structure visible and discussable.</p><p style="font-size:0.82rem;color:var(--muted);margin-top:0.75rem;">Peter N. Bowers is the intellectual source of SWI and the Four Questions. Bowers and Kirby (2010) introduced the term <em>Structured Word Inquiry</em> in a classroom study.</p></article>
           <article class="pillar-card"><h3>INT-informed design</h3><p>We design for cognitive variability by reducing unnecessary load, keeping routines predictable, and preserving linguistic accuracy.</p></article>
           <article class="pillar-card"><h3>Mediated learning in practice</h3><p>Adults guide attention, meaning, reciprocity, and transfer so students build durable reasoning, not just short-term compliance.</p></article>
         </div>
@@ -143,7 +151,7 @@
         <h2 class="section-heading">Growth is tracked with evidence, not slogans</h2>
         <p class="section-sub">We look at student work, word investigation transfer, standardized assessments where appropriate, and educator implementation evidence. When we share case stories, we do so in de-identified form and with enough context to make the evidence interpretable.</p>
         <div class="metrics-grid">
-          <div class="metric-card"><div class="metric-value">Direct service</div><div class="metric-label">Instruction designed for students who need language made more coherent and more transferable.</div></div>
+          <div class="metric-card"><div class="metric-value">Student learning</div><div class="metric-label">Resources and possible instruction formats designed to make language more coherent and more transferable. Availability varies.</div></div>
           <div class="metric-card"><div class="metric-value">Educator learning</div><div class="metric-label">Training and coaching that help adults mediate inquiry, not just deliver rules.</div></div>
           <div class="metric-card"><div class="metric-value">Open tools</div><div class="metric-label">A free, web-based Student Lab with read-aloud support, adjustable speech controls, and scaffolded activities.</div><a href="https://english-orthography.netlify.app" class="btn-primary" target="_blank" rel="noopener noreferrer" aria-label="View the English orthography presentation in a new tab">View the presentation →</a></div>
         </div>
@@ -154,11 +162,11 @@
       <div class="container"><div class="reveal">
         <span class="section-tag">Invest in the work</span>
         <h2 class="section-heading">Support literacy work that lasts</h2>
-        <p class="section-sub">Your gift helps fund direct services, educator learning, and open-access tools.</p>
+        <p class="section-sub">Your gift helps develop student learning resources, educator learning, and open-access tools.</p>
         <div class="invest-grid">
-          <div class="invest-card"><h3>Seed ($1,000)</h3><p>Supports student-facing instruction, learning materials, and open resources.</p></div>
-          <div class="invest-card"><h3>Root ($10,000)</h3><p>Helps expand educator training, coaching, and curriculum development.</p></div>
-          <div class="invest-card"><h3>Canopy (Custom)</h3><p>Supports larger partnerships, implementation planning, and long-range growth.</p></div>
+          <div class="invest-card"><h3>Seed ($1,000)</h3><p>May support student learning materials and open resources.</p></div>
+          <div class="invest-card"><h3>Root ($10,000)</h3><p>May support educator learning, coaching, or curriculum development.</p></div>
+          <div class="invest-card"><h3>Canopy (Custom)</h3><p>May support partnership planning, implementation design, or long-range growth.</p></div>
         </div>
         <div class="invest-cta"><a href="https://givebutter.com/bl1HIO" class="btn-primary" target="_blank" rel="noopener">Donate Now ↗</a></div>
       </div></div>
@@ -171,12 +179,7 @@
       <div class="footer-meta" style="text-align:right"><p><a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a> · <a href="dyslexia.html">Dyslexia</a> · <a href="/tutorbird/">Tutorbird</a></p><p><a href="https://english-orthography.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="View the English orthography presentation in a new tab">Presentation</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener">Donate</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a></p><p><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" onclick="trackFeedbackFormClick('footer')">Log a resource interaction ↗</a></p></div>
     </div>
   </footer>
-  <script>
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  </script>
+  <script src="site-navigation.js"></script>
   <script src="feedback.js"></script>
 </body>
 </html>

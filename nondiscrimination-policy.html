@@ -7,7 +7,7 @@
   <title>Nondiscrimination Policy — Lokahi Connect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css" />
   <style>
     .policy-section { background: var(--cream); }
@@ -40,14 +40,16 @@
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
-<nav>
+<nav aria-label="Primary navigation">
   <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-label visually-hidden">Open menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+  <ul class="nav-links" id="primary-navigation">
     <li><a href="index.html">Home</a></li>
     <li><a href="our-approach.html">Our Approach</a></li>
     <li><a href="programs-and-impact.html">Programs &amp; Impact</a></li>
     <li><a href="dyslexia.html">Dyslexia</a></li>
-    <li><a href="/tutorbird/">Tutorbird</a></li>
+    <li><a href="/tutorbird/">Parent Portal</a></li>
+    <li><a href="https://english-orthography.netlify.app" target="_blank" rel="noopener noreferrer">Presentation</a></li>
     <li><a href="get-involved.html" class="nav-cta">Get Involved</a></li>
   </ul>
 </nav>
@@ -277,15 +279,10 @@
   <div class="footer-inner">
     <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
     <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2026 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
-    <div class="footer-meta" style="text-align:right"><p><a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a> · <a href="dyslexia.html">Dyslexia</a> · <a href="/tutorbird/">Tutorbird</a></p><p><a href="https://english-orthography.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="View the English orthography presentation in a new tab">Presentation</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="nondiscrimination-policy.html">Nondiscrimination Policy</a></p><p><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" onclick="trackFeedbackFormClick('footer')">Log a resource interaction ↗</a></p></div>
+    <div class="footer-meta" style="text-align:right"><p><a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a> · <a href="dyslexia.html">Dyslexia</a> · <a href="/tutorbird/">Tutorbird</a></p><p><a href="https://english-orthography.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="View the English orthography presentation in a new tab">Presentation</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="nondiscrimination-policy.html" aria-current="page">Nondiscrimination Policy</a></p><p><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" onclick="trackFeedbackFormClick('footer')">Log a resource interaction ↗</a></p></div>
   </div>
 </footer>
-<script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
+<script src="site-navigation.js"></script>
 <script src="player.js"></script>
 <script>
   initReadAloud([
