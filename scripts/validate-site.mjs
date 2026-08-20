@@ -53,7 +53,7 @@ for (const page of pages) {
   check(/<a\b[^>]*href=["']\/tutorbird\/["'][^>]*>Tutorbird<\/a>/i.test(footer), `${page}: footer Tutorbird label/path must remain`);
   check(occurrences(html, /aria-current=["']page["']/gi) === 1, `${page}: expected exactly one current-page marker`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260820-1["']/i.test(html), `${page}: versioned shared navigation script is missing`);
-  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260820-1["']/i.test(html), `${page}: versioned shared stylesheet is missing`);
+  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260820-2["']/i.test(html), `${page}: versioned shared stylesheet is missing`);
 
   const baseHtml = execFileSync('git', ['show', `${baseCommit}:${page}`], { cwd: repoRoot, encoding: 'utf8' });
   check(sameSet(mailtoTargets(html), mailtoTargets(baseHtml)), `${page}: mailto target set changed`);
@@ -102,7 +102,7 @@ for (const behavior of ['Escape', 'data-nav-ready', 'data-nav-open', 'aria-expan
 }
 
 const portal = contents.get('tutorbird/index.html');
-for (const portalControl of ['app.tutorbird.com/Website/', "frame.title = 'Tutorbird parent portal login'", 'MutationObserver', 'if (!recognizePortalFrame() && loading)']) {
+for (const portalControl of ['app.tutorbird.com/Website/', "frame.title = 'Tutorbird parent portal login'", "frame.setAttribute('aria-label', 'Tutorbird parent portal login')", "frame.setAttribute('aria-describedby', 'portal-accessibility-help')", 'id="portal-accessibility-help"', 'MutationObserver', 'if (!recognizePortalFrame() && loading)']) {
   check(portal.includes(portalControl), `tutorbird/index.html: portal control is missing: ${portalControl}`);
 }
 
