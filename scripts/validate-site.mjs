@@ -50,7 +50,9 @@ for (const page of pages) {
   check(/<button\b[^>]*class=["'][^"']*\bnav-toggle\b[^"']*["'][^>]*aria-expanded=["']false["'][^>]*aria-controls=["']primary-navigation["']/i.test(nav), `${page}: mobile menu toggle wiring is missing`);
   check(/<ul\b[^>]*class=["'][^"']*\bnav-links\b[^"']*["'][^>]*id=["']primary-navigation["']/i.test(nav), `${page}: primary navigation id is missing`);
   check(/<a\b[^>]*href=["']\/tutorbird\/["'][^>]*>Parent Portal<\/a>/i.test(nav), `${page}: header Parent Portal must retain /tutorbird/`);
+  check(!/english-orthography\.netlify\.app/i.test(nav), `${page}: Presentation must not appear in primary navigation`);
   check(/<a\b[^>]*href=["']\/tutorbird\/["'][^>]*>Tutorbird<\/a>/i.test(footer), `${page}: footer Tutorbird label/path must remain`);
+  check(/<a\b[^>]*href=["']https:\/\/english-orthography\.netlify\.app["'][^>]*>Presentation<\/a>/i.test(footer), `${page}: footer Presentation link changed outside requested scope`);
   check(occurrences(html, /aria-current=["']page["']/gi) === 1, `${page}: expected exactly one current-page marker`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260820-1["']/i.test(html), `${page}: versioned shared navigation script is missing`);
   check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260820-2["']/i.test(html), `${page}: versioned shared stylesheet is missing`);
