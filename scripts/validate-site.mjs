@@ -109,8 +109,8 @@ const home = contents.get('index.html');
 check(home.includes('Research-informed literacy · Bainbridge Island, WA · Hawaiʻi'), 'homepage Hawaiʻi tag is missing or changed');
 
 const programs = contents.get('programs-and-impact.html');
-check(programs.includes('Lokahi Connect’s work is rooted in Bainbridge Island, Washington, and Hawaiʻi, with additional access through remote services and online tools. Program formats and availability vary; contact us for current information.'), 'programs location statement is missing or changed');
-for (const label of ['Bainbridge Island, Washington', 'Hawaiʻi', 'Remote and online access']) {
+check(programs.includes('Lokahi Connect’s work is rooted in Bainbridge Island, Washington, and Maui, Hawaiʻi, with additional access through remote services and online tools. Program formats and availability vary; contact us for current information.'), 'programs location statement is missing or changed');
+for (const label of ['Bainbridge Island, Washington', 'Maui, Hawaiʻi', 'Remote and online access']) {
   check(programs.includes(label), `programs location label is missing: ${label}`);
 }
 
