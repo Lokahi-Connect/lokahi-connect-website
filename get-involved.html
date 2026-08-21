@@ -26,6 +26,8 @@
     .page-hero .hero-cta { margin-top: 1.8rem; }
     .ways-section { background: var(--cream); }
     .ways-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; margin-top: 2.8rem; }
+    .donation-widget-shell { max-width: 720px; margin: 2.5rem auto 0; }
+    .donation-widget-shell givebutter-widget { display: block; }
     .way-card { background: var(--white); border-radius: 1.2rem; padding: 2rem 1.75rem; box-shadow: 0 2px 14px rgba(26,26,46,0.07); display: flex; flex-direction: column; border-top: 4px solid var(--sky); transition: transform 0.25s, box-shadow 0.25s; }
     .way-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(26,26,46,0.12); }
     .way-card:nth-child(1) { border-top-color: var(--seafoam); }
@@ -122,7 +124,10 @@
     <div class="container"><div class="reveal">
       <span class="section-tag">Financial support</span>
       <h2 class="section-heading">Choose how you support the work financially</h2>
-      <p class="section-sub">The external donation campaign is maintained separately. Review its current wording and details before completing a gift.</p>
+      <p class="section-sub">Choose a one-time or monthly gift below. Your support helps strengthen student learning, educator learning, and open-access resources.</p>
+      <div class="donation-widget-shell" aria-label="Lokahi Connect donation form">
+        <givebutter-widget id="LWkGmQ" align="center"></givebutter-widget>
+      </div>
       <div class="ways-grid">
         <article class="way-card"><h3>One-time or recurring gift</h3><p>Support the organization’s work in student learning, educator learning, and resource development. Program formats and availability vary.</p><a href="https://givebutter.com/ARzvHK" class="btn-primary way-cta" target="_blank" rel="noopener">Give Now ↗</a></article>
         <article class="way-card"><h3>Institutional partnership</h3><p>Foundations, districts, and organizations can contact us to discuss possible support for curriculum development, educator learning, or implementation planning.</p><a href="programs-and-impact.html#service-inquiry" class="btn-ocean way-cta">Contact Us →</a></article>
