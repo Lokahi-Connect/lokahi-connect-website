@@ -110,7 +110,7 @@
     .giving-form-fallback a { color: var(--ocean); font-weight: 700; text-underline-offset: 0.18rem; }
     .trust-strip {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: 1.25fr repeat(4, minmax(0, 1fr));
       gap: 1px;
       max-width: 1200px;
       margin: 2.25rem auto 0;
@@ -129,6 +129,16 @@
     }
     .trust-strip__item strong { display: block; color: var(--white); font-family: var(--heading); font-size: 0.82rem; }
     .trust-strip__item a { color: var(--seafoam); text-underline-offset: 0.18rem; }
+    .candid-seal-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: rgba(255,255,255,0.75) !important;
+      text-decoration: none;
+    }
+    .candid-seal-link:hover span,
+    .candid-seal-link:focus-visible span { color: var(--white); text-decoration: underline; text-underline-offset: 0.18rem; }
+    .candid-seal-link img { width: 76px; height: 76px; flex: 0 0 auto; }
     .impact-section { background: var(--cream); }
     .impact-grid {
       display: grid;
@@ -226,6 +236,7 @@
       .giving-hero__copy { padding-top: 0; }
       .giving-form-card { max-width: 720px; width: 100%; margin: 0 auto; }
       .trust-strip { grid-template-columns: 1fr 1fr; }
+      .trust-strip__item--seal { grid-column: span 2; }
       .impact-grid, .giving-paths-grid { grid-template-columns: 1fr; }
       .transparency-grid { grid-template-columns: 1fr; }
     }
@@ -236,6 +247,7 @@
       .giving-form-card { padding: 0.65rem; border-radius: 1rem; }
       .giving-form-card givebutter-widget { min-height: 430px; }
       .trust-strip { grid-template-columns: 1fr; margin-top: 1.5rem; }
+      .trust-strip__item--seal { grid-column: auto; }
       .impact-card, .giving-path { padding: 1.35rem; }
     }
   </style>
@@ -269,6 +281,7 @@
         <p>Choose a one-time or monthly contribution in the secure Givebutter form.</p>
         <div class="giving-form-trust" aria-label="Donation trust information">
           <span><strong>501(c)(3)</strong> · EIN 33-3985311</span>
+          <a href="https://app.candid.org/profile/16316345/lokahi-connect-33-3985311/?pkId=31b707e0-2934-4dec-b398-3bf8823ed076" target="_blank" rel="noopener noreferrer">Candid Platinum</a>
           <a href="privacy.html#donation-forms">Donor privacy</a>
           <a href="about.html#leadership">Leadership</a>
           <a href="mailto:info@lokahiconnect.org?subject=Financial%20Information%20Request">Financial information</a>
@@ -281,6 +294,12 @@
       </div>
     </div>
     <div class="trust-strip" aria-label="Giving and accountability information">
+      <div class="trust-strip__item trust-strip__item--seal">
+        <a class="candid-seal-link" aria-label="View Lokahi Connect's Candid nonprofit profile" href="https://app.candid.org/profile/16316345/lokahi-connect-33-3985311/?pkId=31b707e0-2934-4dec-b398-3bf8823ed076" target="_blank" rel="noopener noreferrer">
+          <img alt="2026 Candid Platinum Seal of Transparency" src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/16316345/svg" width="76" height="76" loading="lazy" decoding="async" />
+          <span><strong>Candid Platinum</strong>View our transparency profile ↗</span>
+        </a>
+      </div>
       <div class="trust-strip__item"><strong>501(c)(3) nonprofit</strong>EIN 33-3985311</div>
       <div class="trust-strip__item"><strong>Donor privacy</strong><a href="privacy.html#donation-forms">Read how giving data is handled</a></div>
       <div class="trust-strip__item"><strong>Leadership</strong><a href="about.html#leadership">Meet Stephanie Steinshouer</a></div>
@@ -331,6 +350,7 @@
       <div class="transparency-grid">
         <ul class="transparency-list">
           <li><strong>Nonprofit status:</strong> Lokahi Connect is a 501(c)(3) nonprofit, EIN 33-3985311.</li>
+          <li><strong>Candid profile:</strong> Lokahi Connect has earned the <a href="https://app.candid.org/profile/16316345/lokahi-connect-33-3985311/?pkId=31b707e0-2934-4dec-b398-3bf8823ed076" target="_blank" rel="noopener noreferrer">2026 Candid Platinum Seal of Transparency ↗</a> by publishing organizational, leadership, financial, and impact information in its nonprofit profile.</li>
           <li><strong>Leadership:</strong> <a href="about.html#leadership">Stephanie Steinshouer</a> is Founder and Executive Director.</li>
           <li><strong>Donor privacy:</strong> Review the site’s <a href="privacy.html#donation-forms">donation-form and analytics disclosures</a> before giving.</li>
           <li><strong>Financial reporting:</strong> <a href="mailto:info@lokahiconnect.org?subject=Financial%20Information%20Request">Request current organizational and available financial information</a>.</li>
