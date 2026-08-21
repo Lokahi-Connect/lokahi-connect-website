@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calm, practical next steps for families, educators, teens, adults, and community partners navigating reading, spelling, writing, or language-based learning challenges." />
+  <meta name="theme-color" content="#0D5A8A" />
+  <link rel="canonical" href="https://www.lokahiconnect.org/family-community-toolkit.html" />
+  <meta property="og:title" content="Family &amp; Community Toolkit — Lokahi Connect" />
+  <meta property="og:description" content="Choose one clear next step: notice useful patterns, prepare for a conversation, understand evaluation, find support, or help shape community learning." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.lokahiconnect.org/family-community-toolkit.html" />
+  <meta property="og:image" content="https://www.lokahiconnect.org/assets/community-literacy-growth.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>Family &amp; Community Toolkit — Lokahi Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_shared.css?v=20260820-5" />
+  <style>
+    .toolkit-hero { padding-bottom: 4.25rem; }
+    .toolkit-hero p { max-width: 760px; }
+    .toolkit-breadcrumb { width: min(1120px, calc(100% - 4rem)); margin: 0 auto 1rem; color: var(--muted); font-size: 0.86rem; }
+    .toolkit-breadcrumb a { color: var(--ocean); font-weight: 700; text-underline-offset: 0.2rem; }
+    .quick-nav a { min-height: 44px; }
+    .toolkit-paths { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .toolkit-paths .pathway-card { border-top: 5px solid var(--seafoam); }
+    .toolkit-paths .pathway-card:nth-child(2n) { border-top-color: var(--sky); }
+    .toolkit-paths .pathway-card:nth-child(3n) { border-top-color: var(--dusk); }
+    .path-number { display: inline-grid; width: 2rem; height: 2rem; place-items: center; margin-bottom: 0.8rem; border-radius: 50%; background: rgba(13,90,138,0.09); color: var(--ocean); font-family: var(--heading); font-size: 0.82rem; font-weight: 700; }
+    .pathway-card > a { margin-top: auto; color: var(--ocean); font-weight: 700; text-decoration: underline; text-decoration-color: rgba(13,90,138,0.3); text-underline-offset: 0.22rem; }
+    .calm-note { padding: 1.35rem 1.5rem; border-left: 5px solid var(--seafoam); border-radius: 0 0.9rem 0.9rem 0; background: rgba(46,196,160,0.09); color: var(--ink); }
+    .calm-note strong { color: var(--ocean); }
+    .toolkit-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .tool-card { padding: 1.6rem; border: 1px solid rgba(13,90,138,0.14); border-radius: 1rem; background: var(--white); box-shadow: 0 4px 18px rgba(10,24,40,0.06); }
+    .tool-card h3 { margin-bottom: 0.7rem; color: var(--ink); font-family: var(--heading); font-size: 1.15rem; }
+    .tool-card p { color: var(--muted); }
+    .action-list { margin: 1rem 0 0 1.2rem; color: var(--muted); }
+    .action-list li { margin-bottom: 0.65rem; padding-left: 0.25rem; }
+    .action-list strong { color: var(--ink); }
+    .conversation-script { margin: 1.4rem 0; padding: 1.25rem 1.4rem; border-left: 5px solid var(--sky); background: rgba(26,143,193,0.07); color: var(--ink); font-size: 1rem; line-height: 1.75; }
+    .definition-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .definition-card { padding: 1.5rem; border-radius: 1rem; background: var(--white); border-top: 5px solid var(--seafoam); box-shadow: 0 4px 18px rgba(10,24,40,0.06); }
+    .definition-card:nth-child(2) { border-top-color: var(--sky); }
+    .definition-card:nth-child(3) { border-top-color: var(--dusk); }
+    .definition-card h3 { margin-bottom: 0.6rem; font-family: var(--heading); font-size: 1.1rem; }
+    .definition-card p { color: var(--muted); font-size: 0.94rem; }
+    .source-note { margin-top: 1rem; color: var(--muted); font-size: 0.84rem; }
+    .source-note a { color: var(--ocean); font-weight: 700; }
+    .state-card h3 span { display: block; margin-top: 0.2rem; color: var(--muted); font-family: var(--sans); font-size: 0.78rem; font-weight: 500; }
+    .urgent-note { margin-top: 2rem; padding: 1.25rem 1.4rem; border: 1px solid rgba(13,90,138,0.18); border-radius: 0.9rem; background: var(--white); }
+    .urgent-note h3 { margin-bottom: 0.45rem; font-family: var(--heading); font-size: 1rem; }
+    .urgent-note p { color: var(--muted); font-size: 0.9rem; }
+    .urgent-note a { color: var(--ocean); font-weight: 700; }
+    .partner-panel { margin-top: 2rem; padding: 1.75rem; border-radius: 1rem; background: var(--sand); }
+    .partner-panel h3 { margin-bottom: 0.5rem; font-family: var(--heading); }
+    .partner-panel p { max-width: 780px; color: var(--muted); }
+    @media (max-width: 900px) {
+      .definition-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .toolkit-breadcrumb { width: calc(100% - 2rem); }
+      .toolkit-paths, .toolkit-two { grid-template-columns: 1fr; }
+      .tool-card, .definition-card { padding: 1.25rem; }
+      .toolkit-hero .section-actions > * { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav aria-label="Primary navigation">
+  <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-icon" aria-hidden="true"></span><span class="nav-toggle-label visually-hidden">Open menu</span></button>
+  <ul class="nav-links" id="primary-navigation">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="our-approach.html">Our Approach</a></li>
+    <li><a href="programs-and-impact.html">Programs</a></li>
+    <li><a href="dyslexia.html">Dyslexia</a></li>
+    <li><a href="resources.html" class="active" aria-current="location">Resources</a></li>
+    <li><a href="/tutorbird/">Parent Portal</a></li>
+    <li><a href="get-involved.html" class="nav-cta">Get Involved</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+  <header class="page-hero toolkit-hero">
+    <span class="eyebrow">Resources · Family &amp; Community Toolkit</span>
+    <h1>One clear next step when language learning feels <em>difficult</em></h1>
+    <p>You do not need to identify the cause or solve everything today. Choose the question that matters most right now. Here, “learner” includes a child, adolescent, or adult.</p>
+    <div class="section-actions"><a class="btn-primary" href="#start-here">Choose a next step ↓</a><a class="btn-ghost" href="resources.html">Browse verified resources →</a></div>
+  </header>
+
+  <div class="page-visual-shell">
+    <div class="page-visual-frame page-visual-frame--community">
+      <picture>
+        <source media="(max-width: 700px)" srcset="assets/community-literacy-growth-small.jpg" />
+        <img src="assets/community-literacy-growth.jpg" width="1600" height="1066" alt="Many hands support new growth rising from an open book." loading="lazy" decoding="async" />
+      </picture>
+    </div>
+  </div>
+
+  <p class="toolkit-breadcrumb"><a href="resources.html">Resources</a> / Family &amp; Community Toolkit</p>
+  <nav class="quick-nav" aria-label="Toolkit sections">
+    <strong>Use this toolkit</strong>
+    <ul><li><a href="#start-here">Choose a step</a></li><li><a href="#prepare">Prepare for a conversation</a></li><li><a href="#understand">Understand the options</a></li><li><a href="#local-help">Find current help</a></li><li><a href="#community-voice">Shape community support</a></li></ul>
+  </nav>
+
+  <section id="start-here">
+    <div class="container">
+      <div class="calm-note"><strong>Difficulty is not a measure of intelligence, motivation, or potential.</strong> Learning concerns can feel emotional, especially when a capable learner is working hard without effective support. Begin with one observable pattern and one next conversation.</div>
+      <p class="resource-reviewed"><strong>Information boundary:</strong> This toolkit provides general educational information—not diagnosis, individualized legal advice, eligibility decisions, crisis response, or a guarantee of services. School procedures vary by state and setting. External guidance was reviewed August 21, 2026.</p>
+      <span class="section-tag">Start where you are</span>
+      <h2 class="section-heading">Which question is closest to yours?</h2>
+      <p class="section-sub section-sub--wide">Choose one pathway. You can return for another step later.</p>
+      <div class="pathway-grid toolkit-paths">
+        <article class="pathway-card"><span class="path-number" aria-hidden="true">1</span><h3>I’m noticing a persistent difficulty</h3><p>Notice patterns, strengths, and supports without trying to diagnose or repeatedly test the learner at home.</p><a href="#notice">Record useful observations →</a></article>
+        <article class="pathway-card"><span class="path-number" aria-hidden="true">2</span><h3>I’m preparing for a school conversation</h3><p>Bring specific examples and direct questions about instruction, progress, access, and follow-up.</p><a href="#prepare">Open the conversation kit →</a></article>
+        <article class="pathway-card"><span class="path-number" aria-hidden="true">3</span><h3>I’m considering screening or evaluation</h3><p>Understand what screening, comprehensive evaluation, diagnosis, and school eligibility can—and cannot—establish.</p><a href="#understand">Compare the options →</a></article>
+        <article class="pathway-card"><span class="path-number" aria-hidden="true">4</span><h3>A learner needs support now</h3><p>Ask what instruction and access supports can begin while other questions are being considered.</p><a href="#support-now">Plan immediate support →</a></article>
+        <article class="pathway-card"><span class="path-number" aria-hidden="true">5</span><h3>I support a teen or adult</h3><p>Find starting points for postsecondary learning, training, workplace access, or personal learning goals.</p><a href="#teen-adult">Find age-appropriate guidance →</a></article>
+        <article class="pathway-card"><span class="path-number" aria-hidden="true">6</span><h3>I’m an educator or community partner</h3><p>Use family-centered questions, explore learning opportunities, or begin a bounded community partnership conversation.</p><a href="#learn-together">Explore ways to learn together →</a></article>
+      </div>
+
+      <div class="resource-region" id="notice">
+        <h2>Notice useful patterns—not labels</h2>
+        <p>The goal is to make the learner’s experience easier to understand, not to reproduce distress or prove that a task is difficult.</p>
+        <div class="toolkit-two">
+          <article class="tool-card">
+            <h3>Record two or three examples</h3>
+            <ol class="action-list">
+              <li>Name the exact reading, spelling, writing, or language task.</li>
+              <li>Describe what happened without interpreting the cause.</li>
+              <li>Notice whether the pattern appears across tasks, settings, or time.</li>
+              <li>Include strengths, interests, the learner’s perspective, and what made participation easier.</li>
+            </ol>
+          </article>
+          <article class="tool-card">
+            <h3>Protect dignity and privacy</h3>
+            <ul class="action-list">
+              <li>Do not ask the learner to repeat a distressing task for proof.</li>
+              <li>Do not share records through this toolkit or the community questionnaire.</li>
+              <li>Use an agreed secure channel before sending school, evaluation, medical, or identifying information.</li>
+              <li>Ask the learner what they notice and which supports feel useful.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prepare" style="background:var(--sand);">
+    <div class="container">
+      <span class="section-tag">School Conversation Kit</span>
+      <h2 class="section-heading">Bring examples, questions, and one requested next step</h2>
+      <p class="section-sub section-sub--wide">You do not need perfect terminology. Plain, specific observations can begin a productive conversation.</p>
+      <blockquote class="conversation-script">“I’m noticing a persistent pattern in [reading, spelling, writing, or language]. Here are two examples and the supports that helped. What are you seeing, what instruction is currently being provided, and how will we know whether it is helping?”</blockquote>
+      <div class="toolkit-two">
+        <article class="tool-card">
+          <h3>Questions to ask</h3>
+          <ul class="action-list">
+            <li>What specific skills or learning demands appear difficult?</li>
+            <li>What evidence has been collected, and what does it show?</li>
+            <li>What instruction is being provided, by whom, and how often?</li>
+            <li>How will progress be measured and communicated?</li>
+            <li>What will change if progress remains limited?</li>
+            <li>What access supports can be used while skills develop?</li>
+            <li>Who will follow up, and when will we talk again?</li>
+          </ul>
+        </article>
+        <article class="tool-card">
+          <h3>Before you leave</h3>
+          <ul class="action-list">
+            <li>Ask for plain-language explanations and an interpreter or accessible format when needed.</li>
+            <li>Write down the agreed next action, responsible person, and follow-up date.</li>
+            <li>Keep dated copies of important communications.</li>
+            <li>Include the learner in an age-appropriate, respectful way.</li>
+          </ul>
+          <p class="source-note">A meeting, screening result, diagnosis, or private report does not automatically determine eligibility for an IEP or Section 504 plan.</p>
+        </article>
+      </div>
+      <div class="section-actions"><a class="btn-ocean" href="#local-help">Find Washington or Hawaiʻi school guidance →</a></div>
+    </div>
+  </section>
+
+  <section id="understand">
+    <div class="container">
+      <span class="section-tag">Understand the options</span>
+      <h2 class="section-heading">Screening, evaluation, diagnosis, instruction, and access are different</h2>
+      <p class="section-sub section-sub--wide">Each can answer a different question. No single score, checklist, or response explains the whole learner.</p>
+      <div class="definition-grid">
+        <article class="definition-card"><h3>Screening</h3><p>A brief process that can identify possible risk or a need for closer attention. Screening does not diagnose dyslexia and is not a comprehensive evaluation.</p></article>
+        <article class="definition-card"><h3>Comprehensive evaluation</h3><p>Uses multiple sources of information to investigate strengths, needs, possible explanations, and instructional implications across all relevant areas.</p></article>
+        <article class="definition-card"><h3>Diagnosis and school eligibility</h3><p>These are related but distinct determinations. A clinical diagnosis does not automatically establish school eligibility, and an existing diagnosis is not required to request a school evaluation.</p></article>
+      </div>
+      <p class="source-note">Federal IDEA regulations explicitly distinguish instructional screening from evaluation. See the <a href="https://sites.ed.gov/idea/regs/b/d" target="_blank" rel="noopener noreferrer">U.S. Department of Education evaluation regulations ↗</a>.</p>
+
+      <div class="resource-region" id="support-now">
+        <h2>Support can begin while questions remain open</h2>
+        <p>Ask what explicit, systematic, cumulative, and responsive instruction is available and what access supports can protect participation while skills develop.</p>
+        <div class="toolkit-two">
+          <article class="tool-card">
+            <h3>Ask about instruction and access</h3>
+            <ul class="action-list">
+              <li>What is being taught, and how was the starting point chosen?</li>
+              <li>How does instruction respond to current learner evidence?</li>
+              <li>How will the learner access grade-level ideas and participation while skills develop?</li>
+              <li>When will progress evidence be reviewed and the plan reconsidered?</li>
+            </ul>
+          </article>
+          <article class="tool-card">
+            <h3>Evaluate a service or provider</h3>
+            <ul class="action-list">
+              <li>What does a typical session include?</li>
+              <li>What relevant qualifications and experience does the provider have?</li>
+              <li>How will progress and uncertainty be explained?</li>
+              <li>How are strengths, dignity, access needs, and personal information protected?</li>
+              <li>What are the schedule, total costs, cancellation terms, and current availability?</li>
+            </ul>
+          </article>
+        </div>
+        <div class="calm-note" style="margin-top:1.5rem;"><strong>Be cautious with guarantees.</strong> A responsible provider should not promise a cure, a fixed-time result, a diagnosis from one brief screener, or one method that fits every learner.</div>
+        <p class="source-note">Federal guidance says intervention or MTSS should not be used to delay or deny a full evaluation when a disability is suspected. Review the <a href="https://sites.ed.gov/idea/idea-files/rts-qa-child-find-part-b-08-24-2021/" target="_blank" rel="noopener noreferrer">U.S. Department of Education Child Find guidance ↗</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="local-help" style="background:var(--sand);">
+    <div class="container">
+      <span class="section-tag">Current public guidance</span>
+      <h2 class="section-heading">Use the process for your location and setting</h2>
+      <p class="section-sub section-sub--wide">Washington and Hawaiʻi use different procedures and timelines. Verify current requirements with the responsible school system or agency.</p>
+      <div class="resource-grid">
+        <article class="resource-card state-card"><span class="resource-meta">Washington public schools</span><h3>Start with a written referral <span>Guidance verified August 21, 2026</span></h3><p>OSPI states that a special-education referral must be in writing; email may be used. Include concerns, examples, and all suspected areas, and keep a copy. Current OSPI guidance states 25 school days for the decision whether to evaluate and 35 school days after written consent to complete the initial evaluation.</p><a href="https://ospi.k12.wa.us/student-success/special-education/family-engagement-and-guidance/making-referral-special-education" target="_blank" rel="noopener noreferrer">Open OSPI referral guidance ↗</a></article>
+        <article class="resource-card state-card"><span class="resource-meta">Hawaiʻi public schools</span><h3>Contact the neighborhood school <span>Guidance verified August 21, 2026</span></h3><p>HIDOE says a family may request an evaluation in person, by phone, letter, fax, email, or the state form. Explain all concerns that appear to affect learning. Current HIDOE guidance says the school responds within 15 days about whether an evaluation will be conducted, and parental consent is required before evaluation.</p><a href="https://hawaiipublicschools.org/school-services/does-my-child-have-a-disability-child-find/" target="_blank" rel="noopener noreferrer">Open HIDOE Child Find guidance ↗</a></article>
+        <article class="resource-card state-card"><span class="resource-meta">Verified directory</span><h3>Find family-navigation help <span>National · Washington · Hawaiʻi · Maui</span></h3><p>Use Lokahi Connect’s reviewed directory for parent-training centers, dyslexia information, screening and evaluation guidance, and local community navigation.</p><a href="resources.html#screening-evaluation">Browse screening, evaluation, and local resources →</a></article>
+      </div>
+
+      <div class="resource-region" id="teen-adult">
+        <h2>Support for teens and adults</h2>
+        <p>Support needs can continue or become more visible when reading and writing demands change. Begin with the setting where access is needed.</p>
+        <div class="toolkit-two">
+          <article class="tool-card"><h3>College or training</h3><p>Contact the institution’s disability or access office early. Ask which documentation it requires and how to request academic adjustments. Postsecondary responsibilities differ from K–12, and an earlier IEP or 504 plan may not satisfy every documentation requirement.</p><p class="source-note"><a href="https://www.ed.gov/higher-education/students-disabilities-preparing-postsecondary-education" target="_blank" rel="noopener noreferrer">Read the U.S. Department of Education postsecondary guide ↗</a></p></article>
+          <article class="tool-card"><h3>Workplace</h3><p>An applicant or employee can request a workplace change in plain language by explaining that it is needed because of a disability or medical condition. No special legal phrase is required. Accommodation questions depend on the individual, the job, and applicable law; a request does not guarantee a particular result.</p><p class="source-note"><a href="https://www.eeoc.gov/laws/guidance/enforcement-guidance-reasonable-accommodation-and-undue-hardship-under-ada" target="_blank" rel="noopener noreferrer">Review EEOC accommodation guidance ↗</a></p></article>
+        </div>
+      </div>
+
+      <div class="urgent-note"><h3>When a concern feels urgent</h3><p>An urgent learning concern is not always an emergency. If the learner is safe, begin with the observation and conversation steps above. Lokahi Connect does not provide crisis response. In the United States, call 911 for immediate physical danger or a medical emergency. For mental-health, suicide, or substance-use crisis support, call or text 988 or use <a href="https://988lifeline.org/get-help/" target="_blank" rel="noopener noreferrer">988 Lifeline chat ↗</a>.</p></div>
+    </div>
+  </section>
+
+  <section id="learn-together">
+    <div class="container">
+      <span class="section-tag">Families, educators, and partners</span>
+      <h2 class="section-heading">Keep the conversation connected to action</h2>
+      <p class="section-sub section-sub--wide">Clear two-way communication, practical family activities, accessible information, and shared progress evidence can help families and educators move from concern to coordinated support.</p>
+      <div class="resource-grid">
+        <article class="resource-card"><span class="resource-meta">Current opportunities</span><h3>Learning and events</h3><p>See current student learning, educator learning, community events, online access, and email-update options. Unconfirmed events are not posted.</p><a href="programs-and-impact.html#current-availability">See current availability →</a></article>
+        <article class="resource-card"><span class="resource-meta">Family engagement</span><h3>Evidence-based planning</h3><p>REL Northwest offers a short worksheet for strengthening family-school literacy communication, accessibility, confidence, and practical support.</p><a href="https://ies.ed.gov/use-work/resource-library/resource/other-resource/strengthen-literacy-through-family-engagement" target="_blank" rel="noopener noreferrer">Open the IES family-engagement resource ↗</a></article>
+        <article class="resource-card"><span class="resource-meta">Open learning tool</span><h3>Lokahi WORD Project Student Lab</h3><p>Explore a free online structured word investigation tool with read-aloud support and scaffolded activities.</p><a href="https://lokahi-connect.github.io/lokahi-word-project-student-lab/" target="_blank" rel="noopener noreferrer">Launch the Student Lab ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="community-voice" style="background:var(--white);">
+    <div class="container">
+      <div class="cta-panel">
+        <h2>Help shape the support communities need next</h2>
+        <p>Tell Lokahi Connect which questions, age groups, locations, languages, access needs, or learning opportunities are being overlooked. The questionnaire prepares an email on your device and asks you not to include learner records or identifying information.</p>
+        <div class="section-actions"><a class="btn-primary" href="community-feedback.html">Share community feedback →</a><a class="btn-white" href="programs-and-impact.html#service-inquiry">Ask about current support →</a></div>
+      </div>
+      <div class="partner-panel">
+        <h3>For community partners and funders</h3>
+        <p>Partners can help host family or educator conversations, expand financial access, or support captions, translation, open resources, and community learning. Begin with a bounded conversation about current need, fit, capacity, intended outcomes, and how the work would be evaluated.</p>
+        <div class="section-actions"><a class="btn-ocean" href="get-involved.html">Explore partnership and support →</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+    <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2026 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
+    <div class="footer-meta" style="text-align:right"><p><a href="about.html">About</a> · <a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a> · <a href="dyslexia.html">Dyslexia</a></p><p><a href="resources.html">Resources</a> · <a href="/tutorbird/">Parent Portal</a> · <a href="community-feedback.html">Community Feedback</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="https://givebutter.com/bl1HIO" target="_blank" rel="noopener noreferrer">Donate</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a></p></div>
+  </div>
+</footer>
+<script src="site-navigation.js?v=20260820-1"></script>
+</body>
+</html>

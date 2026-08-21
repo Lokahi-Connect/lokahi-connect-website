@@ -29,6 +29,11 @@
     .program-card > p { font-size: 0.97rem; line-height: 1.75; color: var(--muted); flex: 1; margin-bottom: 1.2rem; }
     .audience-badge { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; background: rgba(13,90,138,0.08); color: var(--ocean); padding: 0.35rem 0.85rem; border-radius: 2rem; margin-bottom: 1.2rem; }
     .program-card .program-cta { margin-top: auto; }
+    .service-snapshot { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.8rem 0 0; }
+    .service-snapshot div { padding: 1rem 1.1rem; border-radius: 0.9rem; background: var(--white); box-shadow: 0 4px 16px rgba(10,24,40,0.06); }
+    .service-snapshot strong { display: block; margin-bottom: 0.2rem; color: var(--ink); font-family: var(--heading); font-size: 1.05rem; }
+    .service-snapshot span { color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+    .field-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .story-section { background: var(--sand); }
     .story-card { background: var(--white); border-radius: 1.25rem; padding: 2.5rem 2.25rem; border-left: 6px solid var(--seafoam); box-shadow: 0 4px 20px rgba(26,26,46,0.08); max-width: 860px; }
     .story-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--seafoam); margin-bottom: 1rem; display: block; }
@@ -61,6 +66,7 @@
       .flow-item:not(:last-child)::after { content: '↕'; right: auto; left: 50%; top: auto; bottom: -1.1rem; transform: translateX(-50%); }
       .flow-item { min-width: unset; }
       .reach-metrics { flex-direction: column; gap: 1.2rem; }
+      .service-snapshot, .field-pair { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -114,26 +120,32 @@
     <div class="container"><div class="reveal">
       <span class="section-tag">Updated August 20, 2026</span>
       <h2 class="section-heading">Current services and availability</h2>
-      <p class="section-sub section-sub--wide">Lokahi Connect currently offers an open online Student Lab. Student learning and educator professional development begin with an inquiry so fit, format, location, and availability can be confirmed individually.</p>
+      <p class="section-sub section-sub--wide">Lokahi Connect currently offers online student learning for all ages, an open online Student Lab, and educator professional development by inquiry. Availability is confirmed individually.</p>
       <div class="availability-summary">
         <div>
           <p><strong>Inquiries are welcome.</strong> A website inquiry does not promise placement, scheduling, in-person availability, or a particular service format.</p>
         </div>
         <a href="#service-inquiry" class="btn-ocean">Tell us what you need ↓</a>
       </div>
+      <div class="service-snapshot" aria-label="Student learning at a glance">
+        <div><strong>All ages</strong><span>Individualized online student learning</span></div>
+        <div><strong>30 minutes · $75</strong><span>Shorter focused online session</span></div>
+        <div><strong>50 minutes · $120</strong><span>Longer online session</span></div>
+      </div>
       <div class="programs-grid">
         <article class="program-card" id="student-learning">
           <span class="status-badge">Inquiry only</span>
           <h3>Student learning</h3>
           <span class="audience-badge">Designed for students</span>
-          <p>Individualized Lokahi WORD Project instruction may be offered in structured, inquiry-based formats paced to support transfer rather than memorization.</p>
+          <p>Individualized online support is paced to make learning manageable and transferable.</p>
           <ul class="fact-list">
-            <li><strong>For:</strong> learners who need more coherent spelling instruction or benefit from explicit, structure-based teaching</li>
-            <li><strong>What may be included:</strong> guided word investigation, explicit instruction, practice, and documentation of learner evidence</li>
-            <li><strong>Location:</strong> ask about current Bainbridge Island, Maui, or remote options</li>
+            <li><strong>For:</strong> learners of all ages</li>
+            <li><strong>May include:</strong> literacy instruction, educational therapy, ADHD coaching, or academic support based on fit</li>
+            <li><strong>Online sessions:</strong> 30 minutes for $75 or 50 minutes for $120</li>
+            <li><strong>Optional initial plan:</strong> when appropriate, a comprehensive profile and written service plan is $425</li>
             <li><strong>Availability:</strong> confirmed individually; no placement or schedule is promised by this page</li>
-            <li><strong>Age range, format, duration, and fees:</strong> not published; ask what currently applies</li>
           </ul>
+          <p style="font-size:0.85rem;margin-bottom:1.2rem;">Limited financial assistance may be available through Lokahi Connect’s nonprofit financial-access program, depending on funding and capacity.</p>
           <a href="#service-inquiry" class="btn-ocean program-cta js-inquiry-interest" data-inquiry-interest="Student learning">Ask about student learning ↓</a>
         </article>
         <article class="program-card" id="educator-learning">
@@ -212,10 +224,14 @@
 
         <aside class="updates-panel" id="email-updates">
           <h3>Request email updates</h3>
-          <p>Receive occasional news about learning opportunities, family resources, educator learning, and community work. This website does not save this request. You are not added to an updates list until Lokahi Connect confirms.</p>
+          <p>Receive occasional news about learning opportunities, family resources, educator learning, and community work. Your email app will open with a prepared request; review and send it to sign up.</p>
           <form class="feedback-form compact-form" id="updates-request-form" novalidate>
             <fieldset>
               <legend class="visually-hidden">Email update request</legend>
+              <div class="field-pair">
+                <div class="form-field"><label for="updates-first-name">First name <span class="form-hint">Optional</span></label><input id="updates-first-name" name="first_name" type="text" autocomplete="given-name" /></div>
+                <div class="form-field"><label for="updates-last-name">Last name <span class="form-hint">Optional</span></label><input id="updates-last-name" name="last_name" type="text" autocomplete="family-name" /></div>
+              </div>
               <div class="form-field"><label for="updates-email">Email address for updates <span aria-hidden="true">*</span></label><input id="updates-email" name="email" type="email" autocomplete="email" required /></div>
               <div class="form-field"><label for="updates-topic">Updates I’m interested in <span class="form-hint">Optional</span></label><select id="updates-topic" name="topic"><option>All updates</option><option>Family resources</option><option>Educator learning and events</option><option>Community and partner news</option></select></div>
               <label class="consent-row"><input type="checkbox" name="updates_consent" required /> <span>I request occasional email updates from Lokahi Connect and understand that I may unsubscribe at any time. <span aria-hidden="true">*</span></span></label>
@@ -223,7 +239,8 @@
             <div class="form-actions"><button type="submit" class="btn-ocean">Prepare signup request →</button><button type="button" class="btn-ocean" id="copy-updates">Copy request</button></div>
             <p class="form-status" id="updates-status" role="status" aria-live="polite"></p>
           </form>
-          <p class="direct-email">Prefer email? Send an <a href="mailto:info@lokahiconnect.org?subject=Email%20updates%20request">email updates request</a> directly.</p>
+          <p class="direct-email">Subscriber records retain only your optional name, email address, signup date, update preference, and subscription status. Do not include learner or school records.</p>
+          <p class="direct-email">Prefer email? Send an <a href="mailto:info@lokahiconnect.org?subject=Email%20updates%20request%20%E2%80%94%20All%20updates&amp;body=Lokahi%20Connect%20email%20updates%20signup%0A%0AFirst%20name%3A%20Not%20offered%0ALast%20name%3A%20Not%20offered%0AUpdates%20requested%3A%20All%20updates%0ASignup%20source%3A%20Direct%20website%20email%20link%0A%0AConsent%3A%20I%20request%20occasional%20email%20updates%20from%20Lokahi%20Connect%20and%20understand%20that%20I%20may%20unsubscribe%20at%20any%20time.">email updates request</a> directly.</p>
         </aside>
       </div>
     </div></div>
@@ -292,6 +309,6 @@
 </footer>
 <script src="site-navigation.js?v=20260820-1"></script>
 <script src="feedback.js"></script>
-<script src="programs-connect.js?v=20260820-1"></script>
+<script src="programs-connect.js?v=20260820-2"></script>
 </body>
 </html>

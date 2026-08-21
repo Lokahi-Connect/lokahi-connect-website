@@ -11,6 +11,7 @@ const pages = [
   'programs-and-impact.html',
   'dyslexia.html',
   'resources.html',
+  'family-community-toolkit.html',
   'community-feedback.html',
   'get-involved.html',
   'nondiscrimination-policy.html',
@@ -48,7 +49,12 @@ for (const page of pages) {
   check(occurrences(html, /<h1\b/gi) === 1, `${page}: expected exactly one h1`);
   check(occurrences(html, /<main\b/gi) === 1, `${page}: expected exactly one main`);
   check(occurrences(html, /class=["'][^"']*\bskip-link\b[^"']*["']/gi) === 1, `${page}: expected exactly one skip link`);
-  check(occurrences(html, /aria-current=["']page["']/gi) === 1, `${page}: expected exactly one current-page marker`);
+  check(occurrences(html, /aria-current=["'](?:page|location)["']/gi) === 1, `${page}: expected exactly one current-page or current-location marker`);
+  if (page === 'family-community-toolkit.html') {
+    check(/href=["']resources\.html["'][^>]*aria-current=["']location["']/i.test(html), `${page}: Resources must be identified as the current section location`);
+  } else {
+    check(occurrences(html, /aria-current=["']page["']/gi) === 1, `${page}: expected exactly one current-page marker`);
+  }
   check(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']https:\/\/www\.lokahiconnect\.org\//i.test(html), `${page}: canonical URL is missing`);
   check(/<meta\b[^>]*property=["']og:title["']/i.test(html), `${page}: Open Graph title is missing`);
   check(/<meta\b[^>]*property=["']og:description["']/i.test(html), `${page}: Open Graph description is missing`);
@@ -109,12 +115,15 @@ for (const text of ['Start with what brought you here', 'Maui, Hawaiʻi · Onlin
 check(home.includes('https://lokahi-connect.github.io/lokahi-word-project-student-lab/'), 'homepage Student Lab destination is incorrect');
 
 const programs = contents.get('programs-and-impact.html') ?? '';
-for (const text of ['id="current-availability"', 'id="student-learning"', 'id="educator-learning"', 'id="digital-resources"', 'id="events"', 'id="service-inquiry"', 'id="email-updates"', 'id="service-inquiry-form"', 'id="updates-request-form"', 'Bainbridge Island, Washington', 'Maui, Hawaiʻi', 'Remote and online access', 'No public events are currently listed', 'this website does not save or send your answers', 'not added to an updates list until Lokahi Connect confirms']) {
+for (const text of ['id="current-availability"', 'id="student-learning"', 'id="educator-learning"', 'id="digital-resources"', 'id="events"', 'id="service-inquiry"', 'id="email-updates"', 'id="service-inquiry-form"', 'id="updates-request-form"', 'Bainbridge Island, Washington', 'Maui, Hawaiʻi', 'Remote and online access', 'No public events are currently listed', 'this website does not save or send your answers']) {
   check(programs.includes(text), `programs required content is missing: ${text}`);
 }
 check(!/<span class="score-val">[123]<\/span>/.test(programs), 'program evidence cards must not look like numerical scores');
 check(!/<form\b[^>]*\baction=/i.test(programs), 'program inquiry forms must not submit to an undisclosed endpoint');
-check(/programs-connect\.js\?v=20260820-1/.test(programs), 'program inquiry and update-request script is missing');
+check(/programs-connect\.js\?v=20260820-2/.test(programs), 'program inquiry and update-request script is missing');
+for (const text of ['learners of all ages', '30 minutes for $75', '50 minutes for $120', 'comprehensive profile and written service plan is $425', 'name="first_name"', 'name="last_name"', 'Subscriber records retain only']) {
+  check(programs.includes(text), `program availability, pricing, or subscriber control is missing: ${text}`);
+}
 
 const about = contents.get('about.html') ?? '';
 for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive Director', 'CERI and NILD certifications', 'serves on the Board of Directors for the Washington State Branch of the International Dyslexia Association', 'https://www.wabida.org/about-us', 'assets/stephanie-steinshouer-headshot.jpg', 'Portrait of Stephanie Steinshouer']) {
@@ -131,10 +140,46 @@ const approach = contents.get('our-approach.html') ?? '';
 check(approach.includes('programs-and-impact.html#current-availability'), 'approach page early opportunity action is missing');
 
 const resources = contents.get('resources.html') ?? '';
-for (const text of ['id="screening-evaluation"', 'id="washington"', 'id="hawaii"', 'id="maui"', 'id="swi-research"', 'last reviewed August 20, 2026']) {
+for (const text of ['id="family-community-toolkit"', 'family-community-toolkit.html', 'id="screening-evaluation"', 'id="washington"', 'id="hawaii"', 'id="maui"', 'id="swi-research"', 'last reviewed August 21, 2026']) {
   check(resources.includes(text), `resources required content is missing: ${text}`);
 }
 check(resources.includes('programs-and-impact.html#service-inquiry'), 'resources page early support action is missing');
+
+const toolkit = contents.get('family-community-toolkit.html') ?? '';
+for (const text of [
+  'id="start-here"',
+  'id="notice"',
+  'id="prepare"',
+  'id="understand"',
+  'id="support-now"',
+  'id="local-help"',
+  'id="teen-adult"',
+  'id="learn-together"',
+  'id="community-voice"',
+  'School Conversation Kit',
+  'Screening does not diagnose dyslexia',
+  'Guidance verified August 21, 2026',
+  'child, adolescent, or adult',
+  'does not provide crisis response',
+  'Family &amp; Community Toolkit'
+]) {
+  check(toolkit.includes(text), `family toolkit required content is missing: ${text}`);
+}
+for (const href of [
+  'resources.html#screening-evaluation',
+  'community-feedback.html',
+  'programs-and-impact.html#service-inquiry',
+  'get-involved.html',
+  'https://sites.ed.gov/idea/regs/b/d',
+  'https://ospi.k12.wa.us/student-success/special-education/family-engagement-and-guidance/making-referral-special-education',
+  'https://hawaiipublicschools.org/school-services/does-my-child-have-a-disability-child-find/',
+  'https://www.ed.gov/higher-education/students-disabilities-preparing-postsecondary-education',
+  'https://988lifeline.org/get-help/'
+]) {
+  check(toolkit.includes(`href="${href}"`), `family toolkit required destination is missing: ${href}`);
+}
+check(!/<form\b/i.test(toolkit), 'family toolkit must not collect learner or family information');
+check(!/guaranteed results|diagnostic quiz|symptom score/i.test(toolkit), 'family toolkit contains prohibited diagnostic or outcome language');
 
 const questionnaire = contents.get('community-feedback.html') ?? '';
 for (const text of ['community-feedback-form', 'overlooked', 'contact_permission', 'quote_permission', 'does not save these responses', 'not for emergencies']) {
@@ -151,7 +196,7 @@ for (const text of ['https://www.tutorbird.com/privacy-policy/', "frame.title = 
   check(portal.includes(text), `Parent Portal control is missing: ${text}`);
 }
 
-for (const file of ['robots.txt', 'sitemap.xml', 'docs/reviews/EXTERNAL-LINK-REVIEW-2026-08-20.md']) {
+for (const file of ['robots.txt', 'sitemap.xml', 'docs/reviews/EXTERNAL-LINK-REVIEW-2026-08-20.md', 'docs/reviews/EXTERNAL-LINK-REVIEW-2026-08-21.md']) {
   check(fs.existsSync(path.join(repoRoot, file)), `required publication artifact is missing: ${file}`);
 }
 const sitemap = fs.readFileSync(path.join(repoRoot, 'sitemap.xml'), 'utf8');
@@ -169,7 +214,7 @@ for (const behavior of ['validateGroups', 'validateContact', 'buildCommunityFeed
   check(feedbackScript.includes(behavior), `community-feedback.js: expected behavior is missing: ${behavior}`);
 }
 const programsConnectScript = fs.readFileSync(path.join(repoRoot, 'programs-connect.js'), 'utf8');
-for (const behavior of ['buildServiceInquiryEmail', 'buildEmailUpdatesRequest', 'navigator.clipboard', 'mailto:', '.js-inquiry-interest']) {
+for (const behavior of ['buildServiceInquiryEmail', 'buildEmailUpdatesRequest', 'navigator.clipboard', 'mailto:', '.js-inquiry-interest', 'First name:', 'Last name:', 'Signup source: Website email request']) {
   check(programsConnectScript.includes(behavior), `programs-connect.js: expected privacy-conscious behavior is missing: ${behavior}`);
 }
 

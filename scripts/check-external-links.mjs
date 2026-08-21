@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pages = [
   'index.html', 'about.html', 'our-approach.html', 'programs-and-impact.html',
-  'dyslexia.html', 'resources.html', 'community-feedback.html', 'get-involved.html',
+  'dyslexia.html', 'resources.html', 'family-community-toolkit.html', 'community-feedback.html', 'get-involved.html',
   'nondiscrimination-policy.html', 'tutorbird/index.html'
 ];
 
@@ -26,6 +26,7 @@ const browserReviewedDomains = new Set([
 async function checkUrl(url) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 25000);
+  const domain = new URL(url).hostname;
   try {
     const response = await fetch(url, {
       method: 'GET',
@@ -36,7 +37,6 @@ async function checkUrl(url) {
       },
       signal: controller.signal
     });
-    const domain = new URL(url).hostname;
     if (response.ok || response.status === 206) return { status: 'PASS', code: response.status, url, finalUrl: response.url };
     if (browserReviewedDomains.has(domain) && [401, 403, 429].includes(response.status)) {
       return { status: 'MANUAL', code: response.status, url, finalUrl: response.url };

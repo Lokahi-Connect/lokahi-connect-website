@@ -86,14 +86,19 @@
   var copyUpdates = document.getElementById('copy-updates');
 
   function buildEmailUpdatesRequest() {
+    var firstName = value(updatesForm, 'first_name');
+    var lastName = value(updatesForm, 'last_name');
     var email = value(updatesForm, 'email');
     var topic = value(updatesForm, 'topic') || 'All updates';
     var subject = 'Email updates request — ' + topic;
     var body = [
-      'Please add this address to Lokahi Connect email updates:',
-      email,
+      'Lokahi Connect email updates signup',
       '',
-      'Requested topic: ' + topic,
+      'First name: ' + (firstName || 'Not offered'),
+      'Last name: ' + (lastName || 'Not offered'),
+      'Email address: ' + email,
+      'Updates requested: ' + topic,
+      'Signup source: Website email request',
       '',
       'Consent: I request occasional email updates from Lokahi Connect and understand that I may unsubscribe at any time.'
     ].join('\n');
