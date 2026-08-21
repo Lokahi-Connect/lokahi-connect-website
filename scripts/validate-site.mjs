@@ -15,6 +15,7 @@ const pages = [
   'community-feedback.html',
   'get-involved.html',
   'nondiscrimination-policy.html',
+  'privacy.html',
   'tutorbird/index.html'
 ];
 
@@ -69,7 +70,9 @@ for (const page of pages) {
   check(/>Community Feedback<\/a>/i.test(footer), `${page}: footer Community Feedback link is missing`);
   check(!/english-orthography\.netlify\.app|>\s*Presentation\s*<\/a>/i.test(html), `${page}: removed presentation link remains`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260820-1["']/i.test(html), `${page}: shared navigation script is missing`);
-  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260820-5["']/i.test(html), `${page}: current shared stylesheet is missing`);
+  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260821-1["']/i.test(html), `${page}: current shared stylesheet is missing`);
+  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-analytics\.js\?v=20260821-1["']/i.test(html), `${page}: consent-controlled analytics script is missing`);
+  check(/>Privacy &amp; Analytics<\/a>/i.test(footer), `${page}: footer Privacy & Analytics link is missing`);
   check(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/favicon\.svg["'][^>]*type=["']image\/svg\+xml["']/i.test(html), `${page}: SVG favicon link is missing`);
   check(/<meta\b[^>]*name=["']theme-color["'][^>]*content=["']#0D5A8A["']/i.test(html), `${page}: browser theme color is missing`);
   check(html.includes(page === 'index.html' ? 'class="hero-visual"' : 'class="page-visual-shell"'), `${page}: page visual is missing`);
@@ -191,12 +194,17 @@ const policy = contents.get('nondiscrimination-policy.html') ?? '';
 check(/id=["']reporting["']/.test(policy), 'policy reporting anchor is missing');
 check(/<button\b[^>]*class=["']ra-launch["'][^>]*disabled/i.test(policy), 'policy narration control must start disabled pending audio verification');
 
+const privacy = contents.get('privacy.html') ?? '';
+for (const text of ['G-727LCMWN8K', 'Analytics is optional', 'Advertising and cross-device signals remain off', 'data-analytics-preferences', 'not intentionally sent to Google Analytics']) {
+  check(privacy.includes(text), `privacy notice required content is missing: ${text}`);
+}
+
 const portal = contents.get('tutorbird/index.html') ?? '';
 for (const text of ['https://www.tutorbird.com/privacy-policy/', "frame.title = 'Tutorbird parent portal login'", "frame.setAttribute('aria-label', 'Tutorbird parent portal login')", 'portal-accessibility-help', 'MutationObserver']) {
   check(portal.includes(text), `Parent Portal control is missing: ${text}`);
 }
 
-for (const file of ['robots.txt', 'sitemap.xml', 'docs/reviews/EXTERNAL-LINK-REVIEW-2026-08-20.md', 'docs/reviews/EXTERNAL-LINK-REVIEW-2026-08-21.md']) {
+for (const file of ['robots.txt', 'sitemap.xml', 'docs/analytics/GOOGLE-ANALYTICS-CONFIG.md', 'docs/reviews/EXTERNAL-LINK-REVIEW-2026-08-20.md', 'docs/reviews/EXTERNAL-LINK-REVIEW-2026-08-21.md']) {
   check(fs.existsSync(path.join(repoRoot, file)), `required publication artifact is missing: ${file}`);
 }
 const sitemap = fs.readFileSync(path.join(repoRoot, 'sitemap.xml'), 'utf8');
@@ -217,6 +225,13 @@ const programsConnectScript = fs.readFileSync(path.join(repoRoot, 'programs-conn
 for (const behavior of ['buildServiceInquiryEmail', 'buildEmailUpdatesRequest', 'navigator.clipboard', 'mailto:', '.js-inquiry-interest', 'First name:', 'Last name:', 'Signup source: Website email request']) {
   check(programsConnectScript.includes(behavior), `programs-connect.js: expected privacy-conscious behavior is missing: ${behavior}`);
 }
+
+const analyticsScript = fs.readFileSync(path.join(repoRoot, 'site-analytics.js'), 'utf8');
+for (const behavior of ['G-727LCMWN8K', "analytics_storage: 'denied'", "ad_storage: 'denied'", 'allow_google_signals: false', 'allow_ad_personalization_signals: false', 'data-lokahi-google-tag', 'lokahi_analytics_consent_v1']) {
+  check(analyticsScript.includes(behavior), `site-analytics.js: required privacy or measurement control is missing: ${behavior}`);
+}
+check(!/googletagmanager\.com\/gtag\/js/.test(allHtml), 'Google tag must not load directly before visitor consent');
+check(/LokahiAnalytics\.hasConsent\(\)/.test(fs.readFileSync(path.join(repoRoot, 'feedback.js'), 'utf8')), 'feedback event must require analytics consent');
 
 if (errors.length) {
   console.error(`Site validation failed with ${errors.length} error(s):`);
