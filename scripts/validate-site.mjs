@@ -14,6 +14,7 @@ const pages = [
   'family-community-toolkit.html',
   'community-feedback.html',
   'get-involved.html',
+  'give.html',
   'nondiscrimination-policy.html',
   'privacy.html',
   'tutorbird/index.html'
@@ -64,7 +65,7 @@ for (const page of pages) {
   const nav = html.match(/<nav\b[^>]*aria-label=["']Primary navigation["'][\s\S]*?<\/nav>/i)?.[0] ?? '';
   const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? '';
   check(/class=["'][^"']*\bnav-toggle\b/i.test(nav) && /aria-controls=["']primary-navigation["']/i.test(nav), `${page}: mobile navigation control is missing`);
-  for (const label of ['Home', 'About', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Parent Portal', 'Get Involved']) {
+  for (const label of ['Home', 'About', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Parent Portal', 'Give']) {
     check(nav.includes(`>${label}</a>`), `${page}: primary navigation is missing ${label}`);
   }
   check(/>Community Feedback<\/a>/i.test(footer), `${page}: footer Community Feedback link is missing`);
@@ -190,12 +191,37 @@ for (const text of ['community-feedback-form', 'overlooked', 'contact_permission
 }
 check(/community-feedback\.js\?v=20260820-2/.test(questionnaire), 'questionnaire script is missing');
 
+const give = contents.get('give.html') ?? '';
+for (const text of [
+  'Language should make sense.',
+  'Access should not depend on a family’s resources.',
+  '<givebutter-widget id="LWkGmQ"',
+  'https://givebutter.com/ARzvHK',
+  'Specific donor impact',
+  'Matches the full published price of one 30-minute online student-learning session.',
+  'Matches the full published price of one 50-minute online student-learning session.',
+  'Matches the published price of a comprehensive profile and written service plan',
+  'transparent service-cost equivalents',
+  'Give monthly',
+  'Recommend a DAF grant',
+  'Discuss a funding partnership',
+  '501(c)(3) nonprofit',
+  'EIN 33-3985311',
+  'privacy.html#donation-forms',
+  'about.html#leadership',
+  'Financial information'
+]) {
+  check(give.includes(text), `giving page required content or boundary is missing: ${text}`);
+}
+check(!/Seed \(\$1,000\)|Root \(\$10,000\)|Grove|May support|may support/.test(give), 'giving page contains unsupported or vague impact tiers');
+check(give.indexOf('<givebutter-widget id="LWkGmQ"') < give.indexOf('id="impact"'), 'giving form must appear before the detailed impact section');
+
 const policy = contents.get('nondiscrimination-policy.html') ?? '';
 check(/id=["']reporting["']/.test(policy), 'policy reporting anchor is missing');
 check(/<button\b[^>]*class=["']ra-launch["'][^>]*disabled/i.test(policy), 'policy narration control must start disabled pending audio verification');
 
 const privacy = contents.get('privacy.html') ?? '';
-for (const text of ['G-727LCMWN8K', 'Analytics is optional', 'Advertising and cross-device signals remain off', 'data-analytics-preferences', 'not intentionally sent to Google Analytics']) {
+for (const text of ['G-727LCMWN8K', 'Analytics is optional', 'Advertising and cross-device signals remain off', 'data-analytics-preferences', 'not intentionally sent to Google Analytics', 'id="donation-forms"', 'The Give page contains an embedded Givebutter donation form']) {
   check(privacy.includes(text), `privacy notice required content is missing: ${text}`);
 }
 

@@ -18,37 +18,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css?v=20260821-1" />
-  <script
-    async
-    src="https://widgets.givebutter.com/latest.umd.cjs?acct=POcpF0DdxgryWPz7&amp;p=other"
-  ></script>
   <style>
     .page-hero .hero-cta { margin-top: 1.8rem; }
     .ways-section { background: var(--cream); }
-    .ways-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; margin-top: 2.8rem; }
-    .donation-widget-shell { max-width: 720px; margin: 2.5rem auto 0; }
-    .donation-widget-shell givebutter-widget { display: block; }
-    .way-card { background: var(--white); border-radius: 1.2rem; padding: 2rem 1.75rem; box-shadow: 0 2px 14px rgba(26,26,46,0.07); display: flex; flex-direction: column; border-top: 4px solid var(--sky); transition: transform 0.25s, box-shadow 0.25s; }
-    .way-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(26,26,46,0.12); }
-    .way-card:nth-child(1) { border-top-color: var(--seafoam); }
-    .way-card:nth-child(2) { border-top-color: var(--ocean); }
-    .way-card:nth-child(3) { border-top-color: var(--dusk); }
-    .way-card:nth-child(4) { border-top-color: var(--mahogany); }
-    .way-card h3 { font-family: var(--heading); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.75rem; }
-    .way-card p { font-size: 0.95rem; line-height: 1.75; color: var(--muted); flex: 1; margin-bottom: 1.4rem; }
-    .way-card .way-cta { margin-top: auto; }
-    .tiers-section { background: #0A1828; }
-    .tiers-section .section-tag { color: var(--seafoam); background: rgba(46,196,160,0.15); }
-    .tiers-section .section-heading { color: var(--white); }
-    .tiers-section .section-sub { color: rgba(255,255,255,0.68); }
-    .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; margin-top: 2.8rem; }
-    .tier-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 1.2rem; padding: 2.25rem 2rem; position: relative; transition: background 0.25s, transform 0.25s; }
-    .tier-card:hover { background: rgba(255,255,255,0.10); transform: translateY(-3px); }
-    .tier-card.featured { border-color: rgba(46,196,160,0.5); background: rgba(46,196,160,0.08); }
-    .tier-badge { position: absolute; top: -0.75rem; left: 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--seafoam); color: var(--ink); padding: 0.25rem 0.75rem; border-radius: 2rem; }
-    .tier-card .tier-name { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--seafoam); display: block; margin-bottom: 0.3rem; }
-    .tier-card .tier-amount { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); display: block; margin-bottom: 1rem; }
-    .tier-card p { font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.65); }
     .pathways-section { background: var(--sand); }
     .pathways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; margin-top: 2.8rem; }
     .pathway-card { background: var(--white); border-radius: 1.2rem; padding: 2rem 1.75rem; box-shadow: 0 2px 12px rgba(26,26,46,0.06); }
@@ -64,8 +36,6 @@
     .contact-card a.contact-link { font-size: 0.88rem; font-weight: 600; color: var(--ocean); text-decoration: none; border-bottom: 1px solid rgba(13,90,138,0.3); transition: color 0.2s; }
     .contact-card a.contact-link:hover { color: var(--sky); }
     @media (max-width: 768px) {
-      .ways-grid { grid-template-columns: 1fr; }
-      .tiers-grid { grid-template-columns: 1fr; }
       .pathways-grid { grid-template-columns: 1fr; }
       .spread-grid { grid-template-columns: 1fr; }
     }
@@ -84,7 +54,7 @@
     <li><a href="dyslexia.html">Dyslexia</a></li>
     <li><a href="resources.html">Resources</a></li>
     <li><a href="/tutorbird/">Parent Portal</a></li>
-    <li><a href="get-involved.html" class="nav-cta active" aria-current="page">Get Involved</a></li>
+    <li><a href="give.html" class="nav-cta">Give</a></li>
   </ul>
 </nav>
 <main id="main-content">
@@ -123,31 +93,11 @@
   <section class="ways-section">
     <div class="container"><div class="reveal">
       <span class="section-tag">Financial support</span>
-      <h2 class="section-heading">Choose how you support the work financially</h2>
-      <p class="section-sub">Choose a one-time or monthly gift below. Your support helps strengthen student learning, educator learning, and open-access resources.</p>
-      <div class="donation-widget-shell" aria-label="Lokahi Connect donation form">
-        <givebutter-widget id="LWkGmQ" align="center"></givebutter-widget>
-      </div>
-      <div class="ways-grid">
-        <article class="way-card"><h3>One-time or recurring gift</h3><p>Support the organization’s work in student learning, educator learning, and resource development. Program formats and availability vary.</p><a href="https://givebutter.com/ARzvHK" class="btn-primary way-cta" target="_blank" rel="noopener">Give Now ↗</a></article>
-        <article class="way-card"><h3>Institutional partnership</h3><p>Foundations, districts, and organizations can contact us to discuss possible support for curriculum development, educator learning, or implementation planning.</p><a href="programs-and-impact.html#service-inquiry" class="btn-ocean way-cta">Contact Us →</a></article>
-        <article class="way-card"><h3>Tribute or memorial gift</h3><p>Honor someone who believed in the power of literacy, language, and educational access.</p><a href="https://givebutter.com/ARzvHK" class="btn-primary way-cta" target="_blank" rel="noopener">Give in Honor ↗</a></article>
-        <article class="way-card"><h3>Legacy giving</h3><p>Include Lokahi Connect in a longer-range giving plan that helps sustain the work over time.</p><a href="mailto:info@lokahiconnect.org?subject=Legacy%20Giving%20Inquiry" class="btn-ocean way-cta">Contact Us →</a></article>
-      </div>
-    </div></div>
-  </section>
-  <section class="tiers-section">
-    <div class="container"><div class="reveal">
-      <span class="section-tag">Investment Levels</span>
-      <h2 class="section-heading">Examples of what gifts make possible</h2>
-      <div class="tiers-grid">
-        <div class="tier-card"><span class="tier-name">Seed</span><span class="tier-amount">$1,000</span><p>May support student learning materials and open resources.</p></div>
-        <div class="tier-card featured"><span class="tier-badge">Featured</span><span class="tier-name">Root</span><span class="tier-amount">$10,000</span><p>May support educator learning, coaching, or curriculum development.</p></div>
-        <div class="tier-card"><span class="tier-name">Grove</span><span class="tier-amount">$50,000</span><p>May support an implementation project, partnership, or capacity-building work.</p></div>
-        <div class="tier-card"><span class="tier-name">Canopy</span><span class="tier-amount">Custom</span><p>May support multi-year planning, implementation design, or long-range organizational growth.</p></div>
-      </div>
-      <div style="text-align:center; margin-top:2.5rem;">
-        <a href="https://givebutter.com/ARzvHK" class="btn-primary" target="_blank" rel="noopener">Donate Now ↗</a>
+      <h2 class="section-heading">A clearer path for financial support</h2>
+      <p class="section-sub section-sub--wide">The dedicated giving page brings the secure donation form, published service-cost examples, nonprofit information, donor privacy, monthly giving, donor-advised fund coordination, and larger-gift conversations into one focused place.</p>
+      <div class="section-actions">
+        <a href="give.html" class="btn-primary">Explore giving options →</a>
+        <a href="give.html#impact" class="btn-ocean">See specific gift examples →</a>
       </div>
     </div></div>
   </section>
@@ -169,7 +119,7 @@
       <div class="spread-grid">
         <div class="contact-card"><span class="contact-icon" aria-hidden="true">✉️</span><h3>Email Us</h3><p>Reach out with questions, partnership ideas, or to ask about current student-support availability.</p><a href="mailto:info@lokahiconnect.org" class="contact-link">info@lokahiconnect.org</a></div>
         <div class="contact-card"><span class="contact-icon" aria-hidden="true">🌐</span><h3>Student Lab</h3><p>Share the free, open-access Lokahi WORD Project Student Lab with educators and families everywhere.</p><a href="https://lokahi-connect.github.io/lokahi-word-project-student-lab/" target="_blank" rel="noopener" class="contact-link">Launch the Lab ↗</a></div>
-        <div class="contact-card"><span class="contact-icon" aria-hidden="true">💛</span><h3>Donate</h3><p>Your gift helps develop student learning resources, educator learning, and open-access tools.</p><a href="https://givebutter.com/ARzvHK" target="_blank" rel="noopener" class="contact-link">Give at Givebutter ↗</a></div>
+        <div class="contact-card"><span class="contact-icon" aria-hidden="true">💛</span><h3>Give</h3><p>Help expand financial access, educator learning, and open-access tools.</p><a href="give.html" class="contact-link">Explore giving options →</a></div>
       </div>
     </div></div>
   </section>
@@ -177,7 +127,7 @@
     <div class="container"><div class="reveal">
       <h2 class="section-heading" style="color:var(--white); margin-bottom:1rem;">Support literacy work that lasts</h2>
       <p style="font-size:1.05rem; line-height:1.75; color:rgba(255,255,255,0.75); max-width:540px; margin:0 auto 2rem;">Every gift to Lokahi Connect helps develop student learning resources, educator learning, and open-access tools.</p>
-      <a href="https://givebutter.com/ARzvHK" class="btn-primary" target="_blank" rel="noopener">Donate Now ↗</a>
+      <a href="give.html" class="btn-primary">Give to Lokahi Connect →</a>
     </div></div>
   </section>
 </main>
@@ -185,7 +135,7 @@
   <div class="footer-inner">
     <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
     <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2026 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
-    <div class="footer-meta" style="text-align:right"><p><a href="about.html">About</a> · <a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a> · <a href="dyslexia.html">Dyslexia</a></p><p><a href="resources.html">Resources</a> · <a href="/tutorbird/">Parent Portal</a> · <a href="community-feedback.html">Community Feedback</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="https://givebutter.com/ARzvHK" target="_blank" rel="noopener noreferrer">Donate</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a> · <a href="privacy.html">Privacy &amp; Analytics</a></p><p><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" onclick="trackFeedbackFormClick('footer')">Log a resource interaction ↗</a></p></div>
+    <div class="footer-meta" style="text-align:right"><p><a href="about.html">About</a> · <a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a> · <a href="dyslexia.html">Dyslexia</a></p><p><a href="resources.html">Resources</a> · <a href="/tutorbird/">Parent Portal</a> · <a href="community-feedback.html">Community Feedback</a></p><p><a href="get-involved.html" aria-current="page">Get Involved</a> · <a href="give.html">Give</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a> · <a href="privacy.html">Privacy &amp; Analytics</a></p><p><a href="https://airtable.com/appEDbkXoKtlrJPSR/pagaCJaWoG7oQDaQT/form" target="_blank" rel="noopener noreferrer" aria-label="Open the Log a Resource Interaction feedback form in a new tab" onclick="trackFeedbackFormClick('footer')">Log a resource interaction ↗</a></p></div>
   </div>
 </footer>
 <script src="site-analytics.js?v=20260821-1"></script>

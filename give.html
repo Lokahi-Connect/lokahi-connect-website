@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Give to Lokahi Connect to help expand financial access, educator learning, and open literacy tools for learners, families, and communities." />
+  <meta name="theme-color" content="#0D5A8A" />
+  <link rel="canonical" href="https://www.lokahiconnect.org/give.html" />
+  <meta property="og:title" content="Give — Lokahi Connect" />
+  <meta property="og:description" content="Help make coherent literacy support more accessible to learners, families, and educators." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.lokahiconnect.org/give.html" />
+  <meta property="og:image" content="https://www.lokahiconnect.org/assets/community-literacy-growth.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>Give — Lokahi Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_shared.css?v=20260821-1" />
+  <script
+    async
+    src="https://widgets.givebutter.com/latest.umd.cjs?acct=POcpF0DdxgryWPz7&amp;p=other"
+  ></script>
+  <style>
+    .giving-hero {
+      padding: 7.5rem 2.5rem 3rem;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(46,196,160,0.17), transparent 30%),
+        linear-gradient(145deg, #082f49 0%, #0D5A8A 52%, #176f9b 100%);
+      color: var(--white);
+    }
+    .giving-hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .giving-hero__copy { padding-top: clamp(0rem, 2vw, 1.25rem); }
+    .giving-hero .eyebrow {
+      display: inline-block;
+      margin-bottom: 1.1rem;
+      padding: 0.38rem 0.9rem;
+      border: 1px solid rgba(46,196,160,0.42);
+      border-radius: 2rem;
+      background: rgba(46,196,160,0.14);
+      color: var(--seafoam);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+    .giving-hero h1 {
+      max-width: 740px;
+      margin-bottom: 1.15rem;
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: clamp(2.55rem, 5vw, 4.25rem);
+      font-weight: 900;
+      line-height: 1.06;
+    }
+    .giving-hero h1 em { color: var(--seafoam); font-style: italic; }
+    .giving-hero__lead {
+      max-width: 650px;
+      margin-bottom: 1.35rem;
+      color: rgba(255,255,255,0.84);
+      font-size: 1.08rem;
+      line-height: 1.72;
+    }
+    .giving-form-card {
+      min-width: 0;
+      padding: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 1.3rem;
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 26px 70px rgba(3,20,33,0.36);
+      color: var(--ink);
+    }
+    .giving-form-card h2 {
+      margin: 0.25rem 0 0.25rem;
+      font-family: var(--heading);
+      font-size: 1.2rem;
+      line-height: 1.35;
+      text-align: center;
+    }
+    .giving-form-card > p {
+      margin: 0 auto 0.75rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .giving-form-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.25rem 0.7rem;
+      margin: 0 auto 0.7rem;
+      color: var(--muted);
+      font-size: 0.74rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+    .giving-form-trust strong { color: var(--ink); }
+    .giving-form-trust a { color: var(--ocean); font-weight: 700; text-underline-offset: 0.15rem; }
+    .giving-form-card givebutter-widget { display: block; width: 100%; min-height: 400px; }
+    .giving-form-fallback { margin: 0.4rem 0 0.2rem !important; }
+    .giving-form-fallback a { color: var(--ocean); font-weight: 700; text-underline-offset: 0.18rem; }
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 1200px;
+      margin: 2.25rem auto 0;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.17);
+      border-radius: 1rem;
+      background: rgba(255,255,255,0.16);
+    }
+    .trust-strip__item {
+      min-height: 100%;
+      padding: 0.95rem 1rem;
+      background: rgba(6,37,58,0.84);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.79rem;
+      line-height: 1.45;
+    }
+    .trust-strip__item strong { display: block; color: var(--white); font-family: var(--heading); font-size: 0.82rem; }
+    .trust-strip__item a { color: var(--seafoam); text-underline-offset: 0.18rem; }
+    .impact-section { background: var(--cream); }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.35rem;
+    }
+    .impact-card {
+      padding: 1.75rem;
+      border-top: 5px solid var(--seafoam);
+      border-radius: 1rem;
+      background: var(--white);
+      box-shadow: 0 8px 24px rgba(10,24,40,0.07);
+    }
+    .impact-card:nth-child(2) { border-top-color: var(--sky); }
+    .impact-card:nth-child(3) { border-top-color: var(--dusk); }
+    .impact-card__amount {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--ocean);
+      font-family: var(--serif);
+      font-size: 2.25rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .impact-card h3 { margin-bottom: 0.55rem; font-family: var(--heading); font-size: 1.08rem; }
+    .impact-card p { color: var(--muted); font-size: 0.93rem; }
+    .cost-note {
+      margin-top: 1.35rem;
+      padding: 1rem 1.15rem;
+      border-left: 4px solid var(--ocean);
+      border-radius: 0 0.75rem 0.75rem 0;
+      background: rgba(13,90,138,0.07);
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.6;
+    }
+    .giving-paths { background: var(--white); }
+    .giving-paths-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.35rem;
+    }
+    .giving-path {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 100%;
+      padding: 1.65rem;
+      border: 1px solid rgba(13,90,138,0.14);
+      border-radius: 1rem;
+      background: var(--cream);
+    }
+    .giving-path__label {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      color: var(--ocean);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .giving-path h3 { margin-bottom: 0.55rem; font-family: var(--heading); font-size: 1.13rem; }
+    .giving-path p { margin-bottom: 1.25rem; color: var(--muted); font-size: 0.92rem; }
+    .giving-path a { margin-top: auto; }
+    .transparency-section { background: var(--sand); }
+    .transparency-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 2rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+    .transparency-list { display: grid; gap: 0.8rem; list-style: none; }
+    .transparency-list li {
+      padding: 1rem 1.1rem;
+      border-radius: 0.8rem;
+      background: var(--white);
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+    .transparency-list strong { color: var(--ink); }
+    .transparency-list a { color: var(--ocean); font-weight: 700; text-underline-offset: 0.18rem; }
+    .gratitude-card {
+      padding: 1.75rem;
+      border-radius: 1rem;
+      background: linear-gradient(145deg, #0A3D5C, #0D5A8A);
+      color: var(--white);
+    }
+    .gratitude-card h3 { margin-bottom: 0.7rem; font-family: var(--heading); }
+    .gratitude-card p { color: rgba(255,255,255,0.78); font-size: 0.94rem; }
+    @media (max-width: 900px) {
+      .giving-hero__grid { grid-template-columns: 1fr; }
+      .giving-hero__copy { padding-top: 0; }
+      .giving-form-card { max-width: 720px; width: 100%; margin: 0 auto; }
+      .trust-strip { grid-template-columns: 1fr 1fr; }
+      .impact-grid, .giving-paths-grid { grid-template-columns: 1fr; }
+      .transparency-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .giving-hero { padding: 5.6rem 1rem 2.2rem; }
+      .giving-hero h1 { font-size: 2.1rem; }
+      .giving-hero__lead { font-size: 1rem; line-height: 1.62; }
+      .giving-form-card { padding: 0.65rem; border-radius: 1rem; }
+      .giving-form-card givebutter-widget { min-height: 430px; }
+      .trust-strip { grid-template-columns: 1fr; margin-top: 1.5rem; }
+      .impact-card, .giving-path { padding: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav aria-label="Primary navigation">
+  <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-label visually-hidden">Open menu</span><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+  <ul class="nav-links" id="primary-navigation">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="our-approach.html">Our Approach</a></li>
+    <li><a href="programs-and-impact.html">Programs</a></li>
+    <li><a href="dyslexia.html">Dyslexia</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="/tutorbird/">Parent Portal</a></li>
+    <li><a href="give.html" class="nav-cta active" aria-current="page">Give</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+  <header class="giving-hero">
+    <div class="giving-hero__grid">
+      <div class="giving-hero__copy">
+        <span class="eyebrow">Build brighter pathways</span>
+        <h1>Language should make sense. <em>Access should not depend on a family’s resources.</em></h1>
+        <p class="giving-hero__lead">When reading and spelling feel unpredictable, learners can lose confidence while families search for coherent help. Your gift expands financial access, educator learning, and practical tools communities can use.</p>
+      </div>
+      <div class="giving-form-card" id="donate">
+        <h2>Make your gift now</h2>
+        <p>Choose a one-time or monthly contribution in the secure Givebutter form.</p>
+        <div class="giving-form-trust" aria-label="Donation trust information">
+          <span><strong>501(c)(3)</strong> · EIN 33-3985311</span>
+          <a href="privacy.html#donation-forms">Donor privacy</a>
+          <a href="about.html#leadership">Leadership</a>
+          <a href="mailto:info@lokahiconnect.org?subject=Financial%20Information%20Request">Financial information</a>
+        </div>
+        <div aria-label="Secure Lokahi Connect donation form" aria-describedby="giving-form-note">
+          <givebutter-widget id="LWkGmQ" align="center"></givebutter-widget>
+        </div>
+        <p class="giving-form-fallback" id="giving-form-note">If the form does not appear, <a href="https://givebutter.com/ARzvHK" target="_blank" rel="noopener noreferrer">open the secure Givebutter campaign ↗</a>.</p>
+        <noscript><p class="giving-form-fallback"><a href="https://givebutter.com/ARzvHK">Donate through Givebutter</a>.</p></noscript>
+      </div>
+    </div>
+    <div class="trust-strip" aria-label="Giving and accountability information">
+      <div class="trust-strip__item"><strong>501(c)(3) nonprofit</strong>EIN 33-3985311</div>
+      <div class="trust-strip__item"><strong>Donor privacy</strong><a href="privacy.html#donation-forms">Read how giving data is handled</a></div>
+      <div class="trust-strip__item"><strong>Leadership</strong><a href="about.html#leadership">Meet Stephanie Steinshouer</a></div>
+      <div class="trust-strip__item"><strong>Financial information</strong><a href="mailto:info@lokahiconnect.org?subject=Financial%20Information%20Request">Request current information</a></div>
+    </div>
+  </header>
+
+  <section class="impact-section" id="impact">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Specific donor impact</span>
+      <h2 class="section-heading">Connect your gift to a real cost of learning access</h2>
+      <p class="section-sub section-sub--wide">These examples use the student-learning prices Lokahi Connect currently publishes, making the scale of a gift easier to understand.</p>
+      <div class="impact-grid">
+        <article class="impact-card"><span class="impact-card__amount">$75</span><h3>One focused session</h3><p>Matches the full published price of one 30-minute online student-learning session.</p></article>
+        <article class="impact-card"><span class="impact-card__amount">$120</span><h3>One extended session</h3><p>Matches the full published price of one 50-minute online student-learning session.</p></article>
+        <article class="impact-card"><span class="impact-card__amount">$425</span><h3>One comprehensive starting plan</h3><p>Matches the published price of a comprehensive profile and written service plan when that service is appropriate.</p></article>
+      </div>
+      <p class="cost-note"><strong>How to read these examples:</strong> they are transparent service-cost equivalents, not a promise that a contribution will reserve or be restricted to a particular service. Unrestricted gifts support Lokahi Connect’s charitable work where resources are most needed. <a href="mailto:info@lokahiconnect.org?subject=Restricted%20Gift%20Inquiry">Contact us before giving</a> if you want to discuss a restricted contribution.</p>
+    </div></div>
+  </section>
+
+  <div class="page-visual-shell">
+    <figure class="page-visual-frame page-visual-frame--community">
+      <picture>
+        <source media="(max-width: 700px)" srcset="assets/community-literacy-growth-small.jpg" />
+        <img src="assets/community-literacy-growth.jpg" width="1600" height="1066" alt="Many hands support new growth rising from an open book." loading="lazy" decoding="async" />
+      </picture>
+    </figure>
+  </div>
+
+  <section class="giving-paths" id="ways-to-give">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Ways to give</span>
+      <h2 class="section-heading">Choose the giving path that fits you</h2>
+      <p class="section-sub section-sub--wide">A simple online gift is the fastest route. Monthly, donor-advised fund, and larger partnership gifts each have a clear next step.</p>
+      <div class="giving-paths-grid">
+        <article class="giving-path"><span class="giving-path__label">Sustained access</span><h3>Give monthly</h3><p>Monthly gifts provide reliable support for financial access, educator learning, free resources, and the organizational capacity behind the work. Choose <strong>Monthly</strong> in the form above.</p><a href="#donate" class="btn-ocean">Choose a monthly gift ↑</a></article>
+        <article class="giving-path"><span class="giving-path__label">Donor-advised funds</span><h3>Recommend a DAF grant</h3><p>Contact Lokahi Connect for current organization details and giving instructions so your recommendation can be identified and acknowledged correctly.</p><a href="mailto:info@lokahiconnect.org?subject=Donor-Advised%20Fund%20Gift" class="btn-ocean">Coordinate a DAF gift →</a></article>
+        <article class="giving-path"><span class="giving-path__label">Larger and multi-year gifts</span><h3>Discuss a funding partnership</h3><p>For a larger, multi-year, institutional, or potentially restricted gift, begin with a conversation about the intended purpose, evidence, budget, and reporting.</p><a href="mailto:info@lokahiconnect.org?subject=Major%20Gift%20or%20Funding%20Partnership" class="btn-ocean">Start a private conversation →</a></article>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="transparency-section" id="accountability">
+    <div class="container"><div class="reveal">
+      <span class="section-tag">Trust and accountability</span>
+      <h2 class="section-heading">Give with a clear view of who is responsible</h2>
+      <div class="transparency-grid">
+        <ul class="transparency-list">
+          <li><strong>Nonprofit status:</strong> Lokahi Connect is a 501(c)(3) nonprofit, EIN 33-3985311.</li>
+          <li><strong>Leadership:</strong> <a href="about.html#leadership">Stephanie Steinshouer</a> is Founder and Executive Director.</li>
+          <li><strong>Donor privacy:</strong> Review the site’s <a href="privacy.html#donation-forms">donation-form and analytics disclosures</a> before giving.</li>
+          <li><strong>Financial reporting:</strong> <a href="mailto:info@lokahiconnect.org?subject=Financial%20Information%20Request">Request current organizational and available financial information</a>.</li>
+        </ul>
+        <aside class="gratitude-card">
+          <h3>Every gift begins a relationship</h3>
+          <p>Lokahi Connect is committed to treating donors, learners, families, and communities with care. Questions about giving are welcome before or after a contribution.</p>
+          <div class="section-actions"><a href="mailto:info@lokahiconnect.org?subject=Giving%20Question" class="btn-primary">Ask a giving question →</a></div>
+        </aside>
+      </div>
+    </div></div>
+  </section>
+</main>
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="nav-logo">Lokahi <span>Connect</span></a>
+    <div class="footer-meta"><p>501(c)(3) Nonprofit · EIN: 33-3985311</p><p>© 2026 Lokahi Connect. All rights reserved.</p><p>Questions? <a href="mailto:info@lokahiconnect.org">info@lokahiconnect.org</a></p></div>
+    <div class="footer-meta" style="text-align:right"><p><a href="about.html">About</a> · <a href="our-approach.html">Our Approach</a> · <a href="programs-and-impact.html">Programs</a> · <a href="dyslexia.html">Dyslexia</a></p><p><a href="resources.html">Resources</a> · <a href="/tutorbird/">Parent Portal</a> · <a href="community-feedback.html">Community Feedback</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="give.html">Give</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a> · <a href="privacy.html">Privacy &amp; Analytics</a></p></div>
+  </div>
+</footer>
+<script src="site-analytics.js?v=20260821-1"></script>
+<script src="site-navigation.js?v=20260820-1"></script>
+<script src="feedback.js"></script>
+</body>
+</html>

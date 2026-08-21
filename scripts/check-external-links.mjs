@@ -6,7 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pages = [
   'index.html', 'about.html', 'our-approach.html', 'programs-and-impact.html',
   'dyslexia.html', 'resources.html', 'family-community-toolkit.html', 'community-feedback.html', 'get-involved.html',
-  'nondiscrimination-policy.html', 'privacy.html', 'tutorbird/index.html'
+  'give.html', 'nondiscrimination-policy.html', 'privacy.html', 'tutorbird/index.html'
 ];
 
 const urls = new Set();
