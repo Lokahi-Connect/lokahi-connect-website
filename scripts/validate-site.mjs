@@ -216,6 +216,11 @@ for (const text of [
 check(!/Seed \(\$1,000\)|Root \(\$10,000\)|Grove|May support|may support/.test(give), 'giving page contains unsupported or vague impact tiers');
 check(give.indexOf('<givebutter-widget id="LWkGmQ"') < give.indexOf('id="impact"'), 'giving form must appear before the detailed impact section');
 
+for (const text of ['at the word level and across larger language structures', 'phrases, clauses, sentences, prosody, and connected text', 'SWI provides an investigative method through which that instruction can be organized and realized']) {
+  check(dyslexia.includes(text), `expanded SWI and Structured Literacy explanation is missing: ${text}`);
+}
+check(approach.includes('The Four Questions provide a flexible, recursive container for inquiry at the word level and across larger language structures.'), 'Our Approach must explain the expanded instructional scope of the Four Questions');
+
 const policy = contents.get('nondiscrimination-policy.html') ?? '';
 check(/id=["']reporting["']/.test(policy), 'policy reporting anchor is missing');
 check(/<button\b[^>]*class=["']ra-launch["'][^>]*disabled/i.test(policy), 'policy narration control must start disabled pending audio verification');
