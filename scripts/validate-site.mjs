@@ -7,6 +7,7 @@ const repoRoot = path.resolve(scriptDir, '..');
 const pages = [
   'index.html',
   'about.html',
+  'services.html',
   'our-approach.html',
   'programs-and-impact.html',
   'dyslexia.html',
@@ -65,13 +66,13 @@ for (const page of pages) {
   const nav = html.match(/<nav\b[^>]*aria-label=["']Primary navigation["'][\s\S]*?<\/nav>/i)?.[0] ?? '';
   const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? '';
   check(/class=["'][^"']*\bnav-toggle\b/i.test(nav) && /aria-controls=["']primary-navigation["']/i.test(nav), `${page}: mobile navigation control is missing`);
-  for (const label of ['Home', 'About', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Parent Portal', 'Give']) {
+  for (const label of ['Home', 'About', 'Services', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Parent Portal', 'Give']) {
     check(nav.includes(`>${label}</a>`), `${page}: primary navigation is missing ${label}`);
   }
   check(/>Community Feedback<\/a>/i.test(footer), `${page}: footer Community Feedback link is missing`);
   check(!/english-orthography\.netlify\.app|>\s*Presentation\s*<\/a>/i.test(html), `${page}: removed presentation link remains`);
-  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260820-1["']/i.test(html), `${page}: shared navigation script is missing`);
-  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260821-1["']/i.test(html), `${page}: current shared stylesheet is missing`);
+  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260921-1["']/i.test(html), `${page}: shared navigation script is missing`);
+  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260921-1["']/i.test(html), `${page}: current shared stylesheet is missing`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-analytics\.js\?v=20260821-1["']/i.test(html), `${page}: consent-controlled analytics script is missing`);
   check(/>Privacy &amp; Analytics<\/a>/i.test(footer), `${page}: footer Privacy & Analytics link is missing`);
   check(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/favicon\.svg["'][^>]*type=["']image\/svg\+xml["']/i.test(html), `${page}: SVG favicon link is missing`);

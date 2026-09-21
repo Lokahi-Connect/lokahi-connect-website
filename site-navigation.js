@@ -26,7 +26,7 @@
   });
 
   menu.addEventListener('click', function (event) {
-    if (event.target.closest('a') && window.matchMedia('(max-width: 900px)').matches) {
+    if (event.target.closest('a') && window.matchMedia('(max-width: 1100px)').matches) {
       setOpen(false, false);
     }
   });
@@ -44,6 +44,6 @@
   });
 
   window.addEventListener('resize', function () {
-    if (!window.matchMedia('(max-width: 900px)').matches) setOpen(false, false);
+    if (!window.matchMedia('(max-width: 1100px)').matches) setOpen(false, false);
   });
 }());
