@@ -7,6 +7,7 @@ const repoRoot = path.resolve(scriptDir, '..');
 const pages = [
   'index.html',
   'about.html',
+  'services.html',
   'our-approach.html',
   'programs-and-impact.html',
   'dyslexia.html',
@@ -65,13 +66,13 @@ for (const page of pages) {
   const nav = html.match(/<nav\b[^>]*aria-label=["']Primary navigation["'][\s\S]*?<\/nav>/i)?.[0] ?? '';
   const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? '';
   check(/class=["'][^"']*\bnav-toggle\b/i.test(nav) && /aria-controls=["']primary-navigation["']/i.test(nav), `${page}: mobile navigation control is missing`);
-  for (const label of ['Home', 'About', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Parent Portal', 'Give']) {
+  for (const label of ['Home', 'About', 'Services', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Parent Portal', 'Give']) {
     check(nav.includes(`>${label}</a>`), `${page}: primary navigation is missing ${label}`);
   }
   check(/>Community Feedback<\/a>/i.test(footer), `${page}: footer Community Feedback link is missing`);
   check(!/english-orthography\.netlify\.app|>\s*Presentation\s*<\/a>/i.test(html), `${page}: removed presentation link remains`);
-  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260820-1["']/i.test(html), `${page}: shared navigation script is missing`);
-  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260821-1["']/i.test(html), `${page}: current shared stylesheet is missing`);
+  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260921-1["']/i.test(html), `${page}: shared navigation script is missing`);
+  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260921-1["']/i.test(html), `${page}: current shared stylesheet is missing`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-analytics\.js\?v=20260821-1["']/i.test(html), `${page}: consent-controlled analytics script is missing`);
   check(/>Privacy &amp; Analytics<\/a>/i.test(footer), `${page}: footer Privacy & Analytics link is missing`);
   check(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/favicon\.svg["'][^>]*type=["']image\/svg\+xml["']/i.test(html), `${page}: SVG favicon link is missing`);
@@ -133,6 +134,13 @@ const about = contents.get('about.html') ?? '';
 for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive Director', 'CERI and NILD certifications', 'serves on the Board of Directors for the Washington State Branch of the International Dyslexia Association', 'https://www.wabida.org/about-us', 'assets/stephanie-steinshouer-headshot.jpg', 'Portrait of Stephanie Steinshouer']) {
   check(about.includes(text), `about page leadership or history content is missing: ${text}`);
 }
+
+const services = contents.get('services.html') ?? '';
+for (const text of ['https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form', 'mailto:stephanie@lokahiconnect.org', 'privacy.html#service-inquiries', 'No Airtable account is needed', 'Optional profile &amp; service plan', '$75', '$120', '$425']) {
+  check(services.includes(text), `Services contact route or scope is missing: ${text}`);
+}
+check(!/<form\b/i.test(services), 'Services must link to the reviewed hosted form, not collect a second set of answers');
+check(!/services-contact\.js/.test(services), 'Services must not load the retired email-preparation handler');
 
 const dyslexia = contents.get('dyslexia.html') ?? '';
 for (const text of ['id="family-next-steps"', 'Continue with trusted sources and further research', 'https://doi.org/10.31234/osf.io/aktzw', 'At Lokahi Connect, we use these four question areas']) {
