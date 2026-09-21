@@ -1,3 +1,42 @@
+# MAX-R final contact-integration source review — issue #29
+
+Verdict: **Source integration passes; not a live-release or inbox-delivery approval.** No new product-code or public-claim defect identified in the hosted-form revision. Automation testing is being performed separately by MAX-30; rendered page/accessibility review remains unresolved. This review supersedes the earlier email-preparation implementation findings where noted below.
+
+Reviewed 2026-09-21 in `/workspace/scratch/817c779e5c73/website`, branch `max/services-issue-29`. No browser used; no product files modified. Scope: final Services contact panel, CSS, privacy notice, local validation, and stale-document references.
+
+## Current implementation
+
+- `services.html:145-152`: one labeled hosted inquiry link to the exact published URL supplied by MAX-00: `https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form`. It is a native same-tab anchor; no JavaScript is required to follow it.
+- No local inquiry `<form>`, duplicated collection fields, inline submission handler, or reference to retired `services-contact.js` remains. There is no competing local submission flow.
+- `services.html:142,151`: direct email to stephanie@lokahiconnect.org remains available, including a clear fallback when the hosted form does not load or confirm submission.
+- `services.html:147-150`: describes required adult name/email/contact permission, optional phone/interest/question, Airtable hosting, no account requirement, no automatic enrollment or marketing subscription, and exclusion of sensitive learner records.
+- `privacy.html:82-90`: now describes Airtable receiving/storing responses, automatic source/time, internal follow-up fields, optional information, direct-email handling, and the difference between submission confirmation and email inbox receipt. Old local-only/no-storage description is removed. Public site and privacy text are mutually consistent.
+- Removed form-control CSS is no longer needed; the inquiry panel is styled consistently. Earlier analytics-consent padding defect remains fixed by selectors restricted to `main > section`.
+- Existing claims alignment assessment remains applicable: bounded service terms and prices, relational inquiry, no fabricated outcomes, no formal NILD-program claim, and no pressure-based conversion language.
+
+## Remaining gates and documentation update
+
+1. **Operational verification, owned by MAX-30 / MAX-00:** substantiate the no-account requirement and actual public field/consent settings against the hosted form; record automation enablement, a labeled public synthetic submission, successful notification execution, and separately verified receipt at stephanie@lokahiconnect.org. This reviewer did not independently open the form or access the inbox. Do not interpret the native link or local validator as proof of hosted operation or email delivery.
+2. **Rendered review, owned by MAX-00 / release reviewer:** desktop/mobile rendering and keyboard/focus checks remain outstanding. No browser pass is claimed here.
+3. **Reconcile current operational docs before handoff, owned by MAX-00:** at review time, `docs/services/SOURCE-ALIGNMENT-2026-09-21.md:77` still named email-preparation and retired JavaScript; `docs/services/OPERATING-GUIDE.md:42-44` described replacing that form as future work; `docs/services/CONTACT-SYSTEM.md` retained historical no-public-form status; `docs/services/REVIEW-AND-TESTS.md` contained the earlier review. Update current statements and label retained historical evidence clearly. Root advised these updates are underway; this is a documentation synchronization item, not a newly discovered backend failure.
+
+## Subsequent operational update from MAX-00
+
+After source review, MAX-00 reported that MAX-30 verified a public synthetic submission, automation ON, and successful send action in run `wfxvtmmP2DfE2gd6o` at 20:12:42–44 UTC. **Inbox receipt remains unverified.** This is reported operational evidence from MAX-30, not independent browser/inbox verification by this reviewer. MAX-00 also reported updating OPERATING-GUIDE and the SOURCE-ALIGNMENT inquiry map; the earlier document observations above describe their pre-update state. A superseded label for the historical review and final operational evidence are being persisted by MAX-00.
+
+## Checks completed
+
+- `node scripts/validate-site.mjs`: PASS for 14 pages, including actual form URL, direct email, privacy anchor, no local double form, and retired script exclusion.
+- `git diff --check`: PASS.
+- Targeted source search: no retired form/script reference in live Services HTML/CSS or privacy notice; remaining matches were historical/operational documents described above.
+- Earlier mocked-DOM contact-script tests are **obsolete for the current implementation** and must not be presented as verification of the hosted Airtable form.
+
+Earlier findings superseded: missing hosted link is resolved in source; no-JavaScript source/time mismatch is removed with the former local form. Actual notification delivery and rendered verification require their own evidence. Human publication approval remains separate from this technical source review.
+
+
+---
+## Historical initial review — superseded by the final review above
+
 # MAX-R independent review — website issue #29
 
 Verdict: **Not ready for approval as a completed/live issue #29 release.** Public copy and the explicit email-preparation fallback pass source review, with no remaining high-impact claim or privacy defect identified. The requested hosted inquiry and notification system remains incomplete, and rendered/keyboard verification remains outstanding. This review does not authorize publication.

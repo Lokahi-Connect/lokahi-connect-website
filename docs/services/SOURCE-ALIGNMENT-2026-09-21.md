@@ -74,7 +74,7 @@ The LWP main tree contains LC-CHG-2026-005 through 008; 008 dated Sept. 7 is the
 | What happens next | Adult inquiry → fit conversation → agreed plan | Issue #29 + new operating guide | Proposed operational flow |
 | Setup FAQ | Internet/computer/camera/microphone; details confirmed before sessions | Remote service requirements; user-described online practice | Practical setup guidance, no device compatibility guarantee |
 | Parent communication | Existing portal session notes/scheduling/progress updates | tutorbird/index.html at website base | Current published portal functions |
-| Inquiry | Explicit email preparation; exact Stephanie destination; no automatic success claim | services-contact.js + issue #29 | Verified isolated logic; email client/delivery not verified |
+| Inquiry | Actual hosted Airtable form link, direct Stephanie email backup, no embedded response data | Published form + issue #29 + CONTACT-SYSTEM.md | Live public form; see operational record for notification test and receipt limits |
 | No claims of efficacy | No outcome statistics, testimonials, cure, or full-model validation assertion | Canonical evidence boundaries | Deliberate claim restraint |
 
 The new page uses no WORD expansion, fixed morphology/phonology hierarchy, formal NILD program representation, or promised free consultation.

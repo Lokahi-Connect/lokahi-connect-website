@@ -38,20 +38,9 @@
 .faq-list summary { cursor: pointer; font-family: var(--heading); font-size: 1.05rem; padding: .4rem 0; }
 .faq-list details p { margin: .6rem 0 .4rem; max-width: 760px; color: var(--muted); }
 .services-page .inquiry-layout { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 3rem; align-items: start; }
-.services-page .inquiry-form { padding: 1.8rem; border: 1px solid var(--service-border); border-radius: .9rem; background: var(--white); }
-.inquiry-form .form-field { margin-bottom: 1.1rem; }
-.inquiry-form label { display: block; font-weight: 600; margin-bottom: .3rem; }
-.inquiry-form input:not([type=checkbox]), .inquiry-form select, .inquiry-form textarea { width: 100%; min-height: 48px; padding: .65rem .8rem; border: 1px solid #7d8b93; border-radius: .4rem; font: inherit; background: white; color: var(--ink); }
-.inquiry-form textarea { min-height: 110px; resize: vertical; }
-.inquiry-form .consent-row { display: flex; gap: .7rem; align-items: flex-start; font-size: .93rem; font-weight: 400; }
-.inquiry-form input[type=checkbox] { margin-top: .4rem; width: 20px; height: 20px; flex-shrink: 0; }
-.inquiry-form .optional { font-weight: 400; color: var(--muted); font-size: .85rem; }
-.inquiry-form .privacy-note { margin: 1rem 0; padding: .85rem; border-radius: .4rem; background: var(--cream); font-size: .85rem; }
-.inquiry-form .form-status { margin-top: 1rem; font-weight: 600; }
-.inquiry-form .copy-message { margin-top: .5rem; }
+.services-page .inquiry-panel { padding: 1.8rem; border: 1px solid var(--service-border); border-radius: .9rem; background: var(--white); }
+.inquiry-panel .privacy-note { margin: 1rem 0; padding: .85rem; border-radius: .4rem; background: var(--cream); font-size: .85rem; }
 .services-page .direct-contact { overflow-wrap: anywhere; margin-top: 1.5rem; }
-.services-page .plain-button { background: transparent; color: var(--ocean); border: 1px solid var(--ocean); padding: .85rem 1.25rem; font: inherit; font-weight: 600; border-radius: 2rem; cursor: pointer; }
-.services-page [hidden] { display: none !important; }
 @media (max-width: 900px) {
   .services-hero { padding: 7rem 2rem 3rem; }
   .services-hero-grid { gap: 2rem; }
@@ -67,5 +56,5 @@
   .services-page main > section { padding-top: 3rem; padding-bottom: 3rem; }
   .services-page .service-strip { padding: 1rem 1.4rem; }
   .service-strip ul { gap: .4rem 1rem; }
-  .services-page .inquiry-form { padding: 1.2rem; }
+  .services-page .inquiry-panel { padding: 1.2rem; }
 }

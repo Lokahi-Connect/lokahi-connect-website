@@ -4,9 +4,9 @@ Owner: Stephanie Steinshouer. Request: website issue #29. Updated September 21, 
 
 ## Current mode
 
-The Services page uses explicit email preparation. The visitor must send the email themselves. It is a useful fallback, not the requested automated submission system. The Airtable Services Inquiries table and notification automation draft exist; the automation is OFF and there is no public form URL yet. See [CONTACT-SYSTEM.md](CONTACT-SYSTEM.md) for verified IDs and the exact activation checklist.
+The Services page links to the published Airtable form at https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form. Adults can submit without an Airtable account. The direct email link remains a backup. The former local email-preparation form and handler have been removed.
 
-Do not deploy this as the completed issue #29 solution. Keep the PR in draft until the hosted form, email acceptance tests, browser review, and required human release decision are complete.
+See [CONTACT-SYSTEM.md](CONTACT-SYSTEM.md) for the current automation status and actual test evidence. A submitted record and a successfully sent notification are distinct from confirmed inbox receipt. The website PR remains a draft pending final review and Stephanie’s release decision.
 
 ## When an inquiry arrives
 
@@ -36,14 +36,13 @@ Educational Therapist · Founder & Executive Director
 Lokahi Connect · 501(c)(3) nonprofit
 stephanie@lokahiconnect.org
 
-## Switch to the hosted form after acceptance
+## Before website release
 
-1. Complete the account-side checklist in CONTACT-SYSTEM.md, including fresh synthetic submission, successful automation run and work-inbox receipt.
-2. Replace the email-preparation form in `services.html#inquiry` with a clear link to the actual public Airtable form. Label it “Open service inquiry form” and say that Airtable hosts it. Retain the direct email alternative. Do not embed a public record grid or create a URL from internal IDs.
-3. Update `privacy.html#service-inquiries`: disclose which adult contact fields Airtable receives/stores, their purpose, the notification recipient, and a link to Airtable’s privacy policy. No learner records or promised security certifications. Match the actual form settings.
-4. Remove the unused `services-contact.js` reference when replacing the fallback UI; retain the explicit email-preparation path only if useful and still accurately described. Align the source tests with the delivered flow.
-5. Run the repository checks; verify the final form link, mobile/keyboard experience, success and error recovery, and no inquiry contents in analytics. Record observed results and remaining limits in REVIEW-AND-TESTS.md.
-6. Obtain Stephanie’s release decision for the exact reviewed revision before merging the website PR. Do not enable public claims about automatic delivery until receipt is verified.
+- Verify the exact hosted form URL still shows only the approved adult-contact fields; never replace it with a public response grid or an inferred URL.
+- Check required fields, initially unchecked consent, confirmation and failure recovery, and a synthetic notification sent to stephanie@lokahiconnect.org.
+- Confirm inbox receipt, including source/time, reply details and follow-up checklist. Keep synthetic records labeled; do not count them as inquiries.
+- Verify the website’s final mobile, desktop and keyboard experience and record any limits in REVIEW-AND-TESTS.md.
+- Obtain Stephanie’s release decision for the reviewed revision before merging the website PR.
 
 ## Maintenance and quality
 

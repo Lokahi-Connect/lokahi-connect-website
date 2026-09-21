@@ -135,6 +135,13 @@ for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive 
   check(about.includes(text), `about page leadership or history content is missing: ${text}`);
 }
 
+const services = contents.get('services.html') ?? '';
+for (const text of ['https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form', 'mailto:stephanie@lokahiconnect.org', 'privacy.html#service-inquiries', 'No Airtable account is needed', 'Optional profile &amp; service plan', '$75', '$120', '$425']) {
+  check(services.includes(text), `Services contact route or scope is missing: ${text}`);
+}
+check(!/<form\b/i.test(services), 'Services must link to the reviewed hosted form, not collect a second set of answers');
+check(!/services-contact\.js/.test(services), 'Services must not load the retired email-preparation handler');
+
 const dyslexia = contents.get('dyslexia.html') ?? '';
 for (const text of ['id="family-next-steps"', 'Continue with trusted sources and further research', 'https://doi.org/10.31234/osf.io/aktzw', 'At Lokahi Connect, we use these four question areas']) {
   check(dyslexia.includes(text), `dyslexia required content is missing: ${text}`);

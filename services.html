@@ -142,20 +142,14 @@
         <p class="direct-contact">Prefer to write directly?<br /><a class="text-link" href="mailto:stephanie@lokahiconnect.org?subject=Remote%20services%20inquiry">stephanie@lokahiconnect.org</a></p>
         <p class="helper">We’ll discuss fit and availability before arranging services. Please keep this first message free of private learner records.</p>
       </div>
-      <form class="inquiry-form" id="remote-inquiry-form" action="mailto:stephanie@lokahiconnect.org" method="post" enctype="text/plain" aria-labelledby="inquiry-form-title">
-        <h3 id="inquiry-form-title">Prepare a service inquiry</h3>
-        <p class="helper" id="inquiry-how">This form opens your email app. Review the message and choose Send there. This website does not submit or store your answers.</p>
-        <div class="form-field"><label for="adult-name">Your name <span class="optional">(required; adult contact)</span></label><input id="adult-name" name="adult_name" autocomplete="name" maxlength="100" required /></div>
-        <div class="form-field"><label for="reply-email">Your email <span class="optional">(required)</span></label><input id="reply-email" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
-        <div class="form-field"><label for="support-interest">What would you like to discuss? <span class="optional">(required)</span></label><select id="support-interest" name="interest" required><option value="">Choose one</option><option>Reading, spelling, and language</option><option>Planning and learning strategies</option><option>Educational therapy or academic support</option><option>Support for myself as an adult</option><option>Not sure yet</option></select></div>
-        <div class="form-field"><label for="general-message">A general question <span class="optional">(optional)</span></label><textarea id="general-message" name="message" maxlength="600" aria-describedby="message-privacy"></textarea></div>
-        <p class="privacy-note" id="message-privacy">Please leave out learner names, diagnoses, evaluations, school details, and other private records. We can discuss an appropriate way to share information later. <a class="text-link" href="privacy.html#service-inquiries">How service inquiries are handled</a>.</p>
-        <label class="consent-row"><input type="checkbox" name="contact_consent" value="I agree to a reply about this inquiry" required /><span>I agree that Stephanie may reply about this inquiry. This does not sign me up for marketing emails. (Required)</span></label>
-        <div class="section-actions"><button class="btn-ocean" type="submit">Open inquiry in email →</button><button class="plain-button" id="copy-remote-inquiry" type="button" hidden>Copy inquiry</button></div>
-        <p class="form-status" id="remote-inquiry-status" role="status" aria-live="polite"></p>
-        <div class="copy-message" id="remote-copy-panel" hidden><label for="remote-copy-message">Copy this inquiry into your email</label><textarea id="remote-copy-message" readonly rows="9"></textarea></div>
-        <noscript><p class="helper">You can use your email app to send this form, or email Stephanie directly. The website cannot confirm that an email has been sent.</p></noscript>
-      </form>
+      <aside class="inquiry-panel" aria-labelledby="inquiry-form-title">
+        <h3 id="inquiry-form-title">A short inquiry. A personal next step.</h3>
+        <p>The form asks for your adult contact name, email, and permission to reply. Your phone number, support interest, and general question are optional.</p>
+        <div class="section-actions"><a class="btn-ocean" id="service-signup" href="https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form">Open service inquiry form →</a></div>
+        <p class="helper">Opens a form hosted by Airtable. No Airtable account is needed. Submitting an inquiry does not enroll you in services or marketing emails.</p>
+        <p class="privacy-note">Please leave out learner names, diagnoses, evaluations, school details, and other private records. We can discuss an appropriate way to share information later. <a class="text-link" href="privacy.html#service-inquiries">How service inquiries are handled</a>.</p>
+        <p class="helper">If the form does not load or confirm your submission, <a class="text-link" href="mailto:stephanie@lokahiconnect.org?subject=Remote%20services%20inquiry">email Stephanie directly</a>.</p>
+      </aside>
     </div>
   </section>
 </main>
@@ -168,6 +162,5 @@
 </footer>
 <script src="site-analytics.js?v=20260821-1"></script>
 <script src="site-navigation.js?v=20260921-1"></script>
-<script src="services-contact.js?v=20260921-1"></script>
 </body>
 </html>
