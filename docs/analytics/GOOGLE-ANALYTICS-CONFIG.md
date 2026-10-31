@@ -46,4 +46,18 @@ A click is not a lead submission, enrollment, or first session. Airtable is the 
 
 Consent revocation suppresses these events; re-grant updates the loaded Google tag's consent correctly. The choice also works for the current page when browser storage is unavailable. Run `node scripts/test-inquiry-analytics.mjs` to check these boundaries.
 
-Account-level enhanced-measurement settings and live event receipt were not verified: Google Analytics requires an email-preferences choice. No email subscriptions, marketing connections, or retention settings were changed. After the account prompt is resolved, inspect the correct property/stream (G-727LCMWN8K), confirm outbound measurement, and verify the bounded event in Realtime or DebugView using a clearly identified test visit. Do not treat an account report delay as a failed form.
+### Account and live-receipt verification
+
+Verified in the authenticated Google Analytics interface on October 31, 2026:
+
+- Account: Lokahi Connect, account ID `405616166`.
+- Property: Fundraising, property ID `551030199`.
+- Web stream: Nonprofit website, stream ID `15478241565`, URL `https://lokahiconnect.org`, measurement ID `G-727LCMWN8K`.
+- Data collection was active in the past 48 hours. Enhanced measurement was already enabled, including outbound clicks; no enhanced-measurement toggles were changed.
+- Created and verified the event-scoped custom dimension **Contact method**, mapped to `contact_method`. Its description distinguishes a link click from a submitted inquiry, enrollment, or first session.
+- Realtime showed exactly one `service_inquiry_click` for the test, with `contact_method = airtable_form`, by 17:35 UTC (07:35 Hawaiʻi time). A generic `click` was also recorded for that same interaction; do not sum the two as separate inquiries.
+- The test opened the public Airtable inquiry form without submitting it. No inquiry or enrollment record was created. The email route was covered by the source tests, not by a live email action.
+- Test entry URL used `utm_source=internal&utm_medium=qa&utm_campaign=inquiry_tracking_check_20261031`. Realtime's **First user source** remained `(direct)` for the existing browser, so do not assume the campaign marker makes every test event automatically filterable. Treat the October 31 test click and accompanying QA page views as testing, not demand evidence.
+- Analytics consent was allowed for the check and set to **No thanks** afterward.
+
+The email-preferences prompt was resolved by Stephanie before this verification. No email-subscription choices, marketing links, retention settings, or key-event classifications were changed by the agent. Account-level Google Signals and advertising integrations were not independently audited in this check. The custom dimension is saved; availability in processed reports remains subject to Google processing. Realtime receipt establishes collection, not a completed inquiry or customer acquisition.
