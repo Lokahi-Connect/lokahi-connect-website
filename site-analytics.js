@@ -4,6 +4,7 @@
   var measurementId = 'G-727LCMWN8K';
   var consentKey = 'lokahi_analytics_consent_v1';
   var tagSelector = 'script[data-lokahi-google-tag]';
+  var currentConsent = storedConsent();
   var analyticsScript = document.currentScript;
   var privacyUrl = analyticsScript
     ? new URL('privacy.html#analytics', analyticsScript.src).href
@@ -43,14 +44,13 @@
   }
 
   function loadGoogleAnalytics() {
-    if (document.querySelector(tagSelector)) return;
-
     window.gtag('consent', 'update', {
       analytics_storage: 'granted',
       ad_storage: 'denied',
       ad_user_data: 'denied',
       ad_personalization: 'denied'
     });
+    if (document.querySelector(tagSelector)) return;
     window.gtag('js', new Date());
     window.gtag('config', measurementId, {
       allow_google_signals: false,
@@ -70,6 +70,8 @@
   }
 
   function applyConsent(value) {
+    if (value !== 'granted' && value !== 'denied') return;
+    currentConsent = value;
     rememberConsent(value);
     if (value === 'granted') {
       loadGoogleAnalytics();
@@ -117,19 +119,44 @@
   }
 
   function initializeAnalyticsChoice() {
-    var choice = storedConsent();
+    var choice = currentConsent;
     if (choice === 'granted') loadGoogleAnalytics();
     if (!choice) showChoicePanel();
 
     Array.prototype.forEach.call(document.querySelectorAll('[data-analytics-preferences]'), function (button) {
       button.addEventListener('click', showChoicePanel);
     });
+
+    document.addEventListener('click', function (event) {
+      if (currentConsent !== 'granted') return;
+      var link = event.target.closest && event.target.closest('a[href]');
+      if (!link) return;
+      var destination;
+      try { destination = new URL(link.href, window.location.href); } catch (error) { return; }
+      var method = null;
+      if (destination.origin === 'https://airtable.com' &&
+          destination.pathname === '/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form') {
+        method = 'airtable_form';
+      } else if (destination.protocol === 'mailto:' &&
+          destination.pathname === 'stephanie@lokahiconnect.org' &&
+          destination.searchParams.get('subject') === 'Remote services inquiry') {
+        method = 'email';
+      }
+      if (!method) return;
+      // Measure opening a contact route, never the form contents or an enrollment.
+      // Do not pass link text, email bodies, query strings, or learner information.
+      window.gtag('event', 'service_inquiry_click', {
+        contact_method: method,
+        page_location: window.location.origin + window.location.pathname,
+        transport_type: 'beacon'
+      });
+    });
   }
 
   window.LokahiAnalytics = Object.freeze({
     measurementId: measurementId,
-    getConsent: storedConsent,
-    hasConsent: function () { return storedConsent() === 'granted'; },
+    getConsent: function () { return currentConsent; },
+    hasConsent: function () { return currentConsent === 'granted'; },
     setConsent: applyConsent,
     showPreferences: showChoicePanel
   });
@@ -140,3 +167,4 @@
     initializeAnalyticsChoice();
   }
 }());
+

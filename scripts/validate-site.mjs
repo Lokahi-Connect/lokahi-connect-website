@@ -73,7 +73,7 @@ for (const page of pages) {
   check(!/english-orthography\.netlify\.app|>\s*Presentation\s*<\/a>/i.test(html), `${page}: removed presentation link remains`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260921-1["']/i.test(html), `${page}: shared navigation script is missing`);
   check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260921-1["']/i.test(html), `${page}: current shared stylesheet is missing`);
-  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-analytics\.js\?v=20260821-1["']/i.test(html), `${page}: consent-controlled analytics script is missing`);
+  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-analytics\.js\?v=20261031-2["']/i.test(html), `${page}: consent-controlled analytics script is missing`);
   check(/>Privacy &amp; Analytics<\/a>/i.test(footer), `${page}: footer Privacy & Analytics link is missing`);
   check(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/favicon\.svg["'][^>]*type=["']image\/svg\+xml["']/i.test(html), `${page}: SVG favicon link is missing`);
   check(/<meta\b[^>]*name=["']theme-color["'][^>]*content=["']#0D5A8A["']/i.test(html), `${page}: browser theme color is missing`);
@@ -131,7 +131,7 @@ for (const text of ['learners of all ages', '30 minutes for $75', '50 minutes fo
 }
 
 const about = contents.get('about.html') ?? '';
-for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive Director', 'CERI Certified Structured Literacy Dyslexia Interventionist (C-SLDI)', 'id="qualifications"', 'https://effectivereading.org/provider-listings/washington/', 'serves on the Board of Directors for the Washington State Branch of the International Dyslexia Association', 'https://www.wabida.org/about-us', 'assets/stephanie-steinshouer-headshot.jpg', 'Portrait of Stephanie Steinshouer']) {
+for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive Director', 'CERI Certified Structured Literacy Dyslexia Interventionist (C-SLDI)', 'id="qualifications"', 'https://effectivereading.org/providers/3455/', 'serves on the Board of Directors for the Washington State Branch of the International Dyslexia Association', 'https://www.wabida.org/about-us', 'assets/stephanie-steinshouer-headshot.jpg', 'Portrait of Stephanie Steinshouer']) {
   check(about.includes(text), `about page leadership or history content is missing: ${text}`);
 }
 
@@ -280,3 +280,4 @@ if (errors.length) {
 
 console.log(`Site validation passed for ${pages.length} pages.`);
 console.log('Verified structure, navigation, metadata, local links and anchors, claim corrections, source boundaries, questionnaire controls, sitemap, and Parent Portal controls.');
+

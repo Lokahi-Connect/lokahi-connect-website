@@ -4,6 +4,13 @@ Owner: Stephanie Steinshouer. Prepared by MAX-30, 2026-09-21.
 
 ## Current result
 
+### October 31, 2026 measurement update
+
+The public form now includes optional referral source (`fldSqGnT3KsAjSOtH`). Follow-up status now includes Enrolled. The internal date field First session completed (`fld61AUwjZ3BZmgId`) tracks an actual delivered student session. Both internal fields remain excluded from the public form. Existing contact fields, consent, and notification workflow are preserved.
+
+An October 9 synthetic test already records successful automation delivery and independent inbox receipt; the earlier September receipt limitation below is historical. Exclude all synthetic test records from acquisition totals. See OPERATING-GUIDE.md for metric definitions.
+
+
 Created a new bounded **Services Inquiries** table in the existing **Lokahi WORD Project** Airtable base, a public form, and an active notification automation. Existing records, forms and automations were not changed. No paid upgrade was introduced.
 
 **Live account-side:** after secure user sign-in, the public form was published with Anyone on the web access and the notification automation activated. A labeled synthetic public submission succeeded and Airtable reports its email action succeeded. Actual receipt in the separate work inbox remains unverified. Public link: https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form . The later completion record below supersedes historical discovery blockers and the original activation checklist.
@@ -116,3 +123,4 @@ Use your own adult contact information and keep your message general. Do not inc
 Airtable hosts this form and stores your response for Lokahi Connect. Stephanie will use your information to follow up. Submitting does not enroll you in services or marketing emails.
 
 Privacy: https://www.lokahiconnect.org/privacy.html
+
