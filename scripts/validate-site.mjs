@@ -131,7 +131,7 @@ for (const text of ['learners of all ages', '30 minutes for $75', '50 minutes fo
 }
 
 const about = contents.get('about.html') ?? '';
-for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive Director', 'CERI and NILD certifications', 'serves on the Board of Directors for the Washington State Branch of the International Dyslexia Association', 'https://www.wabida.org/about-us', 'assets/stephanie-steinshouer-headshot.jpg', 'Portrait of Stephanie Steinshouer']) {
+for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive Director', 'CERI Certified Structured Literacy Dyslexia Interventionist (C-SLDI)', 'id="qualifications"', 'https://effectivereading.org/provider-listings/washington/', 'serves on the Board of Directors for the Washington State Branch of the International Dyslexia Association', 'https://www.wabida.org/about-us', 'assets/stephanie-steinshouer-headshot.jpg', 'Portrait of Stephanie Steinshouer']) {
   check(about.includes(text), `about page leadership or history content is missing: ${text}`);
 }
 
@@ -146,16 +146,16 @@ const dyslexia = contents.get('dyslexia.html') ?? '';
 for (const text of ['id="family-next-steps"', 'Continue with trusted sources and further research', 'https://doi.org/10.31234/osf.io/aktzw', 'At Lokahi Connect, we use these four question areas']) {
   check(dyslexia.includes(text), `dyslexia required content is missing: ${text}`);
 }
-check(dyslexia.includes('programs-and-impact.html#service-inquiry'), 'dyslexia page early support action is missing');
+check(dyslexia.includes('services.html'), 'dyslexia page early support action is missing');
 
 const approach = contents.get('our-approach.html') ?? '';
-check(approach.includes('programs-and-impact.html#current-availability'), 'approach page early opportunity action is missing');
+check(approach.includes('services.html'), 'approach page early opportunity action is missing');
 
 const resources = contents.get('resources.html') ?? '';
 for (const text of ['id="family-community-toolkit"', 'family-community-toolkit.html', 'id="screening-evaluation"', 'id="washington"', 'id="hawaii"', 'id="maui"', 'id="swi-research"', 'last reviewed August 21, 2026']) {
   check(resources.includes(text), `resources required content is missing: ${text}`);
 }
-check(resources.includes('programs-and-impact.html#service-inquiry'), 'resources page early support action is missing');
+check(resources.includes('services.html'), 'resources page early support action is missing');
 
 const toolkit = contents.get('family-community-toolkit.html') ?? '';
 for (const text of [
