@@ -118,7 +118,26 @@
     document.body.appendChild(panel);
   }
 
+
+  function prepareInquirySource() {
+    // Pass only this recognized campaign label, never the full URL or click ID.
+    // The visible, optional form answer remains editable by the visitor.
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('utm_source') !== 'chatgpt' ||
+        params.get('utm_medium') !== 'paid' ||
+        params.get('utm_campaign') !== 'remote_services') return;
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'), function (link) {
+      var destination;
+      try { destination = new URL(link.href, window.location.href); } catch (error) { return; }
+      if (destination.origin !== 'https://airtable.com' ||
+          destination.pathname !== '/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form') return;
+      destination.searchParams.set('prefill_How did you hear about us?', 'ChatGPT ad');
+      link.href = destination.href;
+    });
+  }
+
   function initializeAnalyticsChoice() {
+    prepareInquirySource();
     var choice = currentConsent;
     if (choice === 'granted') loadGoogleAnalytics();
     if (!choice) showChoicePanel();
