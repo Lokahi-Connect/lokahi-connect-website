@@ -139,7 +139,7 @@
 
   function recordInquirySubmission() {
     if (currentConsent !== 'granted' ||
-        window.location.pathname.replace(/\\/+$/, '') !== '/inquiry-received.html') return;
+        window.location.pathname !== '/inquiry-received.html') return;
     var startedAt = 0;
     try {
       startedAt = Number(window.sessionStorage.getItem('lokahi_service_inquiry_started_at'));
