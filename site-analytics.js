@@ -75,6 +75,7 @@
     rememberConsent(value);
     if (value === 'granted') {
       loadGoogleAnalytics();
+      recordInquirySubmission();
     } else {
       window.gtag('consent', 'update', {
         analytics_storage: 'denied',
@@ -136,10 +137,33 @@
     });
   }
 
+  function recordInquirySubmission() {
+    if (currentConsent !== 'granted' ||
+        window.location.pathname !== '/inquiry-received.html') return;
+    var startedAt = 0;
+    try {
+      startedAt = Number(window.sessionStorage.getItem('lokahi_service_inquiry_started_at'));
+      window.sessionStorage.removeItem('lokahi_service_inquiry_started_at');
+    } catch (error) {
+      return;
+    }
+    var elapsed = Date.now() - startedAt;
+    if (!startedAt || elapsed < 0 || elapsed > 30 * 60 * 1000) return;
+    // Count only an Airtable post-submission redirect, never form contents or record IDs.
+    window.gtag('event', 'service_inquiry_submitted', {
+      contact_method: 'airtable_form',
+      page_location: window.location.origin + window.location.pathname,
+      transport_type: 'beacon'
+    });
+  }
+
   function initializeAnalyticsChoice() {
     prepareInquirySource();
     var choice = currentConsent;
-    if (choice === 'granted') loadGoogleAnalytics();
+    if (choice === 'granted') {
+      loadGoogleAnalytics();
+      recordInquirySubmission();
+    }
     if (!choice) showChoicePanel();
 
     Array.prototype.forEach.call(document.querySelectorAll('[data-analytics-preferences]'), function (button) {
@@ -162,6 +186,13 @@
         method = 'email';
       }
       if (!method) return;
+      if (method === 'airtable_form') {
+        try {
+          window.sessionStorage.setItem('lokahi_service_inquiry_started_at', String(Date.now()));
+        } catch (error) {
+          // The click can still be measured when session storage is unavailable.
+        }
+      }
       // Measure opening a contact route, never the form contents or an enrollment.
       // Do not pass link text, email bodies, query strings, or learner information.
       window.gtag('event', 'service_inquiry_click', {

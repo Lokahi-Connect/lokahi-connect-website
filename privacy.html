@@ -68,7 +68,7 @@
 
   <section class="privacy-section" id="analytics">
     <div class="container"><div class="privacy-wrap">
-      <div class="privacy-meta"><span><strong>Updated:</strong> October 31, 2026</span><span><strong>Google Measurement ID:</strong> G-727LCMWN8K</span></div>
+      <div class="privacy-meta"><span><strong>Updated:</strong> November 3, 2026</span><span><strong>Google Measurement ID:</strong> G-727LCMWN8K</span></div>
       <h2>Analytics is optional</h2>
       <p>Lokahi Connect uses Google Analytics only after a visitor chooses <strong>Allow analytics</strong>. Before that choice, the Google Analytics tag is not loaded and no analytics data is sent to Google from this website.</p>
       <p>If analytics is allowed, Lokahi Connect uses aggregated website information to understand which pages and resources are useful, identify navigation problems, and improve access to information.</p>
@@ -98,9 +98,9 @@
         <li>general browser, device, and screen information;</li>
         <li>approximate geographic information derived by Google;</li>
         <li>visit timing and interaction information; and</li>
-        <li>bounded events such as selecting the community resource-feedback link or opening a service inquiry form or email link.</li>
+        <li>bounded events such as selecting the community resource-feedback link, opening a service inquiry form or email link, or arriving at the inquiry confirmation page after an Airtable submission redirect.</li>
       </ul>
-      <p>Service inquiry click measurement records only the contact route (form or email) and the website page. A click does not confirm a submitted inquiry or enrollment. Form responses, referral answers, and enrollment progress stay in Lokahi Connect’s inquiry records; they are not sent to Google Analytics.</p>
+      <p>Service inquiry click measurement records only the contact route (form or email) and the website page. If a visitor allows analytics, opens the Airtable form in the same browser tab, submits it, and Airtable redirects back to the website confirmation page, the site may record a separate service_inquiry_submitted event. It includes only the contact method and confirmation page path; it does not include the form response, referral answer, record ID, or enrollment status. Visitors who decline analytics or do not return through the confirmation redirect are not counted as submissions in Google Analytics. Form responses, referral answers, and enrollment progress stay in Lokahi Connect’s inquiry records; they are not sent to Google Analytics.</p>
       <p>Advertising and cross-device signals remain off. Lokahi Connect disables advertising storage, advertising personalization, advertising user data, and Google Signals in the website configuration. Analytics is used to improve the website, not to build advertising audiences.</p>
 
       <h3>What is not intentionally sent to Google Analytics</h3>
