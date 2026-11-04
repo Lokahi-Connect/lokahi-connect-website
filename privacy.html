@@ -32,6 +32,8 @@
     .privacy-control { margin-top: 1.5rem; padding: 1.4rem; border-left: 4px solid var(--seafoam); border-radius: 0 0.8rem 0.8rem 0; background: var(--sand); }
     .privacy-control p { margin-bottom: 0.9rem; }
   </style>
+  <link rel="stylesheet" href="ad-measurement.css?v=20261104-1" />
+  <script defer src="site-ad-measurement.js?v=20261104-1"></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -68,7 +70,7 @@
 
   <section class="privacy-section" id="analytics">
     <div class="container"><div class="privacy-wrap">
-      <div class="privacy-meta"><span><strong>Updated:</strong> November 3, 2026</span><span><strong>Google Measurement ID:</strong> G-727LCMWN8K</span></div>
+      <div class="privacy-meta"><span><strong>Updated:</strong> November 4, 2026</span><span><strong>Google Measurement ID:</strong> G-727LCMWN8K</span></div>
       <h2>Analytics is optional</h2>
       <p>Lokahi Connect uses Google Analytics only after a visitor chooses <strong>Allow analytics</strong>. Before that choice, the Google Analytics tag is not loaded and no analytics data is sent to Google from this website.</p>
       <p>If analytics is allowed, Lokahi Connect uses aggregated website information to understand which pages and resources are useful, identify navigation problems, and improve access to information.</p>
@@ -101,7 +103,7 @@
         <li>bounded events such as selecting the community resource-feedback link, opening a service inquiry form or email link, or arriving at the inquiry confirmation page after an Airtable submission redirect.</li>
       </ul>
       <p>Service inquiry click measurement records only the contact route (form or email) and the website page. If a visitor allows analytics, opens the Airtable form in the same browser tab, submits it, and Airtable redirects back to the website confirmation page, the site may record a separate service_inquiry_submitted event. It includes only the contact method and confirmation page path; it does not include the form response, referral answer, record ID, or enrollment status. Visitors who decline analytics or do not return through the confirmation redirect are not counted as submissions in Google Analytics. Form responses, referral answers, and enrollment progress stay in Lokahi Connect’s inquiry records; they are not sent to Google Analytics.</p>
-      <p>Advertising and cross-device signals remain off. Lokahi Connect disables advertising storage, advertising personalization, advertising user data, and Google Signals in the website configuration. Analytics is used to improve the website, not to build advertising audiences.</p>
+      <p>Google advertising and cross-device signals remain off. Lokahi Connect disables Google advertising storage, advertising personalization, advertising user data, and Google Signals in the website configuration. Google Analytics is used to improve the website, not to build advertising audiences. OpenAI ad measurement has its own optional choice, described below.</p>
 
       <h3>What is not intentionally sent to Google Analytics</h3>
       <ul>
@@ -112,6 +114,27 @@
         <li>credentials entered into the Tutorbird Parent Portal.</li>
       </ul>
       <p>Please do not enter private learner records into ordinary website, email, feedback, or donation communications.</p>
+    </div></div>
+  </section>
+
+  <section class="privacy-section" id="ad-measurement">
+    <div class="container"><div class="privacy-wrap">
+      <h2>Optional OpenAI ad measurement</h2>
+      <p>Ad measurement is off until you choose <strong>Allow ad measurement</strong>. Your Google Analytics choice does not enable it. Declining ad measurement does not affect access to services or the inquiry form.</p>
+      <p>With your permission, the Services and inquiry-confirmation pages load the OpenAI Pixel to measure page visits and an inquiry after Airtable returns you to the confirmation page. The Pixel sends event information, the website origin, browser and connection information, and available advertising identifiers to OpenAI. It may store first-party cookies: an ad click reference for up to 30 days and a browser reference for up to 365 days. Browser restrictions may shorten these periods.</p>
+      <p>Lokahi Connect does not provide names, contact details, form answers, learner records, diagnoses, or enrollment information to the Pixel. It is not installed inside Airtable, the Parent Portal, donation forms, or the website’s other forms. Events opt out of future user-level personalization. Review <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">OpenAI’s Privacy Policy</a>.</p>
+      <p>To avoid counting a form opening as an inquiry, browser submission measurement requires a recent form opening in the same tab and a return from Airtable. A random event identifier and start time are kept in that tab’s session storage. The identifier is consumed once when the event is queued. Missing consent, blocked storage, a blocked Pixel, a hidden referrer, a different tab, or a return after 30 minutes can prevent measurement. Airtable inquiry records remain the source of truth; ad reporting is not a complete count of inquiries.</p>
+      <p>The website remembers this separate choice in local storage. Choosing <strong>Keep ad measurement off</strong> stops future events and clears the known first-party measurement cookies. It does not delete information already received by OpenAI. No server-side conversion integration is enabled by this website.</p>
+      <div class="ad-measurement-choice" aria-label="Optional ad measurement">
+        <p><strong>May we measure whether our ads are helpful?</strong></p>
+        <p>If you allow it, OpenAI can measure visits and an inquiry submitted through this website, using browser information and ad identifiers. Your form answers stay in Airtable. This choice is separate from Google Analytics and is not required to contact us.</p>
+        <div class="ad-measurement-actions">
+          <button type="button" data-ad-choice="granted" aria-pressed="false">Allow ad measurement</button>
+          <button type="button" data-ad-choice="denied" aria-pressed="false">Keep ad measurement off</button>
+        </div>
+        <p data-ad-choice-status role="status">Ad measurement is off. You can still send an inquiry.</p>
+        <p><a href="privacy.html#ad-measurement">Ad measurement privacy details</a></p>
+      </div>
     </div></div>
   </section>
 
@@ -143,8 +166,9 @@
     <div class="footer-meta" style="text-align:right"><p><a href="about.html">About</a> · <a href="our-approach.html">Our Approach</a> · <a href="services.html">Services</a> · <a href="programs-and-impact.html">Programs</a> · <a href="dyslexia.html">Dyslexia</a></p><p><a href="resources.html">Resources</a> · <a href="/tutorbird/">Parent Portal</a> · <a href="community-feedback.html">Community Feedback</a></p><p><a href="get-involved.html">Get Involved</a> · <a href="give.html">Give</a></p><p><a href="nondiscrimination-policy.html">Nondiscrimination Policy</a> · <a href="privacy.html" aria-current="page">Privacy &amp; Analytics</a></p><p class="footer-social"><a href="https://www.instagram.com/lokahiconnect/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61578258248589" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.linkedin.com/company/lokahi-connect/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://app.candid.org/profile/16316345/lokahi-connect-33-3985311" target="_blank" rel="noopener noreferrer">Candid profile</a></p></div>
   </div>
 </footer>
-<script src="site-analytics.js?v=20261031-2"></script>
+<script src="site-analytics.js?v=20261104-1"></script>
 <script src="site-navigation.js?v=20260921-1"></script>
 </body>
 </html>
+
 

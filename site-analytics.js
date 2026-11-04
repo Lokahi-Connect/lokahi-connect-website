@@ -101,7 +101,7 @@
     panel.innerHTML = [
       '<div class="analytics-consent__copy">',
       '<strong>Help us improve this website?</strong>',
-      '<p>With your permission, Lokahi Connect uses Google Analytics to understand which pages and resources are useful. Analytics is off unless you allow it. Advertising and cross-device signals remain off.</p>',
+      '<p>With your permission, Lokahi Connect uses Google Analytics to understand which pages and resources are useful. Analytics is off unless you allow it. Google advertising and cross-device signals remain off.</p>',
       '</div>',
       '<div class="analytics-consent__actions">',
       '<button type="button" class="analytics-consent__allow">Allow analytics</button>',
@@ -147,8 +147,12 @@
     } catch (error) {
       return;
     }
+    // A recent form opening alone is not a submission. Require Airtable's return.
+    try {
+      if (new URL(document.referrer).origin !== 'https://airtable.com') return;
+    } catch (error) { return; }
     var elapsed = Date.now() - startedAt;
-    if (!startedAt || elapsed < 0 || elapsed > 30 * 60 * 1000) return;
+    if (!startedAt || !Number.isFinite(elapsed) || elapsed < 0 || elapsed > 30 * 60 * 1000) return;
     // Count only an Airtable post-submission redirect, never form contents or record IDs.
     window.gtag('event', 'service_inquiry_submitted', {
       contact_method: 'airtable_form',
@@ -217,4 +221,5 @@
     initializeAnalyticsChoice();
   }
 }());
+
 

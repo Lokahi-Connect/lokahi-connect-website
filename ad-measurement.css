@@ -1,0 +1,23 @@
+.ad-measurement-choice {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid #557180;
+  border-radius: .6rem;
+  background: #fff;
+  color: #0a1828;
+}
+.ad-measurement-choice p { margin: .5rem 0; font-size: .95rem; line-height: 1.6; }
+.ad-measurement-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .75rem; }
+.ad-measurement-actions button {
+  min-height: 44px;
+  border: 2px solid #0d5a8a;
+  border-radius: .4rem;
+  padding: .65rem 1rem;
+  font: 600 .95rem var(--sans, sans-serif);
+  color: #0d5a8a;
+  background: #fff;
+  cursor: pointer;
+}
+.ad-measurement-actions button[aria-pressed="true"] { background: #0d5a8a; color: #fff; }
+.ad-measurement-actions button:focus-visible { outline: 3px solid #0a1828; outline-offset: 3px; }
+.ad-measurement-choice a { color: #0d5a8a; text-underline-offset: .2em; }
