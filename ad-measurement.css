@@ -21,3 +21,8 @@
 .ad-measurement-actions button[aria-pressed="true"] { background: #0d5a8a; color: #fff; }
 .ad-measurement-actions button:focus-visible { outline: 3px solid #0a1828; outline-offset: 3px; }
 .ad-measurement-choice a { color: #0d5a8a; text-underline-offset: .2em; }
+
+
+.ad-measurement-choice--compact { margin: 1.25rem 0; padding: .75rem 1rem; background: transparent; border-color: rgba(13,90,138,.2); }
+.ad-measurement-choice--compact summary { cursor: pointer; font-size: .9rem; font-weight: 600; }
+.ad-measurement-choice--compact summary:focus-visible { outline: 3px solid #0d5a8a; outline-offset: 4px; }

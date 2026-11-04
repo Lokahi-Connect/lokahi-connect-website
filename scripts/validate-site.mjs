@@ -136,7 +136,7 @@ for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive 
 }
 
 const services = contents.get('services.html') ?? '';
-for (const text of ['https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form', 'mailto:stephanie@lokahiconnect.org', 'privacy.html#service-inquiries', 'No Airtable account is needed', 'Optional profile &amp; service plan', '$75', '$120', '$425']) {
+for (const text of ['https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form', 'mailto:stephanie@lokahiconnect.org', 'privacy.html#service-inquiries', 'No account is needed', 'Optional profile &amp; service plan', '$75', '$120', '$425']) {
   check(services.includes(text), `Services contact route or scope is missing: ${text}`);
 }
 check(!/<form\b/i.test(services), 'Services must link to the reviewed hosted form, not collect a second set of answers');
@@ -280,5 +280,6 @@ if (errors.length) {
 
 console.log(`Site validation passed for ${pages.length} pages.`);
 console.log('Verified structure, navigation, metadata, local links and anchors, claim corrections, source boundaries, questionnaire controls, sitemap, and Parent Portal controls.');
+
 
 
