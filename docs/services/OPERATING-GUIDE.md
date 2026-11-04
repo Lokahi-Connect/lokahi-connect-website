@@ -1,6 +1,6 @@
 # Services inquiry operating guide
 
-Owner: Stephanie Steinshouer. Request: website issue #29. Updated October 31, 2026.
+Owner: Stephanie Steinshouer. Request: website issue #29 and approved service-pricing clarification. Updated November 4, 2026.
 
 ## Current mode
 
@@ -17,6 +17,36 @@ See [CONTACT-SYSTEM.md](CONTACT-SYSTEM.md) for the current automation status and
 - [ ] Record Replied, Conversation scheduled, Enrolled, or Closed. Use Enrolled only after service arrangements are confirmed; record First session completed when a student session has actually taken place. Keep notes limited to contact progress; no evaluations, diagnoses, learner records, or message copies in GitHub.
 
 There is no automatic marketing enrollment or promised response deadline. Check pending inquiries and automation failures when handling work email; a record marked New does not prove its notification was delivered.
+
+## Before agreeing to paid services
+
+Session prices remain $75/30 minutes and $120/50 minutes. The optional profile and
+written plan remains $425. Stephanie approved retaining these prices after the
+November 4 comparison of published online specialist rates; this is a market
+comparison, not evidence of a universal industry standard.
+
+- [ ] Confirm live session length, frequency, and fee.
+- [ ] Explain preparation, session materials, progress review, and family updates
+  included in the individual arrangement. Do not promise unlimited consultation.
+- [ ] Agree separately on dedicated parent/school meetings or work beyond scope,
+  including any fee, before that work begins.
+- [ ] If the optional $425 profile is appropriate, complete the scope note below
+  with the family before purchase. Current repository records do not establish a
+  standard assessment duration, test battery, or included feedback-meeting length.
+
+Reusable scope note (complete privately; do not store learner details in GitHub):
+
+```text
+Optional learning profile and written service plan: $425
+Purpose and learning priorities: [agreed priorities]
+Assessment or learning activities: [agreed activities]
+Meetings and time: [number and duration]
+Written deliverables: [profile and service-plan contents]
+Feedback meeting: [included/not included; duration if included]
+Delivery timing: [agreed date or timeframe]
+Additional work: [scope and any fee agreed separately before starting]
+This is educational planning, not a diagnostic evaluation.
+```
 
 ## Reusable personal reply
 
@@ -64,3 +94,4 @@ Review three separate measures:
 Keep names, email addresses, messages, learner details and record IDs out of Google Analytics and public reports. Summarize sources only in aggregate. Do not backfill historical attribution or enrollments by guessing. No change was made to existing inquiry records.
 
 A one-time review reminder is scheduled for November 14, 2026. Search Console was still processing its new property data on October 31; the sitemap submission had succeeded with 14 discovered pages. Compare available dates and acknowledge small samples; changes in traffic do not prove causation.
+

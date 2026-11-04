@@ -87,8 +87,13 @@ minimization. No synthetic lead has been submitted to Ads Manager to raise EQS.
 - [x] Existing service, mobile navigation, form configuration, and crawl rules reviewed.
 - [x] Consent-based pixel code and privacy disclosures implemented.
 - [x] Local behavior tests passed; no private form data in event payloads.
-- [ ] Attach only Lead Created to the existing Remote Services campaign after the
-  exact campaign change is approved. Keep impressions/reach and the budget intact.
+- [x] Attached only Lead Created to the existing Remote Services campaign on
+  November 4, 2026 after Stephanie approved the change following the pricing review.
+  Fresh campaign and event-setting reads confirmed the association. Active status,
+  impressions/reach, impression billing, USD 500 lifetime budget, US targeting, and
+  the goal's 30-day click / 1-day view windows were preserved. Page Viewed remains
+  unattached as a conversion goal. This configures inquiry reporting; it does not
+  change delivery to conversion optimization or prove that an inquiry occurred.
 - [ ] Verify receipt of a genuine, consented submission event and reconcile it with
   Airtable. A successful code deployment alone does not prove SDK event acceptance
   or attribution. Use recent-event diagnostics for receipt; use reporting for attribution.
