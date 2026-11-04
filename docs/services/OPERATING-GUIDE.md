@@ -1,17 +1,21 @@
 # Services inquiry operating guide
 
-Owner: Stephanie Steinshouer. Request: website issue #29 and approved service-pricing clarification. Updated November 4, 2026.
+Owner: Stephanie Steinshouer. Request: website issue #29, approved service-pricing clarification, and the November 4 free-consultation update. Updated November 4, 2026.
 
 ## Current mode
 
 The Services page links to the published Airtable form at https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form. Adults can submit without an Airtable account. The direct email link remains a backup. The former local email-preparation form and handler have been removed.
+
+The Home and Services pages offer a **free 30-minute online consultation** with Stephanie to discuss Lokahi Connect’s approach, the adult’s questions and goals, and whether online support is a fit. This initial conversation has no charge or obligation to enroll. Student instruction and the optional profile remain separate paid services. Requests use the existing Services Inquiries form and table; do not collect a second set of answers on the website.
+
+Stephanie personally confirms availability and appointment times by email. A form submission does not reserve a time, create a booking, send a calendar invitation, or enroll the adult in marketing. The form collects adult contact details and permission to reply, with optional general context. Keep learner names, school information, diagnoses, and private reports out of this first inquiry.
 
 See [CONTACT-SYSTEM.md](CONTACT-SYSTEM.md) for the current automation status and actual test evidence. A submitted record and a successfully sent notification are distinct from confirmed inbox receipt. The Services page and form are live. An October 9 synthetic test recorded successful automation delivery and verified work-inbox receipt; keep historical test evidence separate from client inquiries.
 
 ## When an inquiry arrives
 
 - [ ] Confirm the adult’s request and contact consent. Read their general goal; avoid drawing conclusions about a learner from a brief inquiry.
-- [ ] Reply personally. Explain the relevant service and current availability. Confirm time zone before suggesting a meeting.
+- [ ] Reply personally. For an initial conversation, offer the free 30-minute online consultation to discuss our approach and fit. Confirm time zone and availability before suggesting a meeting; record an appointment only after Stephanie confirms it.
 - [ ] Confirm fees and scope before services begin: $75/30 minutes, $120/50 minutes; optional comprehensive profile and written plan $425 when appropriate. Verify current approved pricing if this guide is later reused.
 - [ ] Ask only one or two useful next questions. Arrange sensitive-document exchange separately through the approved intake process.
 - [ ] Record Replied, Conversation scheduled, Enrolled, or Closed. Use Enrolled only after service arrangements are confirmed; record First session completed when a student session has actually taken place. Keep notes limited to contact progress; no evaluations, diagnoses, learner records, or message copies in GitHub.
@@ -54,11 +58,11 @@ Subject: Your Lokahi Connect inquiry
 
 Hi [adult name],
 
-Thank you for reaching out and sharing [their stated goal, in their own terms]. I’d be glad to talk about whether Lokahi Connect’s remote support fits what you’re looking for.
+Thank you for reaching out and sharing [their stated goal, in their own terms]. I’d be glad to meet for a free 30-minute online consultation to discuss Lokahi Connect’s approach, your questions, and whether our remote support fits what you’re looking for. There is no obligation to enroll.
 
 What would you most like support to make easier right now?
 
-Once I understand a little more, I can explain the relevant session options, current availability, and next steps. Please let me know your time zone. There is no need to send evaluations or other private learner records by ordinary email.
+Please let me know your time zone and a few times that could work for you. I’ll reply to confirm a mutually available time. During our conversation, we can discuss the relevant session options and next steps. There is no need to send evaluations or other private learner records by ordinary email.
 
 Warmly,
 Stephanie Steinshouer
