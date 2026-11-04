@@ -9,13 +9,10 @@
 .page-visual-frame--approach,
 .page-visual-frame--dyslexia,
 .page-visual-frame--reading { max-width: 680px; }
-.image-note { padding: .65rem 1rem; font-size: .75rem; line-height: 1.5; color: var(--muted); background: var(--sand); }
-.hero-visual .image-note { color: rgba(255,255,255,.9); background: #0A3D5C; }
 .services-hero-grid { grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 3rem; }
 .services-portrait { max-width: 540px; }
 .services-portrait picture { display: block; }
 .services-portrait img { width: 100%; height: auto; aspect-ratio: auto; border-radius: 1rem; }
-.services-portrait .image-note { display: block; padding: .5rem 0 0; }
 footer .nav-logo::before { display: none; }
 footer .nav-logo img { display: block; width: 180px; height: auto; padding: .6rem; border-radius: .75rem; background: var(--white); }
 @media (max-width: 900px) {
