@@ -73,7 +73,7 @@ for (const page of pages) {
   check(!/english-orthography\.netlify\.app|>\s*Presentation\s*<\/a>/i.test(html), `${page}: removed presentation link remains`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260921-1["']/i.test(html), `${page}: shared navigation script is missing`);
   check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260921-1["']/i.test(html), `${page}: current shared stylesheet is missing`);
-  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-analytics\.js\?v=20261031-2["']/i.test(html), `${page}: consent-controlled analytics script is missing`);
+  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-analytics\.js\?v=20261104-1["']/i.test(html), `${page}: consent-controlled analytics script is missing`);
   check(/>Privacy &amp; Analytics<\/a>/i.test(footer), `${page}: footer Privacy & Analytics link is missing`);
   check(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/favicon\.svg["'][^>]*type=["']image\/svg\+xml["']/i.test(html), `${page}: SVG favicon link is missing`);
   check(/<meta\b[^>]*name=["']theme-color["'][^>]*content=["']#0D5A8A["']/i.test(html), `${page}: browser theme color is missing`);
@@ -234,7 +234,7 @@ check(/id=["']reporting["']/.test(policy), 'policy reporting anchor is missing')
 check(/<button\b[^>]*class=["']ra-launch["'][^>]*disabled/i.test(policy), 'policy narration control must start disabled pending audio verification');
 
 const privacy = contents.get('privacy.html') ?? '';
-for (const text of ['G-727LCMWN8K', 'Analytics is optional', 'Advertising and cross-device signals remain off', 'data-analytics-preferences', 'not intentionally sent to Google Analytics', 'id="donation-forms"', 'The Give page contains an embedded Givebutter donation form']) {
+for (const text of ['G-727LCMWN8K', 'Analytics is optional', 'Google advertising and cross-device signals remain off', 'data-analytics-preferences', 'not intentionally sent to Google Analytics', 'id="donation-forms"', 'The Give page contains an embedded Givebutter donation form']) {
   check(privacy.includes(text), `privacy notice required content is missing: ${text}`);
 }
 
@@ -280,4 +280,5 @@ if (errors.length) {
 
 console.log(`Site validation passed for ${pages.length} pages.`);
 console.log('Verified structure, navigation, metadata, local links and anchors, claim corrections, source boundaries, questionnaire controls, sitemap, and Parent Portal controls.');
+
 
