@@ -34,6 +34,10 @@ Ads Manager for campaign configuration and assessments; Airtable for actual inqu
   coverage returned. The latest-15-minute event sample was empty; this is not a
   historical conversion total and does not establish absence of all events.
 
+## Visitor-facing wording
+
+At Stephanie’s request, the Services and inquiry-confirmation pages keep vendor names and internal processing details on the linked Privacy & Analytics page. The consultation card focuses on contacting Stephanie. A compact, expandable ad-measurement choice appears after the main inquiry content, with the same opt-in and decline controls. This copy and placement change does not change the tracking code, event fields, default-off state, or previously saved choices.
+
 ## Implemented boundaries
 
 - `site-ad-measurement.js` loads only on Services, the confirmation page, and the
@@ -111,3 +115,4 @@ References:
 - https://help.openai.com/en/articles/20001409-conversion-measurement
 - https://help.openai.com/en/articles/20001214-measure-results
 - https://developers.openai.com/ads/measurement-pixel
+

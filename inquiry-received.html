@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared.css?v=20260921-1" />
   <link rel="stylesheet" href="services.css?v=20260921-1" />
-  <link rel="stylesheet" href="ad-measurement.css?v=20261104-1" />
+  <link rel="stylesheet" href="ad-measurement.css?v=20261104-2" />
   <script defer src="site-ad-measurement.js?v=20261104-1"></script>
   <link rel="stylesheet" href="image-refresh.css?v=20261104-1" />
 </head>
@@ -37,22 +37,23 @@
       <h1 class="section-heading">Thank you for reaching out.</h1>
       <p class="section-sub section-sub--wide">Your service inquiry was submitted to Lokahi Connect. Stephanie will follow up by email. An inquiry does not enroll you in services or commit you to a purchase.</p>
       <p class="helper">Please keep private learner records out of ordinary email. If you have another question about online services or scheduling, you can reply to Stephanie’s message or email <a class="text-link" href="mailto:stephanie@lokahiconnect.org?subject=Remote%20services%20inquiry">stephanie@lokahiconnect.org</a>.</p>
-      <div class="ad-measurement-choice" aria-label="Optional ad measurement">
-        <p><strong>May we measure whether our ads are helpful?</strong></p>
-        <p>If you allow it, OpenAI can measure visits and an inquiry submitted through this website, using browser information and ad identifiers. Your form answers stay in Airtable. This choice is separate from Google Analytics and is not required to contact us.</p>
-        <div class="ad-measurement-actions">
-          <button type="button" data-ad-choice="granted" aria-pressed="false">Allow ad measurement</button>
-          <button type="button" data-ad-choice="denied" aria-pressed="false">Keep ad measurement off</button>
-        </div>
-        <p data-ad-choice-status role="status">Ad measurement is off. You can still send an inquiry.</p>
-        <p><a href="privacy.html#ad-measurement">Ad measurement privacy details</a></p>
-      </div>
       <div class="section-actions">
         <a class="btn-ocean" href="services.html">Return to services →</a>
         <a class="text-link" href="index.html">Visit Lokahi Connect home</a>
       </div>
     </div>
   </section>
+  <div class="container">
+    <details class="ad-measurement-choice ad-measurement-choice--compact">
+      <summary>Optional ad measurement</summary>
+      <p>With your permission, advertising cookies help us measure visits and completed inquiries. This is optional and does not affect contacting us. <a href="privacy.html#ad-measurement">What is shared and with whom</a>.</p>
+      <div class="ad-measurement-actions">
+        <button type="button" data-ad-choice="granted" aria-pressed="false">Allow ad measurement</button>
+        <button type="button" data-ad-choice="denied" aria-pressed="false">Keep ad measurement off</button>
+      </div>
+      <p data-ad-choice-status role="status">Ad measurement is off. You can still send an inquiry.</p>
+    </details>
+  </div>
 </main>
 <footer>
   <div class="footer-inner">
