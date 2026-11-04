@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pages = [
-  'index.html', 'about.html', 'our-approach.html', 'programs-and-impact.html',
+  'index.html', 'about.html', 'services.html', 'adult-literacy-support.html',
+  'online-structured-literacy.html', 'ideas-to-writing.html', 'our-approach.html', 'programs-and-impact.html',
   'dyslexia.html', 'resources.html', 'family-community-toolkit.html', 'community-feedback.html', 'get-involved.html',
   'give.html', 'nondiscrimination-policy.html', 'privacy.html', 'tutorbird/index.html'
 ];

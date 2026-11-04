@@ -1,0 +1,19 @@
+.learning-guide .services-hero-grid { align-items: start; }
+.learning-guide .services-portrait { max-width: 300px; }
+.learning-guide .services-portrait img { aspect-ratio: 2 / 3; border-radius: .85rem; object-fit: cover; }
+.learning-guide .guide-copy { max-width: 760px; }
+.learning-guide .guide-copy p + p { margin-top: 1rem; }
+.learning-guide .guide-list { margin: 1rem 0 1rem 1.3rem; }
+.learning-guide .guide-list li { padding-left: .25rem; margin-bottom: .7rem; }
+.learning-guide .guide-meta { color: var(--muted); font-size: .9rem; margin-top: 1rem; }
+.learning-guide .guide-example { margin: 1.5rem 0; padding: 1.5rem; background: var(--sand); border-left: 4px solid var(--seafoam); }
+.learning-guide .guide-example p + p { margin-top: 1rem; }
+.learning-guide .guide-sources { overflow-wrap: anywhere; }
+.learning-guide .quick-nav a { min-height: 44px; }
+.learning-guide h2, .learning-guide h3 { overflow-wrap: break-word; }
+@media (max-width: 650px) {
+  .learning-guide .services-hero h1 { font-size: 2rem; }
+  .learning-guide .services-portrait { max-width: none; }
+  .learning-guide .section-actions { align-items: flex-start; }
+  .learning-guide .guide-example { padding: 1rem; }
+}
