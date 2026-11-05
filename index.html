@@ -70,11 +70,12 @@
     .metric-card .btn-primary { margin-top: 1.25rem; }
     .invest { background: #0A1828; }
     .invest .section-heading { color: var(--white); }
-    .invest .section-sub { color: rgba(255,255,255,0.65); }
+    .invest .section-sub { color: rgba(255,255,255,0.85); }
     .invest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 3rem 0 2.5rem; }
     .invest-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13); border-radius: 1rem; padding: 2rem 1.75rem; }
     .invest-card h3 { font-family: var(--heading); font-size: 1.3rem; font-weight: 700; color: var(--seafoam); margin-bottom: 0.75rem; }
-    .invest-card p { font-size: 0.93rem; line-height: 1.7; color: rgba(255,255,255,0.6); }
+    .invest-card p { font-size: 0.93rem; line-height: 1.7; color: rgba(255,255,255,0.85); }
+    .invest .fundraising-note { color: rgba(255,255,255,0.85); }
     .invest-cta { text-align: center; }
     @media (max-width: 768px) {
       .hero { padding: 7rem 1.4rem 4rem; }
@@ -130,6 +131,7 @@
 }
   </script>
   <link rel="stylesheet" href="image-refresh.css?v=20261104-1" />
+  <link rel="stylesheet" href="fundraising.css?v=20261104-1" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -159,6 +161,7 @@
             <a href="services.html" class="btn-primary">Explore student support →</a>
             <a href="services.html#inquiry" class="btn-ghost">Request a free consultation →</a>
           </div>
+          <p class="fundraising-hero-link">Help make this support more affordable. <a href="give.html">Donate to learning access →</a></p>
         </div>
         <figure class="hero-visual">
           <picture>
@@ -240,17 +243,18 @@
         <a href="programs-and-impact.html" class="btn-primary">See Programs &amp; Impact →</a>
       </div></div>
     </section>
-    <section class="invest">
+    <section class="invest" id="fund-learning">
       <div class="container"><div class="reveal">
-        <span class="section-tag">Language should make sense</span>
-        <h2 class="section-heading">Help make coherent literacy support more accessible</h2>
-        <p class="section-sub">When learners need help, access should not depend only on a family’s resources. Your gift strengthens financial access, educator learning, and practical tools communities can use.</p>
+        <span class="section-tag">Help fund this work</span>
+        <h2 class="section-heading">Cost should not stand between a learner and support.</h2>
+        <p class="section-sub">Donate to help children, teens, and adults access individualized literacy services—including learners with dyslexia and other language-based learning needs. Your gift supports financial assistance and professional development for the people who support learners.</p>
         <div class="invest-grid">
-          <div class="invest-card"><h3>$75</h3><p>Matches the published price of one 30-minute online student-learning session.</p></div>
-          <div class="invest-card"><h3>$120</h3><p>Matches the published price of one 50-minute online student-learning session.</p></div>
-          <div class="invest-card"><h3>$425</h3><p>Matches the published price of a comprehensive profile and written service plan when appropriate.</p></div>
+          <div class="invest-card"><h3>Help fund learning services</h3><p>Contribute toward financial assistance for learners and families facing the cost of reading, spelling, writing, and comprehension support.</p></div>
+          <div class="invest-card"><h3>Support educator learning</h3><p>Help fund professional learning and coaching Lokahi offers to educators responding to specific learning needs in their classrooms and practice.</p></div>
+          <div class="invest-card"><h3>Invest in practitioner training</h3><p>Help Lokahi’s practitioners pursue continuing professional development that informs the individualized support they provide.</p></div>
         </div>
-        <div class="invest-cta"><a href="give.html" class="btn-primary">See the impact and give →</a></div>
+        <p class="fundraising-note">Give an amount that works for you, once or monthly. Assistance and learning opportunities depend on available funding and capacity.</p>
+        <div class="section-actions"><a href="give.html" class="btn-primary">Donate to learning access →</a><a href="give.html#your-gift" class="btn-ghost">See who and what your gift supports →</a></div>
       </div></div>
     </section>
   </main>

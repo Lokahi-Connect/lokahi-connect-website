@@ -225,11 +225,11 @@ check(/community-feedback\.js\?v=20260820-2/.test(questionnaire), 'questionnaire
 
 const give = contents.get('give.html') ?? '';
 for (const text of [
-  'Language should make sense.',
-  'Access should not depend on a family’s resources.',
+  'Help put learning support',
+  'Cost should not stand between a learner and the support they need.',
   '<givebutter-widget id="LWkGmQ"',
   'https://givebutter.com/ARzvHK',
-  'Specific donor impact',
+  'What support costs',
   'Matches the full published price of one 30-minute online student-learning session.',
   'Matches the full published price of one 50-minute online student-learning session.',
   'Matches the published price of a comprehensive profile and written service plan',
