@@ -19,6 +19,7 @@ const pages = [
   'community-feedback.html',
   'get-involved.html',
   'give.html',
+  'fund-a-student.html',
   'nondiscrimination-policy.html',
   'privacy.html',
   'tutorbird/index.html'
@@ -56,7 +57,9 @@ for (const page of pages) {
   check(occurrences(html, /<main\b/gi) === 1, `${page}: expected exactly one main`);
   check(occurrences(html, /class=["'][^"']*\bskip-link\b[^"']*["']/gi) === 1, `${page}: expected exactly one skip link`);
   check(occurrences(html, /aria-current=["'](?:page|location)["']/gi) === 1, `${page}: expected exactly one current-page or current-location marker`);
-  if (page === 'adult-literacy-support.html') {
+  if (page === 'fund-a-student.html') {
+    check(/href=["']give\.html["'][^>]*aria-current=["']location["']/i.test(html), `${page}: Give must be identified as the current section location`);
+  } else if (page === 'adult-literacy-support.html') {
     check(/href=["']services\.html["'][^>]*aria-current=["']location["']/i.test(html), `${page}: Services must be identified as the current section location`);
   } else if (['family-community-toolkit.html', 'online-structured-literacy.html', 'ideas-to-writing.html'].includes(page)) {
     check(/href=["']resources\.html["'][^>]*aria-current=["']location["']/i.test(html), `${page}: Resources must be identified as the current section location`);
