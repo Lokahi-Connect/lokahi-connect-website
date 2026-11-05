@@ -251,7 +251,7 @@ check(give.indexOf('<givebutter-widget id="LWkGmQ"') < give.indexOf('id="impact"
 for (const text of ['at the word level and across larger language structures', 'phrases, clauses, sentences, prosody, and connected text', 'SWI provides an investigative method through which that instruction can be organized and realized']) {
   check(dyslexia.includes(text), `expanded SWI and Structured Literacy explanation is missing: ${text}`);
 }
-check(approach.includes('The Four Questions provide a flexible, recursive container for inquiry at the word level and across larger language structures.'), 'Our Approach must explain the expanded instructional scope of the Four Questions');
+check(approach.includes('An investigation may focus on one word or extend into phrases, sentences, and whole texts.') && approach.includes('These are areas we can explore in any order.'), 'Our Approach must preserve language beyond individual words and flexible inquiry');
 
 const policy = contents.get('nondiscrimination-policy.html') ?? '';
 check(/id=["']reporting["']/.test(policy), 'policy reporting anchor is missing');
