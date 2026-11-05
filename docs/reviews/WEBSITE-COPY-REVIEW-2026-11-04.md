@@ -1,7 +1,7 @@
 # Website proofreading and welcome-language review
 
 Reviewed November 4, 2026 (Hawaiʻi time).
-Owner: Stephanie Steinshouer. Status: proposed copy edits; public release requires Stephanie's approval.
+Owner: Stephanie Steinshouer. Status: approved for publication by Stephanie on November 4, 2026 (Hawaiʻi time).
 Source: website main commit `360843132ad77cdf1939988d7e17dc10ab537ef6`.
 
 ## Outcome
@@ -59,7 +59,7 @@ Lexical meanings checked against [Merriam-Webster: replay](https://www.merriam-w
 - [x] Learners can ask questions, make choices, and use different response methods.
 - [x] No new outcome guarantees or broader service commitments are introduced.
 - [x] Service fees and contact routes stay consistent.
-- [ ] Stephanie reviews the proposed copy and authorizes public release.
+- [x] Stephanie approved all edits and publication: “Appove all edit and publish.”
 
 Done for proofreading: review and proposed corrections are recorded in this change.
-Next action: Stephanie reviews the copy; after approval, merge and verify the public pages.
+Release action: publish the approved copy and verify the public pages. Brief visible illustration labels and explicit AI-generated alternative text implement the approved image-transparency recommendation.

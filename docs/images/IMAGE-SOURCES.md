@@ -10,7 +10,7 @@ Owner: Stephanie Steinshouer. These local downloads were selected for the websit
 | `ProfessionalWorkshop.png` | `stephanie-professional-workshop` | Programs, Get Involved, Family & Community Toolkit; About and Community Feedback link previews |
 | `LCHIlogo.png` | `lokahi-connect-logo.png` | Shared footer |
 
-The four learning scenes were generated with AI using Stephanie's likeness. They illustrate services and learning settings; they do not document actual clients or completed events. Alternative text describes the scenes as illustrations. Public generation captions were removed at Stephanie’s request. The original leadership headshot remains on About.
+The four learning scenes were generated with AI using Stephanie's likeness. They illustrate services and learning settings; they do not document actual clients or completed events. Alternative text describes the scenes as illustrations. Public generation captions were initially removed at Stephanie’s request. Following her November 4 approval of the messaging and truthfulness review, every visible generated learning or workshop scene now carries a brief caption identifying it as illustrative and AI-generated; alternative text and shared-link image descriptions also identify the generated scenes. The original leadership headshot remains on About.
 
 Assets live in `assets/`. Full scenes are preserved without cropping. WebP versions provide desktop and smaller mobile images; JPEG versions support shared-link previews. The logo retains its transparency and is displayed on a light background. `image-refresh.css` adapts the existing layout to these image proportions.
 
