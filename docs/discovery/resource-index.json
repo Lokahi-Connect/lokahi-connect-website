@@ -44,10 +44,10 @@
         ]
       },
       "individualized_learning_routes": "Discuss goals, pacing, visual access and communication routes with Stephanie; this page does not prescribe an individualized plan",
-      "development_status": "IMPLEMENTED_LOCAL",
+      "development_status": "IMPLEMENTED_VALIDATED",
       "evidence_status": "Source checks and bounded browser review; not field validated",
       "human_interaction_review": "NOT_YET_REVIEWED",
-      "approval_release_boundary": "Publication and substantive human approval not established by this record",
+      "approval_release_boundary": "Publication authorized by Stephanie Steinshouer on 2026-11-04 for the reviewed website package; see publication_authorization. Specialist, accessibility-conformance and field-validation approval are not asserted.",
       "section": "Services"
     },
     {
@@ -92,10 +92,10 @@
         ]
       },
       "individualized_learning_routes": "Discuss goals, pacing, visual access and communication routes with Stephanie; this page does not prescribe an individualized plan",
-      "development_status": "IMPLEMENTED_LOCAL",
+      "development_status": "IMPLEMENTED_VALIDATED",
       "evidence_status": "Source checks and bounded browser review; not field validated",
       "human_interaction_review": "NOT_YET_REVIEWED",
-      "approval_release_boundary": "Publication and substantive human approval not established by this record",
+      "approval_release_boundary": "Publication authorized by Stephanie Steinshouer on 2026-11-04 for the reviewed website package; see publication_authorization. Specialist, accessibility-conformance and field-validation approval are not asserted.",
       "section": "Resources"
     },
     {
@@ -140,11 +140,19 @@
         ]
       },
       "individualized_learning_routes": "Discuss goals, pacing, visual access and communication routes with Stephanie; this page does not prescribe an individualized plan",
-      "development_status": "IMPLEMENTED_LOCAL",
+      "development_status": "IMPLEMENTED_VALIDATED",
       "evidence_status": "Source checks and bounded browser review; not field validated",
       "human_interaction_review": "NOT_YET_REVIEWED",
-      "approval_release_boundary": "Publication and substantive human approval not established by this record",
+      "approval_release_boundary": "Publication authorized by Stephanie Steinshouer on 2026-11-04 for the reviewed website package; see publication_authorization. Specialist, accessibility-conformance and field-validation approval are not asserted.",
       "section": "Resources"
     }
-  ]
+  ],
+  "publication_authorization": {
+    "authority": "Stephanie Steinshouer",
+    "date": "2026-11-04",
+    "reviewed_commit": "5e180bbb2830f392dedddbeef0aab4955f34819b",
+    "scope": "Publish the reviewed website discoverability improvements",
+    "source": "Explicit publication instruction in the project conversation",
+    "limits": "Does not assert specialist review, accessibility conformance, field validation, or learner outcomes"
+  }
 }
