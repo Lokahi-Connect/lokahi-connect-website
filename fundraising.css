@@ -1,0 +1,58 @@
+/* Donation invitations alongside the services they support. */
+.fundraising-hero-link { margin-top: 1.5rem; color: var(--white); font-size: .95rem; line-height: 1.7; }
+.fundraising-hero-link a { color: var(--seafoam); font-weight: 700; text-underline-offset: .2em; }
+.fundraising-section { background: var(--sand); }
+.fundraising-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.fundraising-card { display: flex; flex-direction: column; align-items: flex-start; padding: 1.6rem; border-top: 4px solid var(--seafoam); border-radius: .8rem; background: var(--white); }
+.fundraising-card h3 { margin-bottom: .7rem; color: var(--ink); font-family: var(--heading); font-size: 1.15rem; }
+.fundraising-card p { margin-bottom: 1rem; color: var(--muted); font-size: .95rem; }
+.fundraising-card a { margin-top: auto; color: var(--ocean); font-weight: 700; text-underline-offset: .2em; }
+.fundraising-note { max-width: 850px; margin-top: 1.25rem; font-size: .9rem; color: var(--muted); }
+.fundraising-note a { color: var(--ocean); text-underline-offset: .2em; }
+.fundraising-callout { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1.5rem; margin-top: 2rem; padding: 1.5rem; border: 1px solid rgba(13,90,138,.2); border-left: 5px solid var(--seafoam); border-radius: .8rem; background: var(--white); }
+.fundraising-callout h3 { margin-bottom: .5rem; color: var(--ocean); font-family: var(--heading); font-size: 1.15rem; }
+.fundraising-callout p { max-width: 760px; color: var(--muted); font-size: .95rem; }
+.fundraising-callout .section-actions { margin-top: 0; }
+.fundraising-label { display: block; margin-bottom: .6rem; color: var(--ocean); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.giving-hero__purpose { max-width: 650px; margin: 1.25rem 0; padding-left: 1.25rem; color: var(--white); line-height: 1.65; }
+.giving-hero__purpose li + li { margin-top: .55rem; }
+.giving-hero__links { display: flex; flex-wrap: wrap; gap: .8rem 1.25rem; align-items: center; }
+.giving-hero__links > a:not(.btn-primary) { color: var(--white); text-underline-offset: .2em; }
+#donate, #your-gift, #impact, #fund-learning, #how-gifts-help, #gift-amounts, #tuition-questions { scroll-margin-top: 6rem; }
+.tuition-hero { padding: 8rem 2.5rem 4rem; color: var(--white); background: linear-gradient(145deg,#082f49,#0D5A8A); }
+.tuition-hero-grid { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,.85fr); gap: 3rem; align-items: start; }
+.tuition-hero h1 { margin-bottom: 1.5rem; font-family: var(--serif); font-size: clamp(2.5rem,5vw,4rem); line-height: 1.1; }
+.tuition-hero .section-tag { background: rgba(255,255,255,.12); color: var(--white); }
+.tuition-hero p { max-width: 720px; }
+.tuition-lead { margin-bottom: 1.25rem; font-size: 1.1rem; }
+.tuition-tagline { margin-bottom: 1.25rem; font-family: var(--heading); font-size: 1.35rem; font-weight: 700; line-height: 1.5; }
+.tuition-light-link { color: var(--white); font-weight: 700; text-underline-offset: .2em; }
+.tuition-small { margin-top: 1.2rem; font-size: .88rem; line-height: 1.6; }
+.tuition-goal { padding: 2rem; border-radius: 1.2rem; background: var(--white); color: var(--ink); }
+.tuition-goal h2 { font-family: var(--heading); font-size: 1.4rem; line-height: 1.35; }
+.tuition-goal .tuition-goal-amount { margin: 1rem 0 .5rem; color: var(--ocean); font-family: var(--heading); font-weight: 700; font-size: 3rem; line-height: 1; }
+.tuition-goal > p:not(.tuition-goal-amount) { color: var(--muted); }
+.tuition-facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 1rem; margin-top: 1.25rem; }
+.tuition-facts div { padding: .7rem 0; border-top: 1px solid rgba(13,90,138,.2); }
+.tuition-facts dt { font-size: .8rem; color: var(--muted); }
+.tuition-facts dd { margin: .2rem 0 0; font-weight: 700; }
+.tuition-white { background: var(--white); }
+.tuition-cost { background: var(--cream); }
+.tuition-cost h3 { color: var(--ocean); font-size: 2rem; }
+.tuition-questions { max-width: 900px; margin-top: 2rem; }
+.tuition-questions details { padding: 1.25rem 0; border-top: 1px solid rgba(13,90,138,.2); }
+.tuition-questions summary { cursor: pointer; font-family: var(--heading); font-weight: 700; }
+.tuition-questions p { margin-top: .75rem; color: var(--muted); }
+.tuition-questions a { color: var(--ocean); text-underline-offset: .2em; }
+.giving-hero .tuition-invitation { margin-bottom: 1.75rem; padding: 1.25rem; border: 1px solid rgba(255,255,255,.35); border-radius: .9rem; }
+.tuition-invitation h2 { margin-bottom: .6rem; font-family: var(--heading); font-size: 1.25rem; }
+.tuition-invitation p { color: var(--white); margin-bottom: 1rem; font-size: .95rem; }
+@media (max-width: 900px) {
+  .fundraising-grid, .fundraising-callout, .tuition-hero-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .fundraising-card, .fundraising-callout { padding: 1.25rem; }
+  .fundraising-callout .btn-ocean { white-space: normal; text-align: center; }
+  .tuition-hero { padding: 6rem 1.2rem 3rem; }
+  .tuition-goal { padding: 1.4rem; }
+}
