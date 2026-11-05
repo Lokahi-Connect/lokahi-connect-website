@@ -82,7 +82,7 @@ for (const page of pages) {
   const nav = html.match(/<nav\b[^>]*aria-label=["']Primary navigation["'][\s\S]*?<\/nav>/i)?.[0] ?? '';
   const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? '';
   check(/class=["'][^"']*\bnav-toggle\b/i.test(nav) && /aria-controls=["']primary-navigation["']/i.test(nav), `${page}: mobile navigation control is missing`);
-  for (const label of ['Home', 'About', 'Services', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Parent Portal', 'Give']) {
+  for (const label of ['Home', 'About', 'Services', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Student Portal', 'Give']) {
     check(nav.includes(`>${label}</a>`), `${page}: primary navigation is missing ${label}`);
   }
   check(/>Community Feedback<\/a>/i.test(footer), `${page}: footer Community Feedback link is missing`);
@@ -274,8 +274,8 @@ for (const text of ['G-727LCMWN8K', 'Analytics is optional', 'Google advertising
 }
 
 const portal = contents.get('tutorbird/index.html') ?? '';
-for (const text of ['https://www.tutorbird.com/privacy-policy/', "frame.title = 'Tutorbird parent portal login'", "frame.setAttribute('aria-label', 'Tutorbird parent portal login')", 'portal-accessibility-help', 'MutationObserver']) {
-  check(portal.includes(text), `Parent Portal control is missing: ${text}`);
+for (const text of ['https://www.tutorbird.com/privacy-policy/', "frame.title = 'Tutorbird student portal login'", "frame.setAttribute('aria-label', 'Tutorbird student portal login')", 'portal-accessibility-help', 'MutationObserver']) {
+  check(portal.includes(text), `Student Portal control is missing: ${text}`);
 }
 
 for (const file of ['robots.txt', 'sitemap.xml', 'docs/analytics/GOOGLE-ANALYTICS-CONFIG.md', 'docs/reviews/EXTERNAL-LINK-REVIEW-2026-08-20.md', 'docs/reviews/EXTERNAL-LINK-REVIEW-2026-08-21.md']) {
@@ -323,7 +323,7 @@ if (errors.length) {
 }
 
 console.log(`Site validation passed for ${pages.length} pages.`);
-console.log('Verified structure, navigation, metadata, local links and anchors, claim corrections, source boundaries, questionnaire controls, sitemap, and Parent Portal controls.');
+console.log('Verified structure, navigation, metadata, local links and anchors, claim corrections, source boundaries, questionnaire controls, sitemap, and Student Portal controls.');
 
 
 
