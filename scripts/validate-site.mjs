@@ -8,6 +8,9 @@ const pages = [
   'index.html',
   'about.html',
   'services.html',
+  'adult-literacy-support.html',
+  'online-structured-literacy.html',
+  'ideas-to-writing.html',
   'our-approach.html',
   'programs-and-impact.html',
   'dyslexia.html',
@@ -53,7 +56,9 @@ for (const page of pages) {
   check(occurrences(html, /<main\b/gi) === 1, `${page}: expected exactly one main`);
   check(occurrences(html, /class=["'][^"']*\bskip-link\b[^"']*["']/gi) === 1, `${page}: expected exactly one skip link`);
   check(occurrences(html, /aria-current=["'](?:page|location)["']/gi) === 1, `${page}: expected exactly one current-page or current-location marker`);
-  if (page === 'family-community-toolkit.html') {
+  if (page === 'adult-literacy-support.html') {
+    check(/href=["']services\.html["'][^>]*aria-current=["']location["']/i.test(html), `${page}: Services must be identified as the current section location`);
+  } else if (['family-community-toolkit.html', 'online-structured-literacy.html', 'ideas-to-writing.html'].includes(page)) {
     check(/href=["']resources\.html["'][^>]*aria-current=["']location["']/i.test(html), `${page}: Resources must be identified as the current section location`);
   } else {
     check(occurrences(html, /aria-current=["']page["']/gi) === 1, `${page}: expected exactly one current-page marker`);
@@ -98,6 +103,25 @@ for (const page of pages) {
       const targetHtml = target === page ? html : fs.readFileSync(targetPath, 'utf8');
       check(new RegExp(`\\bid=["']${hash.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`, 'i').test(targetHtml), `${page}: local anchor does not exist: ${href}`);
     }
+  }
+}
+
+const publicResourceIndex = JSON.parse(fs.readFileSync(path.join(repoRoot, 'docs/discovery/resource-index.json'), 'utf8'));
+const resourceIds = new Set();
+for (const resource of publicResourceIndex.resources) {
+  check(!resourceIds.has(resource.id), `resource index: duplicate immutable ID ${resource.id}`);
+  resourceIds.add(resource.id);
+  const html = contents.get(resource.path) ?? '';
+  check(html.includes(`name="lokahi:resource-id" content="${resource.id}"`), `${resource.path}: immutable resource ID does not match catalog`);
+  check(Boolean(resource.version && resource.approval_release_boundary), `${resource.path}: resource version or release boundary missing`);
+}
+for (const [page, html] of contents) {
+  const expectedCanonical = 'https://www.lokahiconnect.org/' + (page === 'index.html' ? '' : page.replace(/index\.html$/, ''));
+  check(occurrences(html, /<link\b[^>]*rel=["']canonical["']/gi) === 1, `${page}: expected one canonical link`);
+  check(html.includes(`rel="canonical" href="${expectedCanonical}"`), `${page}: canonical does not identify this page`);
+  check(!/<meta\b[^>]*name=["'](?:robots|googlebot)["'][^>]*content=["'][^"']*noindex/i.test(html), `${page}: public discovery page unexpectedly excludes indexing`);
+  for (const match of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
+    try { JSON.parse(match[1]); } catch { check(false, `${page}: structured data is not valid JSON`); }
   }
 }
 

@@ -1,0 +1,158 @@
+{
+  "catalog_version": "1.0.0",
+  "scope": "Website service information and explainers; not the Lokahi WORD Project curriculum catalog",
+  "resources": [
+    {
+      "id": "urn:uuid:bee5262f-9439-46ce-9ebf-996f78b88512",
+      "resource_type": "service-information",
+      "title": "Reading, spelling, and writing support for adults",
+      "path": "adult-literacy-support.html",
+      "version": "1.0.0",
+      "audience": "Adult readers, including adults seeking support, families, and educators",
+      "intended_age_range": "18+ readership; examples are informational and not age-leveled instruction",
+      "intended_grade_range": "Not applicable: public service information, not a curriculum lesson",
+      "jurisdictions": [
+        "Hawaiʻi",
+        "Washington",
+        "Online inquiries subject to fit and scheduling"
+      ],
+      "standards_alignment": {
+        "status": "not_applicable",
+        "reason": "No curriculum or grade-level standards claim"
+      },
+      "structured_literacy_domains": [
+        "oral and written language",
+        "word reading",
+        "spelling",
+        "vocabulary",
+        "syntax",
+        "semantics",
+        "discourse",
+        "written expression"
+      ],
+      "swi_word_families": [],
+      "prerequisites": [
+        "No diagnosis required to make an inquiry",
+        "General informational reading; not a prerequisite-gated learning activity"
+      ],
+      "sequence_relationships": {
+        "required_predecessors": [],
+        "related_resources": [
+          "services.html",
+          "our-approach.html",
+          "resources.html#learning-guides"
+        ]
+      },
+      "individualized_learning_routes": "Discuss goals, pacing, visual access and communication routes with Stephanie; this page does not prescribe an individualized plan",
+      "development_status": "IMPLEMENTED_VALIDATED",
+      "evidence_status": "Source checks and bounded browser review; not field validated",
+      "human_interaction_review": "NOT_YET_REVIEWED",
+      "approval_release_boundary": "Publication authorized by Stephanie Steinshouer on 2026-11-04 for the reviewed website package; see publication_authorization. Specialist, accessibility-conformance and field-validation approval are not asserted.",
+      "section": "Services"
+    },
+    {
+      "id": "urn:uuid:6b4cd485-59ed-45fe-8082-a12e6f4aaa19",
+      "resource_type": "educational-explainer",
+      "title": "What does online Structured Literacy instruction look like?",
+      "path": "online-structured-literacy.html",
+      "version": "1.0.0",
+      "audience": "Adult readers, including adults seeking support, families, and educators",
+      "intended_age_range": "18+ readership; examples are informational and not age-leveled instruction",
+      "intended_grade_range": "Not applicable: public service information, not a curriculum lesson",
+      "jurisdictions": [
+        "Hawaiʻi",
+        "Washington",
+        "Online inquiries subject to fit and scheduling"
+      ],
+      "standards_alignment": {
+        "status": "not_applicable",
+        "reason": "No curriculum or grade-level standards claim"
+      },
+      "structured_literacy_domains": [
+        "oral and written language",
+        "word reading",
+        "spelling",
+        "vocabulary",
+        "syntax",
+        "semantics",
+        "discourse",
+        "written expression"
+      ],
+      "swi_word_families": [],
+      "prerequisites": [
+        "No diagnosis required to make an inquiry",
+        "General informational reading; not a prerequisite-gated learning activity"
+      ],
+      "sequence_relationships": {
+        "required_predecessors": [],
+        "related_resources": [
+          "services.html",
+          "our-approach.html",
+          "resources.html#learning-guides"
+        ]
+      },
+      "individualized_learning_routes": "Discuss goals, pacing, visual access and communication routes with Stephanie; this page does not prescribe an individualized plan",
+      "development_status": "IMPLEMENTED_VALIDATED",
+      "evidence_status": "Source checks and bounded browser review; not field validated",
+      "human_interaction_review": "NOT_YET_REVIEWED",
+      "approval_release_boundary": "Publication authorized by Stephanie Steinshouer on 2026-11-04 for the reviewed website package; see publication_authorization. Specialist, accessibility-conformance and field-validation approval are not asserted.",
+      "section": "Resources"
+    },
+    {
+      "id": "urn:uuid:3790f36c-ecfd-43a4-8384-5b0fa55646e4",
+      "resource_type": "educational-explainer",
+      "title": "What can help when ideas are easier to explain than to write?",
+      "path": "ideas-to-writing.html",
+      "version": "1.0.0",
+      "audience": "Adult readers, including adults seeking support, families, and educators",
+      "intended_age_range": "18+ readership; examples are informational and not age-leveled instruction",
+      "intended_grade_range": "Not applicable: public service information, not a curriculum lesson",
+      "jurisdictions": [
+        "Hawaiʻi",
+        "Washington",
+        "Online inquiries subject to fit and scheduling"
+      ],
+      "standards_alignment": {
+        "status": "not_applicable",
+        "reason": "No curriculum or grade-level standards claim"
+      },
+      "structured_literacy_domains": [
+        "oral and written language",
+        "word reading",
+        "spelling",
+        "vocabulary",
+        "syntax",
+        "semantics",
+        "discourse",
+        "written expression"
+      ],
+      "swi_word_families": [],
+      "prerequisites": [
+        "No diagnosis required to make an inquiry",
+        "General informational reading; not a prerequisite-gated learning activity"
+      ],
+      "sequence_relationships": {
+        "required_predecessors": [],
+        "related_resources": [
+          "services.html",
+          "our-approach.html",
+          "resources.html#learning-guides"
+        ]
+      },
+      "individualized_learning_routes": "Discuss goals, pacing, visual access and communication routes with Stephanie; this page does not prescribe an individualized plan",
+      "development_status": "IMPLEMENTED_VALIDATED",
+      "evidence_status": "Source checks and bounded browser review; not field validated",
+      "human_interaction_review": "NOT_YET_REVIEWED",
+      "approval_release_boundary": "Publication authorized by Stephanie Steinshouer on 2026-11-04 for the reviewed website package; see publication_authorization. Specialist, accessibility-conformance and field-validation approval are not asserted.",
+      "section": "Resources"
+    }
+  ],
+  "publication_authorization": {
+    "authority": "Stephanie Steinshouer",
+    "date": "2026-11-04",
+    "reviewed_commit": "5e180bbb2830f392dedddbeef0aab4955f34819b",
+    "scope": "Publish the reviewed website discoverability improvements",
+    "source": "Explicit publication instruction in the project conversation",
+    "limits": "Does not assert specialist review, accessibility conformance, field validation, or learner outcomes"
+  }
+}
