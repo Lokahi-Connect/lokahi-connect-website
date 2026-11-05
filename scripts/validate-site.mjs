@@ -26,6 +26,8 @@ const pages = [
 
 const errors = [];
 const contents = new Map();
+const searchTitles = new Set();
+const searchDescriptions = new Set();
 
 function check(condition, message) {
   if (!condition) errors.push(message);
@@ -51,6 +53,15 @@ for (const page of pages) {
   if (!fs.existsSync(absolutePath)) continue;
   const html = fs.readFileSync(absolutePath, 'utf8');
   contents.set(page, html);
+
+  const title = html.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim();
+  const description = html.match(/<meta\b[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i)?.[1]?.trim();
+  check(Boolean(title), `${page}: search title is missing or empty`);
+  check(Boolean(description), `${page}: search description is missing or empty`);
+  check(!searchTitles.has(title), `${page}: duplicate search title`);
+  check(!searchDescriptions.has(description), `${page}: duplicate search description`);
+  searchTitles.add(title);
+  searchDescriptions.add(description);
 
   check(occurrences(html, /<h1\b/gi) === 1, `${page}: expected exactly one h1`);
   check(occurrences(html, /<main\b/gi) === 1, `${page}: expected exactly one main`);
@@ -271,6 +282,15 @@ for (const file of ['robots.txt', 'sitemap.xml', 'docs/analytics/GOOGLE-ANALYTIC
   check(fs.existsSync(path.join(repoRoot, file)), `required publication artifact is missing: ${file}`);
 }
 const sitemap = fs.readFileSync(path.join(repoRoot, 'sitemap.xml'), 'utf8');
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+check(new Set(sitemapUrls).size === sitemapUrls.length, 'sitemap contains duplicate URLs');
+check(sitemapUrls.length === pages.length, 'sitemap must contain exactly the public discovery pages');
+const confirmation = fs.readFileSync(path.join(repoRoot, 'inquiry-received.html'), 'utf8');
+check(/<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(confirmation), 'inquiry confirmation must remain excluded from search indexing');
+check(!sitemap.includes('/inquiry-received.html'), 'inquiry confirmation must not appear in the sitemap');
+const robots = fs.readFileSync(path.join(repoRoot, 'robots.txt'), 'utf8');
+check(/^User-agent:\s*\*\s*\nAllow:\s*\/\s*$/im.test(robots), 'robots.txt must allow general search crawlers');
+check(robots.includes('Sitemap: https://www.lokahiconnect.org/sitemap.xml'), 'robots.txt must advertise the canonical sitemap');
 for (const page of pages) {
   const url = page === 'index.html' ? 'https://www.lokahiconnect.org/' : `https://www.lokahiconnect.org/${page.replace('index.html', '')}`;
   check(sitemap.includes(`<loc>${url}</loc>`), `sitemap is missing ${url}`);
