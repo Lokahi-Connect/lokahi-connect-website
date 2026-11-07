@@ -180,13 +180,24 @@
       if (!link) return;
       var destination;
       try { destination = new URL(link.href, window.location.href); } catch (error) { return; }
+      var givingPage = destination.origin === window.location.origin &&
+        destination.pathname === '/give.html' && window.location.pathname !== '/give.html';
+      var givingCheckout = destination.origin === 'https://givebutter.com' &&
+        destination.pathname === '/ARzvHK';
+      if (givingPage || givingCheckout) {
+        window.gtag('event', givingPage ? 'giving_page_click' : 'giving_checkout_click', {
+          page_location: window.location.origin + window.location.pathname,
+          transport_type: 'beacon'
+        });
+        return;
+      }
       var method = null;
       if (destination.origin === 'https://airtable.com' &&
           destination.pathname === '/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form') {
         method = 'airtable_form';
       } else if (destination.protocol === 'mailto:' &&
           destination.pathname === 'stephanie@lokahiconnect.org' &&
-          destination.searchParams.get('subject') === 'Remote services inquiry') {
+          ['Remote services inquiry', 'Free 30-minute consultation'].indexOf(destination.searchParams.get('subject')) !== -1) {
         method = 'email';
       }
       if (!method) return;

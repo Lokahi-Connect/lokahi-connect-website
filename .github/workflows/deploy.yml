@@ -38,6 +38,8 @@ jobs:
           cp tutorbird/index.html _site/tutorbird/
           cp docs/discovery/resource-index.json _site/docs/discovery/
           cp assets/lokahi-connect-logo.png assets/stephanie-steinshouer-headshot.jpg _site/assets/
+      - name: Crawl the staged site and verify donation links
+        run: python3 scripts/crawl-site.py _site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
