@@ -1,20 +1,18 @@
 {
-  "catalog_version": "1.0.0",
-  "scope": "Website service information and explainers; not the Lokahi WORD Project curriculum catalog",
+  "catalog_version": "1.1.0",
+  "scope": "Public literacy guides and learning examples",
   "resources": [
     {
       "id": "urn:uuid:bee5262f-9439-46ce-9ebf-996f78b88512",
-      "resource_type": "service-information",
-      "title": "Reading, spelling, and writing support for adults",
+      "resource_type": "educational-explainer",
+      "title": "Reading and writing resources for adults",
       "path": "adult-literacy-support.html",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "audience": "Adult readers, including adults seeking support, families, and educators",
       "intended_age_range": "18+ readership; examples are informational and not age-leveled instruction",
-      "intended_grade_range": "Not applicable: public service information, not a curriculum lesson",
+      "intended_grade_range": "General information for readers across grade levels",
       "jurisdictions": [
-        "Hawaiʻi",
-        "Washington",
-        "Online inquiries subject to fit and scheduling"
+        "Online"
       ],
       "standards_alignment": {
         "status": "not_applicable",
@@ -31,38 +29,33 @@
         "written expression"
       ],
       "swi_word_families": [],
-      "prerequisites": [
-        "No diagnosis required to make an inquiry",
-        "General informational reading; not a prerequisite-gated learning activity"
-      ],
+      "prerequisites": [],
       "sequence_relationships": {
         "required_predecessors": [],
         "related_resources": [
-          "services.html",
+          "family-community-toolkit.html",
           "our-approach.html",
           "resources.html#learning-guides"
         ]
       },
-      "individualized_learning_routes": "Discuss goals, pacing, visual access and communication routes with Stephanie; this page does not prescribe an individualized plan",
+      "individualized_learning_routes": "Choose an example related to your own reading or writing, and follow links to related resources.",
       "development_status": "IMPLEMENTED_VALIDATED",
       "evidence_status": "Source checks and bounded browser review; not field validated",
       "human_interaction_review": "NOT_YET_REVIEWED",
-      "approval_release_boundary": "Publication authorized by Stephanie Steinshouer on 2026-11-04 for the reviewed website package; see publication_authorization. Specialist, accessibility-conformance and field-validation approval are not asserted.",
-      "section": "Services"
+      "approval_release_boundary": "Updated for the November 2026 nonprofit website publication. Specialist and field validation are not claimed.",
+      "section": "Resources"
     },
     {
       "id": "urn:uuid:6b4cd485-59ed-45fe-8082-a12e6f4aaa19",
       "resource_type": "educational-explainer",
       "title": "What does online Structured Literacy instruction look like?",
       "path": "online-structured-literacy.html",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "audience": "Adult readers, including adults seeking support, families, and educators",
       "intended_age_range": "18+ readership; examples are informational and not age-leveled instruction",
-      "intended_grade_range": "Not applicable: public service information, not a curriculum lesson",
+      "intended_grade_range": "General information for readers across grade levels",
       "jurisdictions": [
-        "Hawaiʻi",
-        "Washington",
-        "Online inquiries subject to fit and scheduling"
+        "Online"
       ],
       "standards_alignment": {
         "status": "not_applicable",
@@ -79,23 +72,20 @@
         "written expression"
       ],
       "swi_word_families": [],
-      "prerequisites": [
-        "No diagnosis required to make an inquiry",
-        "General informational reading; not a prerequisite-gated learning activity"
-      ],
+      "prerequisites": [],
       "sequence_relationships": {
         "required_predecessors": [],
         "related_resources": [
-          "services.html",
+          "family-community-toolkit.html",
           "our-approach.html",
           "resources.html#learning-guides"
         ]
       },
-      "individualized_learning_routes": "Discuss goals, pacing, visual access and communication routes with Stephanie; this page does not prescribe an individualized plan",
+      "individualized_learning_routes": "Choose an example related to your own reading or writing, and follow links to related resources.",
       "development_status": "IMPLEMENTED_VALIDATED",
       "evidence_status": "Source checks and bounded browser review; not field validated",
       "human_interaction_review": "NOT_YET_REVIEWED",
-      "approval_release_boundary": "Publication authorized by Stephanie Steinshouer on 2026-11-04 for the reviewed website package; see publication_authorization. Specialist, accessibility-conformance and field-validation approval are not asserted.",
+      "approval_release_boundary": "Updated for the November 2026 nonprofit website publication. Specialist and field validation are not claimed.",
       "section": "Resources"
     },
     {
@@ -103,14 +93,12 @@
       "resource_type": "educational-explainer",
       "title": "What can help when ideas are easier to explain than to write?",
       "path": "ideas-to-writing.html",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "audience": "Adult readers, including adults seeking support, families, and educators",
       "intended_age_range": "18+ readership; examples are informational and not age-leveled instruction",
-      "intended_grade_range": "Not applicable: public service information, not a curriculum lesson",
+      "intended_grade_range": "General information for readers across grade levels",
       "jurisdictions": [
-        "Hawaiʻi",
-        "Washington",
-        "Online inquiries subject to fit and scheduling"
+        "Online"
       ],
       "standards_alignment": {
         "status": "not_applicable",
@@ -127,23 +115,20 @@
         "written expression"
       ],
       "swi_word_families": [],
-      "prerequisites": [
-        "No diagnosis required to make an inquiry",
-        "General informational reading; not a prerequisite-gated learning activity"
-      ],
+      "prerequisites": [],
       "sequence_relationships": {
         "required_predecessors": [],
         "related_resources": [
-          "services.html",
+          "family-community-toolkit.html",
           "our-approach.html",
           "resources.html#learning-guides"
         ]
       },
-      "individualized_learning_routes": "Discuss goals, pacing, visual access and communication routes with Stephanie; this page does not prescribe an individualized plan",
+      "individualized_learning_routes": "Choose an example related to your own reading or writing, and follow links to related resources.",
       "development_status": "IMPLEMENTED_VALIDATED",
       "evidence_status": "Source checks and bounded browser review; not field validated",
       "human_interaction_review": "NOT_YET_REVIEWED",
-      "approval_release_boundary": "Publication authorized by Stephanie Steinshouer on 2026-11-04 for the reviewed website package; see publication_authorization. Specialist, accessibility-conformance and field-validation approval are not asserted.",
+      "approval_release_boundary": "Updated for the November 2026 nonprofit website publication. Specialist and field validation are not claimed.",
       "section": "Resources"
     }
   ],

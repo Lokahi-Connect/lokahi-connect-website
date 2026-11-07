@@ -26,10 +26,22 @@ jobs:
         with:
           enablement: true
 
+      - name: Validate the public site
+        run: |
+          node scripts/validate-site.mjs
+          node scripts/test-inquiry-analytics.mjs
+          node scripts/test-ad-measurement.mjs
+      - name: Stage public pages and assets
+        run: |
+          mkdir -p _site/assets _site/tutorbird _site/docs/discovery
+          cp *.html *.css *.js favicon.svg robots.txt sitemap.xml CNAME _site/
+          cp tutorbird/index.html _site/tutorbird/
+          cp docs/discovery/resource-index.json _site/docs/discovery/
+          cp assets/lokahi-connect-logo.png assets/stephanie-steinshouer-headshot.jpg _site/assets/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
 
   deploy:
     environment:
