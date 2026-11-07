@@ -67,9 +67,7 @@ for (const page of pages) {
   check(occurrences(html, /<main\b/gi) === 1, `${page}: expected exactly one main`);
   check(occurrences(html, /class=["'][^"']*\bskip-link\b[^"']*["']/gi) === 1, `${page}: expected exactly one skip link`);
   check(occurrences(html, /aria-current=["'](?:page|location)["']/gi) === 1, `${page}: expected exactly one current-page or current-location marker`);
-  if (page === 'adult-literacy-support.html') {
-    check(/href=["']services\.html["'][^>]*aria-current=["']location["']/i.test(html), `${page}: Services must be identified as the current section location`);
-  } else if (['family-community-toolkit.html', 'online-structured-literacy.html', 'ideas-to-writing.html'].includes(page)) {
+  if (['adult-literacy-support.html', 'family-community-toolkit.html', 'online-structured-literacy.html', 'ideas-to-writing.html'].includes(page)) {
     check(/href=["']resources\.html["'][^>]*aria-current=["']location["']/i.test(html), `${page}: Resources must be identified as the current section location`);
   } else {
     check(occurrences(html, /aria-current=["']page["']/gi) === 1, `${page}: expected exactly one current-page marker`);
@@ -82,7 +80,7 @@ for (const page of pages) {
   const nav = html.match(/<nav\b[^>]*aria-label=["']Primary navigation["'][\s\S]*?<\/nav>/i)?.[0] ?? '';
   const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? '';
   check(/class=["'][^"']*\bnav-toggle\b/i.test(nav) && /aria-controls=["']primary-navigation["']/i.test(nav), `${page}: mobile navigation control is missing`);
-  for (const label of ['Home', 'About', 'Services', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Student Portal', 'Give']) {
+  for (const label of ['Home', 'About', 'Consultation', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Student Portal', 'Give']) {
     check(nav.includes(`>${label}</a>`), `${page}: primary navigation is missing ${label}`);
   }
   check(/>Community Feedback<\/a>/i.test(footer), `${page}: footer Community Feedback link is missing`);
@@ -93,7 +91,8 @@ for (const page of pages) {
   check(/>Privacy &amp; Analytics<\/a>/i.test(footer), `${page}: footer Privacy & Analytics link is missing`);
   check(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/favicon\.svg["'][^>]*type=["']image\/svg\+xml["']/i.test(html), `${page}: SVG favicon link is missing`);
   check(/<meta\b[^>]*name=["']theme-color["'][^>]*content=["']#0D5A8A["']/i.test(html), `${page}: browser theme color is missing`);
-  check(html.includes(page === 'index.html' ? 'class="hero-visual"' : 'class="page-visual-shell"'), `${page}: page visual is missing`);
+  check(!/stephanie-(?:online-learning|professional-workshop|shared-reading|story-inquiry)/i.test(html), `${page}: removed illustration is still referenced`);
+  check(!/\$\s*(?:75|120|425)\b|"(?:price|priceRange)"\s*:/.test(html), `${page}: removed service pricing is still published`);
 
   for (const imageTag of html.matchAll(/<img\b[^>]*>/gi)) {
     check(/\balt=["'][^"']+["']/i.test(imageTag[0]), `${page}: image needs meaningful alternative text`);
@@ -149,20 +148,20 @@ for (const pattern of [
 ]) check(!pattern.test(allHtml), `forbidden or superseded wording remains: ${pattern}`);
 
 const home = contents.get('index.html') ?? '';
-for (const text of ['Start with what brought you here', 'Maui, Hawaiʻi · Online', '31%', '28%', 'Launch Student Lab']) {
+for (const text of ['The Lokahi WORD Project', 'Browse free resources', 'Open the Student Lab', 'Support the project', 'our-approach.html#word-inquiry']) {
   check(home.includes(text), `homepage required content is missing: ${text}`);
 }
 check(home.includes('https://lokahi-connect.github.io/lokahi-word-project-student-lab/'), 'homepage Student Lab destination is incorrect');
 
 const programs = contents.get('programs-and-impact.html') ?? '';
-for (const text of ['id="current-availability"', 'id="student-learning"', 'id="educator-learning"', 'id="digital-resources"', 'id="events"', 'id="service-inquiry"', 'id="email-updates"', 'id="service-inquiry-form"', 'id="updates-request-form"', 'Bainbridge Island, Washington', 'Maui, Hawaiʻi', 'Remote and online access', 'No public events are currently listed', 'this website does not save or send your answers']) {
+for (const text of ['id="program-development"', 'id="educator-learning"', 'id="digital-resources"', 'id="events"', 'id="service-inquiry"', 'id="email-updates"', 'id="service-inquiry-form"', 'id="updates-request-form"', 'Bainbridge Island, Washington', 'Maui, Hawaiʻi', 'No public events are currently listed', 'this website does not save or send your answers']) {
   check(programs.includes(text), `programs required content is missing: ${text}`);
 }
 check(!/<span class="score-val">[123]<\/span>/.test(programs), 'program evidence cards must not look like numerical scores');
 check(!/<form\b[^>]*\baction=/i.test(programs), 'program inquiry forms must not submit to an undisclosed endpoint');
 check(/programs-connect\.js\?v=20260820-2/.test(programs), 'program inquiry and update-request script is missing');
-for (const text of ['learners of all ages', '30 minutes for $75', '50 minutes for $120', 'comprehensive profile and written service plan is $425', 'name="first_name"', 'name="last_name"', 'Subscriber records retain only']) {
-  check(programs.includes(text), `program availability, pricing, or subscriber control is missing: ${text}`);
+for (const text of ['Word investigation materials', 'name="first_name"', 'name="last_name"', 'Subscriber records retain only']) {
+  check(programs.includes(text), `program resource or subscriber control is missing: ${text}`);
 }
 
 const about = contents.get('about.html') ?? '';
@@ -171,7 +170,7 @@ for (const text of ['id="leadership"', 'id="our-story"', 'Founder and Executive 
 }
 
 const services = contents.get('services.html') ?? '';
-for (const text of ['https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form', 'mailto:stephanie@lokahiconnect.org', 'privacy.html#service-inquiries', 'No account is needed', 'Optional profile &amp; service plan', '$75', '$120', '$425']) {
+for (const text of ['https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form', 'mailto:stephanie@lokahiconnect.org', 'privacy.html#service-inquiries', 'No account is needed', 'Services may be available upon request.', 'Free 30-minute consultation', 'id="service-signup"']) {
   check(services.includes(text), `Services contact route or scope is missing: ${text}`);
 }
 check(!/<form\b/i.test(services), 'Services must link to the reviewed hosted form, not collect a second set of answers');
@@ -181,16 +180,16 @@ const dyslexia = contents.get('dyslexia.html') ?? '';
 for (const text of ['id="family-next-steps"', 'Continue with trusted sources and further research', 'https://doi.org/10.31234/osf.io/aktzw', 'At Lokahi Connect, we use these four question areas']) {
   check(dyslexia.includes(text), `dyslexia required content is missing: ${text}`);
 }
-check(dyslexia.includes('services.html'), 'dyslexia page early support action is missing');
+check(dyslexia.includes('family-community-toolkit.html'), 'dyslexia page early support action is missing');
 
 const approach = contents.get('our-approach.html') ?? '';
-check(approach.includes('services.html'), 'approach page early opportunity action is missing');
+check(approach.includes('resources.html#swi-research'), 'approach page early opportunity action is missing');
 
 const resources = contents.get('resources.html') ?? '';
 for (const text of ['id="family-community-toolkit"', 'family-community-toolkit.html', 'id="screening-evaluation"', 'id="washington"', 'id="hawaii"', 'id="maui"', 'id="swi-research"', 'last reviewed August 21, 2026']) {
   check(resources.includes(text), `resources required content is missing: ${text}`);
 }
-check(resources.includes('services.html'), 'resources page early support action is missing');
+check(resources.includes('adult-literacy-support.html'), 'resources page early support action is missing');
 
 const toolkit = contents.get('family-community-toolkit.html') ?? '';
 for (const text of [
@@ -236,15 +235,10 @@ check(/community-feedback\.js\?v=20260820-2/.test(questionnaire), 'questionnaire
 
 const give = contents.get('give.html') ?? '';
 for (const text of [
-  'Language should make sense.',
-  'Access should not depend on a family’s resources.',
+  'Support the <em>Lokahi WORD Project</em>',
   '<givebutter-widget id="LWkGmQ"',
   'https://givebutter.com/ARzvHK',
-  'Specific donor impact',
-  'Matches the full published price of one 30-minute online student-learning session.',
-  'Matches the full published price of one 50-minute online student-learning session.',
-  'Matches the published price of a comprehensive profile and written service plan',
-  'transparent service-cost equivalents',
+  'What your gift supports',
   'Give monthly',
   'Recommend a DAF grant',
   'Discuss a funding partnership',
