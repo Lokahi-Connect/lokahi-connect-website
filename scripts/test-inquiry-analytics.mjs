@@ -76,3 +76,23 @@ for (const referrer of ['', 'https://www.lokahiconnect.org/services.html', 'http
 }
 console.log('Inquiry completion: Airtable return required; direct visits and reload/re-grant do not create submissions.');
 
+
+const donation = harness('denied');
+const giving = 'https://www.lokahiconnect.org/give.html';
+const checkout = 'https://givebutter.com/ARzvHK';
+donation.click(giving);
+assert.equal(donation.events().length, 0);
+donation.window.LokahiAnalytics.setConsent('granted');
+donation.click(giving + '?private=PRIVATE');
+donation.click(checkout + '?private=PRIVATE');
+donation.click('https://givebutter.com/another-campaign');
+donation.click('https://example.org/give.html');
+assert.deepEqual(Array.from(donation.events(), args => args[1]), ['giving_page_click', 'giving_checkout_click']);
+assert.ok(!JSON.stringify(donation.events()).includes('PRIVATE'));
+donation.window.LokahiAnalytics.setConsent('denied');
+donation.click(checkout);
+assert.equal(donation.events().length, 2);
+const withinGiving = harness('granted', false, {pathname: '/give.html'});
+withinGiving.click(giving + '#donate');
+assert.equal(withinGiving.events().length, 0);
+console.log('Giving analytics: consent, exact destinations, in-page links and data minimization passed.');

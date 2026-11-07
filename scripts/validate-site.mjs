@@ -80,14 +80,15 @@ for (const page of pages) {
   const nav = html.match(/<nav\b[^>]*aria-label=["']Primary navigation["'][\s\S]*?<\/nav>/i)?.[0] ?? '';
   const footer = html.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] ?? '';
   check(/class=["'][^"']*\bnav-toggle\b/i.test(nav) && /aria-controls=["']primary-navigation["']/i.test(nav), `${page}: mobile navigation control is missing`);
-  for (const label of ['Home', 'About', 'Consultation', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Student Portal', 'Give']) {
+  check(/<a class="mobile-donate nav-cta" href="\/?give\.html">Donate<\/a>/.test(nav), `${page}: donation shortcut is missing from the mobile header`);
+  for (const label of ['Home', 'About', 'Consultation', 'Our Approach', 'Programs', 'Dyslexia', 'Resources', 'Student Portal', 'Donate']) {
     check(nav.includes(`>${label}</a>`), `${page}: primary navigation is missing ${label}`);
   }
   check(/>Community Feedback<\/a>/i.test(footer), `${page}: footer Community Feedback link is missing`);
   check(!/english-orthography\.netlify\.app|>\s*Presentation\s*<\/a>/i.test(html), `${page}: removed presentation link remains`);
   check(/<script\b[^>]*src=["'](?:\.\.\/)?site-navigation\.js\?v=20260921-1["']/i.test(html), `${page}: shared navigation script is missing`);
-  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20260921-1["']/i.test(html), `${page}: current shared stylesheet is missing`);
-  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-analytics\.js\?v=20261104-1["']/i.test(html), `${page}: consent-controlled analytics script is missing`);
+  check(/<link\b[^>]*href=["'](?:\.\.\/)?_shared\.css\?v=20261107-1["']/i.test(html), `${page}: current shared stylesheet is missing`);
+  check(/<script\b[^>]*src=["'](?:\.\.\/)?site-analytics\.js\?v=20261107-1["']/i.test(html), `${page}: consent-controlled analytics script is missing`);
   check(/>Privacy &amp; Analytics<\/a>/i.test(footer), `${page}: footer Privacy & Analytics link is missing`);
   check(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/favicon\.svg["'][^>]*type=["']image\/svg\+xml["']/i.test(html), `${page}: SVG favicon link is missing`);
   check(/<meta\b[^>]*name=["']theme-color["'][^>]*content=["']#0D5A8A["']/i.test(html), `${page}: browser theme color is missing`);
@@ -148,9 +149,10 @@ for (const pattern of [
 ]) check(!pattern.test(allHtml), `forbidden or superseded wording remains: ${pattern}`);
 
 const home = contents.get('index.html') ?? '';
-for (const text of ['The Lokahi WORD Project', 'Browse free resources', 'Open the Student Lab', 'Support the project', 'our-approach.html#word-inquiry']) {
+for (const text of ['The Lokahi WORD Project', 'Browse free resources', 'Open the Student Lab', 'Donate to Lokahi Connect', 'our-approach.html#word-inquiry']) {
   check(home.includes(text), `homepage required content is missing: ${text}`);
 }
+check(/class="hero-actions">\s*<a class="btn-primary" href="give\.html">Donate/.test(home), 'The first homepage action must open the fundraiser');
 check(home.includes('https://lokahi-connect.github.io/lokahi-word-project-student-lab/'), 'homepage Student Lab destination is incorrect');
 
 const programs = contents.get('programs-and-impact.html') ?? '';
@@ -186,7 +188,7 @@ const approach = contents.get('our-approach.html') ?? '';
 check(approach.includes('resources.html#swi-research'), 'approach page early opportunity action is missing');
 
 const resources = contents.get('resources.html') ?? '';
-for (const text of ['id="family-community-toolkit"', 'family-community-toolkit.html', 'id="screening-evaluation"', 'id="washington"', 'id="hawaii"', 'id="maui"', 'id="swi-research"', 'last reviewed August 21, 2026']) {
+for (const text of ['id="family-community-toolkit"', 'family-community-toolkit.html', 'id="screening-evaluation"', 'id="washington"', 'id="hawaii"', 'id="maui"', 'id="swi-research"', 'Directory sources reviewed']) {
   check(resources.includes(text), `resources required content is missing: ${text}`);
 }
 check(resources.includes('adult-literacy-support.html'), 'resources page early support action is missing');
@@ -235,7 +237,7 @@ check(/community-feedback\.js\?v=20260820-2/.test(questionnaire), 'questionnaire
 
 const give = contents.get('give.html') ?? '';
 for (const text of [
-  'Support the <em>Lokahi WORD Project</em>',
+  'Donate to <em>Lokahi Connect</em>',
   '<givebutter-widget id="LWkGmQ"',
   'https://givebutter.com/ARzvHK',
   'What your gift supports',
