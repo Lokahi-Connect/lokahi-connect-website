@@ -33,8 +33,9 @@ jobs:
           node scripts/test-ad-measurement.mjs
       - name: Stage public pages and assets
         run: |
-          mkdir -p _site/assets _site/tutorbird _site/docs/discovery
+          mkdir -p _site/assets _site/home _site/tutorbird _site/docs/discovery
           cp *.html *.css *.js favicon.svg robots.txt sitemap.xml CNAME _site/
+          cp home/index.html _site/home/
           cp tutorbird/index.html _site/tutorbird/
           cp docs/discovery/resource-index.json _site/docs/discovery/
           cp assets/lokahi-connect-logo.png assets/stephanie-steinshouer-headshot.jpg _site/assets/
