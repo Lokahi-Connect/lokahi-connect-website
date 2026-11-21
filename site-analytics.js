@@ -182,10 +182,18 @@
       try { destination = new URL(link.href, window.location.href); } catch (error) { return; }
       var givingPage = destination.origin === window.location.origin &&
         destination.pathname === '/give.html' && window.location.pathname !== '/give.html';
-      var givingCheckout = destination.origin === 'https://givebutter.com' &&
-        destination.pathname === '/ARzvHK';
-      if (givingPage || givingCheckout) {
+      var fundraisingPath = null;
+      if (destination.origin === 'https://givebutter.com') {
+        if (destination.pathname === '/ARzvHK' || destination.pathname === '/ARzvHK/donate') {
+          fundraisingPath = 'general';
+        } else if (destination.pathname === '/fund-a-students-tuition-biuo57' ||
+            destination.pathname === '/fund-a-students-tuition-biuo57/donate') {
+          fundraisingPath = 'tuition_assistance';
+        }
+      }
+      if (givingPage || fundraisingPath) {
         window.gtag('event', givingPage ? 'giving_page_click' : 'giving_checkout_click', {
+          fundraising_path: givingPage ? 'site_giving_page' : fundraisingPath,
           page_location: window.location.origin + window.location.pathname,
           transport_type: 'beacon'
         });
