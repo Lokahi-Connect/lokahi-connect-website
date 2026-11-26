@@ -192,7 +192,13 @@
         }
       }
       if (givingPage || fundraisingPath) {
-        window.gtag('event', givingPage ? 'giving_page_click' : 'giving_checkout_click', {
+        var eventName = 'giving_page_click';
+        if (fundraisingPath) {
+          eventName = destination.pathname.endsWith('/donate')
+            ? 'giving_checkout_click'
+            : 'giving_campaign_click';
+        }
+        window.gtag('event', eventName, {
           fundraising_path: givingPage ? 'site_giving_page' : fundraisingPath,
           page_location: window.location.origin + window.location.pathname,
           transport_type: 'beacon'
