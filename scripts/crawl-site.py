@@ -44,6 +44,12 @@ def crawl(root):
     if GIVING not in listed:
         errors.append('The donation page is missing from the sitemap')
 
+    consultation = ORIGIN + '/services.html'
+    guide = ORIGIN + '/online-structured-literacy.html'
+    for required in (consultation, guide):
+        if required not in listed:
+            errors.append(f'Remote literacy page missing from sitemap: {required}')
+
     queue = deque([HOME])
     seen = {HOME}
     indexed = set()
@@ -87,6 +93,13 @@ def crawl(root):
                 if target not in seen:
                     seen.add(target)
                     queue.append(target)
+        if url in (HOME, guide) and consultation not in destinations:
+            errors.append(f'{route} needs a crawlable link to the consultation page')
+        if url == consultation:
+            if 'https://airtable.com/appEDbkXoKtlrJPSR/pagRy0ILKrkFzxKR2/form' not in destinations:
+                errors.append('Consultation page is missing its inquiry form link')
+            if not any(link.split('?')[0] == 'mailto:stephanie@lokahiconnect.org' for link in destinations):
+                errors.append('Consultation page is missing its email alternative')
         if url == GIVING:
             if CAMPAIGN not in destinations:
                 errors.append('Give must link directly to the campaign in its HTML')
